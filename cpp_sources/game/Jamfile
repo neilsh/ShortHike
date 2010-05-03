@@ -1,0 +1,6 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP sources game ;
+
+AddLocalCppSources ShortHike ;
+AddLocalCppSources SelfTest ;

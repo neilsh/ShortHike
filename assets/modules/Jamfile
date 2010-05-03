@@ -1,0 +1,6 @@
+# --------------------------------------------------------------------------------
+# The asset Jamfiles collect together all assets for release
+
+SubDir TOP assets modules ;
+
+AddTargetFiles assets : *.shd ;

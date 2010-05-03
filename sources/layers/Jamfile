@@ -1,0 +1,6 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP sources layers ;
+
+AddDImportDirectory ShortHike ;
+AddLocalDSources ShortHike ;

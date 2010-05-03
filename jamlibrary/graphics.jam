@@ -1,0 +1,30 @@
+# --------------------------------------------------------------------------------
+# Texture conversion
+
+rule AddTextureTargetFiles
+{
+  local TARGETS = $(1) ;
+  local SOURCE_FILES = $(2) ;
+
+  for SOURCE_TEXTURE in $(SOURCE_FILES) {
+    local TARGET_TEXTURE = $(SOURCE_TEXTURE:S=.jpg) ;
+    TextureConvert [ FDirName $(SEARCH_SOURCE) $(TARGET_TEXTURE) ] : [ FDirName $(SEARCH_SOURCE) $(SOURCE_TEXTURE) ] ;
+    for TARGET_NAME in $(TARGETS) {
+      AddTargetFiles $(TARGET_NAME) : $(TARGET_TEXTURE) ;
+    }
+  }
+}
+
+rule TextureConvert
+{
+  local TARGET_TEXTURE = $(1) ;
+  local SOURCE_TEXTURE = $(2) ;
+
+  Depends $(TARGET_TEXTURE) : $(SOURCE_TEXTURE) ;
+  Depends assets : $(TARGET_TEXTURE) ;
+}
+
+actions TextureConvert
+{
+  $(CONVERT) $(2) $(1)
+}

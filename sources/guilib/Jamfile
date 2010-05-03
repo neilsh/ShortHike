@@ -1,0 +1,7 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP sources guilib ;
+
+AddDImportDirectory ShortHike ;
+AddLocalDSources ShortHike ;
+

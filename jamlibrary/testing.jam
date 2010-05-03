@@ -1,0 +1,63 @@
+# --------------------------------------------------------------------------------
+# Unit testing
+
+rule UnitTest
+{
+  local PROGRAM_NAME = $(1) ;
+  local EXECUTABLE_NAME = [ GetExecutableName debug : $(PROGRAM_NAME) ] ;
+  local TEST_PREFIX = $(2) ;
+  
+  local TEST_TARGET = test-$(PROGRAM_NAME) ;
+  local PROFILE_TARGET = profile-$(PROGRAM_NAME) ;
+  if $(TEST_PREFIX) != "" {
+    TEST_TARGET = test-$(PROGRAM_NAME)-$(TEST_PREFIX) ;
+    PROFILE_TARGET = profile-$(PROGRAM_NAME)-$(TEST_PREFIX) ;
+    TEST_PREFIX on $(TEST_TARGET) = $(TEST_PREFIX) ;
+    TEST_PREFIX on $(PROFILE_TARGET) = $(TEST_PREFIX) ;
+  }
+
+# Debug purposes
+  Echo "UnitTest:" $(TEST_TARGET) "Exe: " $(EXECUTABLE_NAME) "Prefix: " $(TEST_PREFIX) ;
+
+  ExecuteTest $(TEST_TARGET) : $(EXECUTABLE_NAME) ;
+  ExecuteProfiling $(PROFILE_TARGET) : $(EXECUTABLE_NAME) ;
+}
+
+#--------------------------------------------------------------------------------
+# Just runs the actual tests
+
+rule ExecuteTest
+{
+  local TEST_TARGET = $(1) ;
+  local TEST_EXE = $(2) ;
+  Depends $(TEST_TARGET) : $(TEST_EXE) ;
+}
+
+actions ExecuteTest
+{
+  echo Test directory is: $(RUN_TEST_DIR)
+  cd $(RUN_TEST_DIR)
+  
+  echo EXEC: $(2) --test $(TEST_PREFIX)
+  $(2) --test $(TEST_PREFIX)
+}
+
+#--------------------------------------------------------------------------------
+# Run the tests using a profiler
+
+rule ExecuteProfiling
+{
+  local PROFILE_TARGET = $(1) ;
+  local PROFILE_EXE = $(2) ;
+  Depends $(PROFILE_TARGET) : $(PROFILE_EXE) ;
+}
+
+actions ExecuteProfiling
+{
+  echo Test directory is: $(RUN_TEST_DIR)
+  cd $(RUN_TEST_DIR)
+  
+  echo Executable is "$(GLOWCODE) /L $(2) /C $(TEST_PREFIX)"
+  "$(GLOWCODE)" /L "$(2)" /C $(TEST_PREFIX)
+}
+

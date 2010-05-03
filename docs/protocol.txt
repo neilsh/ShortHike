@@ -1,0 +1,93 @@
+The client server model is one of a thin client with proxies for
+quicker read access. The client can send aquire/release messages to
+the server to show interest in proxying while the server only sends
+state update messages to the client.
+
+In the ASCII message format each message is delimeted by a
+newline. Parameters are separated by space. String are placed at the
+end of the message and are delimeted by the newline (this needs
+refactoring once we start to use multiple string arguments).
+
+The client change request messages and the server change messages are
+identical except where additional audit information is required (like
+<playerID> tagged to the end of server update messages).
+
+General message format, both for client and server:
+<itemID> <command> <args>
+
+There is a single fixed itemID: 0. This stands for the server itself. The
+server object is automatically aquired at the beginning of the session.
+
+GENERIC ITEM MESSAGES
+
+ aquire <classname>
+Aquire an item proxy. The server will send an initial stream of
+updates to get basic state. The classname is a safety check against
+the real class name.
+
+ release
+Release an item proxy. The client will receive no more updates on this
+item. A reaquire will resend the whole state.
+
+
+
+SERVER MESSAGES (fixed itemID 0)
+       
+ reload
+Reload all world server modules
+
+ exit
+Close the connection
+
+ name <itemID> <string name>
+Link an itemID to a root name.
+
+Interesting name
+station	    The station we are working on.
+
+
+
+
+
+STATION MESSAGES
+
+
+add_module <itemID> [SERVER]
+Add module to station
+
+remove_module <itemID> [SERVER]
+Remove module from station
+
+
+create_module <xpos> <ypos> <zpos> <qw> <qx> <qy> <qz> <prototype_name> [CLIENT]
+This is a temporary message while module construction isn't yet worked
+out.
+
+destroy_module <itemID> [CLIENT]
+Remove a module from the station
+
+
+MODULE MESSAGES
+prototype <prototype_name>
+position <xpos> <ypos> <zpos>
+orientation <qw> <qx> <qy> <qz>
+
+
+EXAMPLE: Adding module (two clients online):
+
+C1->S 500 create_module 0 0 0 1 0 0 0 node
+S->C1 500 add_module 1001
+S->C2 500 add_module 1001
+
+C1->S 1001 aquire
+S->C1 1001 aquire
+S->C1 1001 prototype node
+S->C1 1001 position 0 0 0
+S->C1 1001 orientation 1 0 0 0
+
+C2->S 1001 aquire
+S->C2 1001 aquire
+S->C2 1001 prototype node
+S->C2 1001 position 0 0 0
+S->C2 1001 orientation 1 0 0 0
+

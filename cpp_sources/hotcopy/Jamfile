@@ -1,0 +1,6 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP sources hotcopy ;
+
+AddLocalCppSources HotCopy ;
+

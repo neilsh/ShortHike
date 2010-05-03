@@ -1,0 +1,41 @@
+
+ Start         Length     Name                   Class
+ 0002:00000000 0000E198H  _TEXT                  CODE 32-bit
+ 0002:0000E198 00000150H  ICODE                  ICODE 32-bit
+ 0003:00000000 00000004H  .CRT$XIA               DATA 32-bit
+ 0003:00000010 00000004H  .CRT$XIZ               DATA 32-bit
+ 0003:00000020 00000004H  .CRT$XCA               DATA 32-bit
+ 0003:00000030 00000004H  .CRT$XCZ               DATA 32-bit
+ 0003:00000040 00000004H  .CRT$XPA               DATA 32-bit
+ 0003:00000050 00000004H  .CRT$XPZ               DATA 32-bit
+ 0003:00000060 00000004H  .CRT$XTA               DATA 32-bit
+ 0003:00000070 00000004H  .CRT$XTZ               DATA 32-bit
+ 0003:00000074 00000000H  IMP__DATA              IMP__DATA 32-bit
+ 0003:00000080 00004818H  _DATA                  DATA 32-bit
+ 0003:00004898 00000000H  FMB                    DATA 32-bit
+ 0003:00004898 00000030H  FM                     DATA 32-bit
+ 0003:000048C8 00000000H  FME                    DATA 32-bit
+ 0003:000048C8 00000000H  XIB                    DATA 32-bit
+ 0003:000048C8 00000018H  XI                     DATA 32-bit
+ 0003:000048E0 00000000H  XIE                    DATA 32-bit
+ 0003:000048E0 00000000H  XCB                    DATA 32-bit
+ 0003:000048E0 00000010H  XC                     DATA 32-bit
+ 0003:000048F0 00000000H  XCE                    DATA 32-bit
+ 0003:000048F0 00000000H  XIFCB                  DATA 32-bit
+ 0003:000048F0 00000004H  XIFU                   DATA 32-bit
+ 0003:000048F4 00000000H  XIFL                   DATA 32-bit
+ 0003:000048F4 00000004H  XIFM                   DATA 32-bit
+ 0003:000048F8 00000000H  XIFCE                  DATA 32-bit
+ 0003:00004900 00000000H  CONST                  CONST 32-bit
+ 0003:00004900 00000000H  EEND                   ENDBSS 32-bit
+ 0003:00004900 0000293CH  _BSS                   BSS 32-bit
+ 0003:0000723C 00000000H  XOB                    BSS 32-bit
+ 0003:0000723C 00000004H  XO                     BSS 32-bit
+ 0003:00007240 00000000H  XOE                    BSS 32-bit
+ 0003:00007240 00000000H  XOFB                   BSS 32-bit
+ 0003:00007240 00000108H  XOF                    BSS 32-bit
+ 0003:00007348 00000000H  XOFE                   BSS 32-bit
+ 0003:00007350 00000419H  c_common               BSS 32-bit
+ 0003:00007770 00000000H  STACK                  STACK 32-bit
+
+Program entry point at 00006E68 

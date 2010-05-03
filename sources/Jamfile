@@ -1,0 +1,23 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP sources ;
+
+AddDImportDirectory ShortHike ;
+RevisionHeader BuildInfo.d : ShortHike ;
+
+SubInclude TOP sources audio ;
+SubInclude TOP sources file ;
+SubInclude TOP sources game ;
+SubInclude TOP sources guilib ;
+SubInclude TOP sources layers ;
+SubInclude TOP sources main ;
+SubInclude TOP sources math ;
+SubInclude TOP sources rendering ;
+SubInclude TOP sources scheme ;
+SubInclude TOP sources screens ;
+SubInclude TOP sources util ;
+
+if $(OS) = "NT" {
+  SubInclude TOP sources dx8 ;
+  SubInclude TOP sources win32 ;
+}

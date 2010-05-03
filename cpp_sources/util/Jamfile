@@ -1,0 +1,7 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP sources util ;
+
+AddLocalCppSources ShortHike ;
+
+AddCppSources SelfTest : TestFixture.cpp Exceptions.cpp Log.cpp imath.cpp : TestFixture.hpp Exceptions.hpp Log.hpp imath.hpp ;

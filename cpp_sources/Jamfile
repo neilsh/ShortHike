@@ -1,0 +1,44 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP sources ;
+
+#AddLocalCppSources ShortHike ;
+#AddLocalCppSources SelfTest ;
+AddCppSources ShortHike : shorthike.res crash_dialog.res ;
+
+
+SubInclude TOP sources drm ;
+SubInclude TOP sources file ;
+SubInclude TOP sources game ;
+SubInclude TOP sources generated ;
+SubInclude TOP sources guilib ;
+SubInclude TOP sources hotcopy ;
+SubInclude TOP sources layers ;
+SubInclude TOP sources math ;
+SubInclude TOP sources profiler ;
+SubInclude TOP sources rendering ;
+SubInclude TOP sources test ;
+SubInclude TOP sources util ;
+
+# ----------------------------------------
+# Platform specific
+SubInclude TOP sources win32 ;
+
+#----------------------------------------
+#Refactor these
+#SubInclude TOP sources audio ;
+#SubInclude TOP sources orbit ;
+#SubInclude TOP sources widgets ;
+
+
+#----------------------------------------
+# Remove these dependencies
+#SubInclude TOP sources config ;
+#SubInclude TOP sources property ;
+#SubInclude TOP sources screens ;
+#SubInclude TOP sources script ;
+
+# These are the directories containing the main executables
+SubInclude TOP sources main ;
+SubInclude TOP sources self_test ;
+SubInclude TOP sources compressor ;

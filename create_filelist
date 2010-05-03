@@ -1,0 +1,16 @@
+#!/bin/sh
+# A nifty little bash script for creating the filelist we need when updating the different
+# directories on the target computer.
+
+echo o... Removing any stale files
+rm -f filelist.txt _create_filelist_md5
+
+echo oo.. Creating script file
+/bin/find -type f -and -not -name filelist.txt -and -not -name _create_filelist_md5 -printf 'echo $(md5sum %P|cut -b -32) $(wc -c %P)\n' >_create_filelist_md5
+
+echo ooo. Calculating md5 sums
+echo FileList > filelist.txt
+source _create_filelist_md5 | sort >> filelist.txt
+
+echo oooo Removing temp files
+rm -f _create_filelist_md5

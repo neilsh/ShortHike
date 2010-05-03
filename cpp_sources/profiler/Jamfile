@@ -1,0 +1,6 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP sources profiler ;
+
+AddLocalCppSources ShortHike ;
+AddLocalCppSources SelfTest ;

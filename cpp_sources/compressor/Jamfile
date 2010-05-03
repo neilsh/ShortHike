@@ -1,0 +1,6 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP sources compressor ;
+
+AddLocalCppSources Compressor ;
+

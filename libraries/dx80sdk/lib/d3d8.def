@@ -1,0 +1,10 @@
+LIBRARY D3D8
+EXETYPE NT
+SUBSYSTEM WINDOWS
+EXPORTS
+_Direct3DCreate8@4=Direct3DCreate8
+    CheckFullscreen                @1   ; CheckFullscreen
+    DebugSetMute                   @4   ; DebugSetMute
+    Direct3DCreate8                @5   ; Direct3DCreate8
+    ValidatePixelShader            @2   ; ValidatePixelShader
+    ValidateVertexShader           @3   ; ValidateVertexShader

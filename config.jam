@@ -1,0 +1,4 @@
+# --------------------------------------------------------------------------------
+# Release specific information
+
+TOOLS_DIR = [ FDirName $(TOP) .. tools ] ;

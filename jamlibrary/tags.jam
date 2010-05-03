@@ -1,0 +1,15 @@
+# --------------------------------------------------------------------------------
+# TAGS files used for finding symbols in Emacs
+
+rule Tags
+{
+  local TAGS_FILENAME = $(1) ;
+
+  Depends tags : $(TAGS_FILENAME) ;
+  ALWAYS $(TAGS_FILENAME) ;
+}
+
+actions Tags
+{	
+  bash -c " $(CTAGS) -f $(1) `/bin/find sources -name *.cpp -or -name *.hpp`"
+}

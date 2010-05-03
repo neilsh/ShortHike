@@ -1,0 +1,8 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP sources rendering ;
+
+AddLocalCppSources ShortHike ;
+AddLocalCppSources SelfTest ;
+
+SubInclude TOP sources rendering dx7 ;

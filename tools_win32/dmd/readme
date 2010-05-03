@@ -1,0 +1,10 @@
+
+	Digital Mars D Compiler Package
+	-------------------------------
+
+Windows Programmers:
+--------------------
+
+Be sure and also download and install the Digital Mars C/C++ compiler
+toolset ftp://ftp.digitalmars.com/dmc.zip, which contains the linker
+and necessary libraries.

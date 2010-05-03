@@ -1,0 +1,60 @@
+.TH dmd 1
+.SH NAME
+dmd - Digital Mars D Compiler
+.SH SYNOPSIS
+.B dmd
+files.d
+...
+.I { -switch }
+.SH OPTIONS
+.IP files.d
+.IP files.htm
+.IP files.html
+D source files
+.IP files.o  
+Object files to link in
+.IP files.a
+Library files to link in
+.IP -c
+compile only, do not link
+.IP  -d
+allow deprecated features
+.IP  -g
+add symbolic debug info
+.IP  -gt
+add trace profiling hooks
+.IP  -v
+verbose
+.IP  -O
+optimize
+.IP  -odobjdir
+write object files to directory objdir
+.IP  -offilename
+name output file to filename
+.IP  -op
+do not strip paths from source file
+.IP  -Ipath
+where to look for imports
+
+.I path
+is a ; separated list of paths. Multiple -I's can be used, and the paths are searched in the same order.
+.IP  -Llinkerflag
+pass linkerflag to linker
+.IP  -debug
+compile in debug code
+.IP  -debug=level
+compile in debug code <= level
+.IP  -debug=ident
+compile in debug code identified by ident
+.IP  -inline
+do function inlining
+.IP  -release
+compile release version
+.IP  -unittest
+compile in unit tests
+.IP  -version=level
+compile in version code >= level
+.IP  -version=ident
+compile in version code identified by ident
+.SH AUTHOR
+Copyright (c) 1999-2004 by Digital Mars written by Walter Bright

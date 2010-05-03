@@ -1,0 +1,88 @@
+module win32api;
+
+/* get the D windows IF */
+import windows;
+/* more of the Win32 API */
+import windef;
+import wingdi;
+import winuser;
+
+
+// saves file space not having these inline
+// and if your not interested in the aliases
+// you don't need to import this module.
+version( UNICODE )
+{
+	import win32unicode;
+}
+else
+{
+	import win32ascii;
+}
+
+//// !!!! looks like a bug to me MJW !!!!
+//// !!!! or did MS get it wrong !!  !!!!
+//LPSTR GetEnvironmentStrings();
+//LPWSTR GetEnvironmentStringsW();
+///#ifdef UNICODE
+//#define GetEnvironmentStrings  GetEnvironmentStringsW
+//#else
+//#define GetEnvironmentStringsA  GetEnvironmentStrings
+//#endif // !UNICODE
+
+alias UINT  (* LPFNDEVMODE)(HWND, HMODULE, LPDEVMODE, LPSTR, LPSTR, LPDEVMODE, LPSTR, UINT);
+alias DWORD (* LPFNDEVCAPS)(LPSTR, LPSTR, UINT, LPSTR, LPDEVMODE);
+
+
+
+/*
+#define CreateWindowA(lpClassName, lpWindowName, dwStyle, x, y,\
+nWidth, nHeight, hWndParent, hMenu, hInstance, lpParam)\
+CreateWindowExA(0L, lpClassName, lpWindowName, dwStyle, x, y,\
+nWidth, nHeight, hWndParent, hMenu, hInstance, lpParam)
+#define CreateWindowW(lpClassName, lpWindowName, dwStyle, x, y,\
+nWidth, nHeight, hWndParent, hMenu, hInstance, lpParam)\
+CreateWindowExW(0L, lpClassName, lpWindowName, dwStyle, x, y,\
+nWidth, nHeight, hWndParent, hMenu, hInstance, lpParam)
+*/
+/*
+#define CreateDialogA(hInstance, lpName, hWndParent, lpDialogFunc) \
+CreateDialogParamA(hInstance, lpName, hWndParent, lpDialogFunc, 0L)
+#define CreateDialogW(hInstance, lpName, hWndParent, lpDialogFunc) \
+CreateDialogParamW(hInstance, lpName, hWndParent, lpDialogFunc, 0L)
+#ifdef UNICODE
+#define CreateDialog  CreateDialogW
+#else
+#define CreateDialog  CreateDialogA
+#endif // !UNICODE
+#define CreateDialogIndirectA(hInstance, lpTemplate, hWndParent, lpDialogFunc) \
+CreateDialogIndirectParamA(hInstance, lpTemplate, hWndParent, lpDialogFunc, 0L)
+#define CreateDialogIndirectW(hInstance, lpTemplate, hWndParent, lpDialogFunc) \
+CreateDialogIndirectParamW(hInstance, lpTemplate, hWndParent, lpDialogFunc, 0L)
+#ifdef UNICODE
+#define CreateDialogIndirect  CreateDialogIndirectW
+#else
+#define CreateDialogIndirect  CreateDialogIndirectA
+#endif // !UNICODE
+*/
+/*
+#define DialogBoxA(hInstance, lpTemplate, hWndParent, lpDialogFunc) \
+DialogBoxParamA(hInstance, lpTemplate, hWndParent, lpDialogFunc, 0L)
+#define DialogBoxW(hInstance, lpTemplate, hWndParent, lpDialogFunc) \
+DialogBoxParamW(hInstance, lpTemplate, hWndParent, lpDialogFunc, 0L)
+#ifdef UNICODE
+#define DialogBox  DialogBoxW
+#else
+#define DialogBox  DialogBoxA
+#endif // !UNICODE
+
+#define DialogBoxIndirectA(hInstance, lpTemplate, hWndParent, lpDialogFunc) \
+DialogBoxIndirectParamA(hInstance, lpTemplate, hWndParent, lpDialogFunc, 0L)
+#define DialogBoxIndirectW(hInstance, lpTemplate, hWndParent, lpDialogFunc) \
+DialogBoxIndirectParamW(hInstance, lpTemplate, hWndParent, lpDialogFunc, 0L)
+#ifdef UNICODE
+#define DialogBoxIndirect  DialogBoxIndirectW
+#else
+#define DialogBoxIndirect  DialogBoxIndirectA
+#endif // !UNICODE
+*/

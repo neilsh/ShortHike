@@ -1,0 +1,5 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP assets locations ;
+
+AddTargetFiles assets : *.shd ;

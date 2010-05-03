@@ -1,0 +1,122 @@
+
+LICENSE AGREEMENT
+
+SHORTHIKE(tm) SOFTWARE
+
+THIS IS A LEGAL AGREEMENT BETWEEN YOU, THE END USER ("You or Licensee") AND MISTARIL LTD, A LIMITED LIABILITY COMPANY ORGANIZED AND EXISTING UNDER THE LAWS OF THE REPUBLIC OF FINLAND ("Licensor"). DOWNLOADING AND/OR INSTALLING SHORTHIKE(tm) SOFTWARE TRIAL COPY MEANS YOU ACCEPT THESE TERMS AND CONDITIONS. IF YOU DO NOT AGREE WITH THEM, YOU MAY NOT DOWNLOAD AND/OR INSTALL THE SOFTWARE. DOWNLOADING AND/OR INSTALLING SHORTHIKE(tm) SOFTWARE FULL VERSION COPY MEANS YOU ACCEPT THESE TERMS AND CONDITIONS. IF YOU DO NOT AGREE WITH THEM, YOU MAY NOT DOWNLOAD AND/OR INSTALL THE SOFTWARE.
+
+THIS LICENSE CONTAINS TWO DIFFERENT PHASES, TRIAL LICENSE (INCLUDING SECTION 2) FOR THE TRIAL VERSION OF THE SOFTWARE AND FULL VERSION LICENSE (INCLUDING SECTION 3) FOR THE FULL VERSION OF THE SOFTWARE. BOTH LICENSES ARE SUBJECT TO SECTIONS 1, 4, 5, 6, 7, 8, 9 AND 10. 
+
+1. DEFINITIONS. 
+As used in this Agreement, capitalized terms will have the meanings set forth below: 
+(a) "Authorized User" means any person authorized by the Licensor to access and use the Software with its Full Version subject to the terms and conditions of this Agreement. 
+(b) "Trial User" means any person authorized by the Licensor to access and use the Software with its Trial Version subject to the terms and conditions of this Agreement.
+(c) "Software" means the computer game software "ShortHike(tm)" that is owned or licensed by the Licensor (including but not limited to software, data, manuals, guidelines, comments, and content editors). The Software is available in Trial Version or in Full Version subject to the terms and conditions of this Agreement. 
+(d) "Trial Version" means the free of charge, restricted content version of the Software for use on trial basis subject to the terms and conditions of this Agreement.
+(e) "Full Version" means the commercial version of the Software which may be obtained from the Licensor's web site against payment of the Software license and which is subject to the terms and conditions of this Agreement. 
+(f) "Trial License" means this License Agreement as amended from time to time with all terms and conditions herein except those applicable only to the Full Version License (Section 3).
+(g) "Full Version License" means this License Agreement as amended from time to time with all terms and conditions herein except those applicable only to the Trial License (Section 2).
+(h) "Licenses" means both phases of this License Agreement (Trial License and Full Version License together) subject to the terms and conditions of this License Agreement.
+(i) "Content Editor" means a tool or tools that may be included in Trial Version and/or Full Version of the Software (including but not limited to editors, script languages, interfaces, compilers and other tools capable of editing the content in whole or in part) for editing the content of the Software (mainly game scenarios, details, options and/or alike) and producing Trial User's or Authorized User's own content for the Software (mainly game scenarios, details, options and/or alike).  
+
+2.	TRIAL LICENSE
+2.1	The Licensor grants to You a personal, non-exclusive, non-transferable Trial License to use a Trial Version of the Software and the accompanying documentation, if any, in accordance with the terms set forth in this License Agreement, solely for the purpose of evaluating the same. Delivery of the Software to You does not grant to You any rights to use the Software for any purpose except evaluation.
+
+The Software is owned by the Licensor or its licensors and protected by copyright and trademark laws. Therefore, You must treat the Software like any other copyrighted material except that:
+
+2.2 	You may:
+
+(a) make copies Trial Version of the Software in machine readable form provided that You reproduce all proprietary notices and this License Agreement on the copy;
+(b) distribute the Trial Version copies provided that You reproduce all proprietary notices and this License Agreement on the copy; 
+
+2.3 You may not: 
+
+(a) modify, make changes to, translate, reverse engineer, reproduce, decompile, disassemble, create derivative works based on, or merge the Software into another program/software or do the same to the accompanying documentation in whole or in part (except as provided in Section 4);
+(b) remove any proprietary notices, labels, or marks on the Software, documentation, related materials or containers.
+
+Please refer to Section 4 as regards the Content Editor. 
+
+2.4	Testing and Evaluation. You are responsible for providing all computer and other equipment and facilities necessary or desirable for evaluation and testing of the Software. You agree to inform the Licensor of errors, difficulties or other problems with Software. This License is for a Trial Copy only and the Licensor makes no representations concerning the completeness, accuracy or operation of the Software. AS A TRIAL COPY, THE FUNCTIONALITY OR USE OF THE SOFTWARE IS OR MAY BE RESTRICTED. The Licensor assumes no liability that may arise out of the use, inability to use, or possession of the Software. It is understood that the Licensor will not be obligated to fix reported errors, provide ongoing support or consultation, or to make the Software available as a standard or full use product.
+
+3.	FULL VERSION LICENSE
+
+3.1 The Licensor grants to You a personal, non-exclusive, non-transferable Full Version License to access and use a copy of the Full Version of the Software and the accompanying documentation, if any, in accordance with the terms set forth in this License Agreement. 
+
+The Software is owned by the Licensor or its licensors and protected by copyright and trademark laws. Therefore, You must treat the Software like any other copyrighted material except that:
+
+3.2 	You may:
+
+(a) use the Software on one computer at a time;
+(b) install the Software on up to three computers;
+(c) physically transfer the Software from one computer to another provided that the Software is used on only one computer at a time. 
+(d) make one (1) copy of the Software in machine readable form solely for backup purposes, provided that You reproduce all proprietary notices and this License Agreement on the copy;
+
+3.3 You may not: 
+
+(a) use the Software on more than one computer at a time;
+(b) install the Software on more than three computers;
+(c) modify, make changes to, translate, reverse engineer, reproduce, decompile, disassemble, create derivative works based on, copy (except for the backup copy), or merge the Software into another program/software or the do the same to accompanying documentation in whole or in part (except as provided in Section 4);
+(d) commercially or non-commercially exploit, distribute, rent, lease, give or transfer the Software or any rights in the Software or accompanying documentation in any form to any person or entity without the prior written consent of the Licensor which, if given, is subject to the transferee's consent to the terms and conditions of this License Agreement; or
+(e) remove any proprietary notices, labels, or marks on the Software, documentation, related materials or containers.
+
+Please refer to Section 4 as regards the Content Editor. 
+
+4. CONTENT EDITOR
+
+4.1	Both Software versions (Trial Version and Full Version) may include a Content Editor. With the Content Editor You may create Your own content for the ShortHike(tm) game (consisting of the Software). You may not edit, alter or modify the original files of the Software at any time. The content You may create with the Content Editor may only be distributed and exchanged by You non-commercially among Authorized Users. You may not sell, lease, give, transfer or otherwise commercially exploit the content created with the Content Editor. 
+
+4.2	License to the content You create. You agree to grant the Licensor free of charge, exclusive, transferable, world-wide and perpetual license to any and all content You create with the Content Editor. This license includes the right to commercially or non-commercially exploit the content in any form and in/through any media, including but not limited to use, lease, give or transfer, distribute, modify, make changes to, translate, reverse engineer, reproduce, decompile, disassemble, create derivative works based on, or merge created content into another program/software or the Software or do the same to the accompanying documentation in whole or in part. 
+
+5. COPYRIGHT AND TRADEMARK 
+
+5.1 The Software (and all materials related to it) is owned by the Licensor and/or others and is proprietary in nature. The Software is protected by copyright law in Finland and other countries as well as by international treaty provisions. 
+
+5.2 Unless otherwise provided in Sections 2 (Trial License), 3 (Full Version License) and 4 (Content Editor) You may not :
+
+(a) modify, make changes to, translate, reverse engineer, reproduce, decompile, disassemble, create derivative works based on, copy or merge the Software into another program/software or do the same to accompanying documentation in whole or in part;
+(b) commercially or non-commercially exploit, distribute, rent, lease, give or transfer the Software or any rights in the Software or accompanying documentation in any form to any person or entity without the prior written consent of the Licensor which, if given, is subject to the transferee's consent to the terms and conditions of this License Agreement; or
+(c) remove any proprietary notices, labels, or marks on the Software, documentation, related materials or containers.
+
+5.3 You may not copy, lease, give or transfer, distribute, modify, make changes to, translate or otherwise commercially or non-commercially exploit any of the materials (in printed, in electronical or in other form) accompanying the Software. 
+
+5.4 SHORTHIKE(tm) is a trademark owned by the Licensor and is proprietary in nature. The Software and related materials may also contain other trademarks owned by the Licensor or others. All trademarks are proprietary in nature and protected by trademark laws in Finland and other countries as well as by international treaty provisions. 
+
+5.5 You may not copy, use, lease, give or transfer, distribute, modify, make changes to, translate or otherwise commercially or non-commercially exploit any logos, service marks, trademarks or any of the materials (in printed, in electronical or in other form) containing the aforesaid.
+
+5.6 All rights, title, interest, trademarks and all other marks and all copyrights to the Software, and any other documentation and/or materials relating to it, and any copy made by You remain with the Licensor. Unauthorized copying or any other unauthorized use of the Software, any trademarks or any other documentation relating to the Software, or failure to comply with the restrictions in this License Agreement, will result in automatic termination of the Licenses and will make available to the Licensor any and all legal remedies.
+
+6. 	TERM OF LICENSE
+
+6.1	The Trial License will be effective from Your downloading and/or installing of the Software and shall remain in force until (a) You discontinue use of the Software and destroy all the Software files from Your computer or computers which the Software has been installed to; (b) You convert this Trial License into a Full Version License by downloading and/or installing of the Full Version; or (c) the Licensor otherwise terminates this License Agreement or as provided herein, whichever is earlier. 
+
+6.2	The Full Version License will be effective from Your downloading and/or installing of the Full Version (and thus becoming an Authorized User) and shall remain in force until (a) You discontinue use of the Software and destroy all the Software files from Your computer or computers which the Software has been installed to; (b) the Licensor otherwise terminates this License Agreement or as provided herein, whichever is earlier.
+
+6.3	The Licenses shall also terminate if You fail to abide to the terms of this License Agreement. Upon termination You agree to destroy all copies of the Software and its documentation including any Software stored on the hard disk of any computer under Your control.
+
+6.4	Surviving Terms. Any terms and conditions that by their nature or otherwise reasonably should survive a cancellation or termination of this License Agreement shall also be deemed to survive. Such terms and conditions include but are not limited to Section 1 Definitions, Section 4 Content Editor, Section 5 Copyright and Trademark, Section 7 Limitation of Liability, Section 8 Disclaimer of warranty on Software, Section 9 Governing law and severability.
+
+7.	LIMITATION OF LIABILITY
+
+7.1	The Licensor's sole, exclusive and maximum liability for any claim by You or anyone claiming through or on behalf of You arising out of Your order, Your use of the Software, or the warranty for any damages, losses, and causes of action (whether in contract, tort (including negligence) or otherwise), shall not in any event exceed the actual amount paid by You for the Software. 
+
+7.2	YOU EXPRESSLY ACKNOWLEDGE AND AGREE THAT USE OF THE SOFTWARE IS AT YOUR SOLE RISK. UNDER NO CIRCUMSTANCES WILL THE LICENSOR, OR ITS DEVELOPERS, DIRECTORS, OFFICERS, EMPLOYEES, AGENTS OR AFFILIATES BE LIABLE TO YOU FOR ANY DAMAGES EXCEEDING THE AMOUNT PAID BY YOU FOR THE SOFTWARE AND/OR ANY CONSEQUENTIAL, INCIDENTAL, OR INDIRECT DAMAGES (INCLUDING DAMAGES FOR LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION, AND THE LIKE) ARISING OUT OF THE USE OF OR INABILITY TO USE THE SOFTWARE OR ACCOMPANYING WRITTEN MATERIALS, EVEN IF THE LICENSOR OR AN AUTHORIZED REPRESENTATIVE HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. 
+
+8.	DISCLAIMER OF WARRANTY ON SOFTWARE 
+
+8.1	THE SOFTWARE AND ALL RELATED DOCUMENTATION AND/OR MATERIALS ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, AND THE LICENSOR EXPRESSLY DISCLAIMS ALL IMPLIED WARRANTIES, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. 
+
+8.2	THE LICENSOR DOES NOT WARRANT, GUARANTEE, OR MAKE ANY REPRESENTATIONS REGARDING THE USE OR THE RESULTS OF THE USE OF THE SOFTWARE OR ANY ACCOMPANYING WRITTEN MATERIALS IN TERMS OF THEIR CORRECTNESS, ACCURACY, RELIABILITY, CURRENTNESS, OR OTHERWISE. THE ENTIRE RISK AS TO THE RESULTS AND PERFORMANCE OF THE SOFTWARE AND WRITTEN MATERIALS IS ASSUMED BY YOU. 
+
+8.3	THERE IS NO GUARANTEE THAT THE FUNCTIONS CONTAINED IN THIS SOFTWARE WILL MEET YOUR REQUIREMENTS, OR THAT THE OPERATION OF THE SOFTWARE WILL BE UNINTERRUPTED OR ERROR-FREE, OR THAT DEFECTS IN THE SOFTWARE WILL BE CORRECTED. THE LICENSOR DOES NOT WARRANT THAT THE SOFTWARE WILL WORK CORRECTLY IN YOUR MULTI-USER OR NETWORK ENVIRONMENT. SHOULD THE SOFTWARE PROVE DEFECTIVE, YOU, AND NOT THE LICENSOR OR ITS DEALERS, DISTRIBUTORS, AGENTS, OR EMPLOYEES, ASSUME THE ENTIRE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION. THE LIMITED WARRANTY SET FORTH HEREIN MAY NOT BE EXTENDED, ENLARGED OR OTHERWISE MODIFIED BY ANY DISTRIBUTOR, AGENT OR EMPLOYEE OF THE LICENSOR. 
+
+9. 	GOVERNING LAW AND SEVERABILITY 
+
+9.1	This License Agreement shall be governed by and construed in accordance with the laws of Finland. If for any reason a court of competent jurisdiction finds any provision of this License Agreement, or portion thereof, to be unenforceable, that provision of the License Agreement shall be enforced to the maximum extent permissible so as to affect the intent of the parties, and the remainder of this License Agreement shall continue in full force and effect.
+
+10.	ENTIRE AGREEMENT 
+
+This License Agreement constitutes the entire agreement between the parties with respect to the use of the Software and related documentation, and supersedes all prior understandings or agreements, written or oral, regarding such subject matter. No amendment to or modification of this License Agreement will be binding unless in writing and signed by a duly authorized representative of the Licensor.
+
+YOU ACKNOWLEDGE THAT YOU HAVE READ THIS AGREEMENT, UNDERSTAND IT AND AGREE TO BE BOUND BY ITS TERMS AND CONDITIONS. 
+
+

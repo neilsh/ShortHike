@@ -1,0 +1,8 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP libraries win32 ;
+
+SingleDLL ShortHike : [ FDirName $(SEARCH_SOURCE) ] : fmod.dll ;
+SingleDLL ShortHike : [ FDirName $(SEARCH_SOURCE) ] : freetype.dll ;
+SingleDLL ShortHike : [ FDirName $(SEARCH_SOURCE) ] : libpng13.dll ;
+SingleDLL ShortHike : [ FDirName $(SEARCH_SOURCE) ] : zlib1.dll ;

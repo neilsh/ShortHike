@@ -1,0 +1,6 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP sources audio ;
+
+AddDImportDirectory ShortHike ;
+AddLocalDSources ShortHike ;

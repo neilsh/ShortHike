@@ -1,0 +1,23 @@
+.TH obj2asm 1
+.SH name
+obj2asm - Digital Mars .OBJ file disassembler
+.SH SYNOPSIS
+.B obj2asm
+[-l]
+[-o]
+.I objfile[.obj]
+.I [srcfile]
+[-c[outfile[.cod]]]
+.SH OPTIONS
+.IP -c
+Specify output filename
+.IP -l
+Omit generated code labels
+.IP -o
+Output object code for each assembly instruction.
+.IP -x
+Emit code offsets
+.SH AUTHOR
+Written by Walter Bright  www.digitalmars.com/ctg/obj2asm.html
+
+Copyright (C) Digital Mars 2000-2003.  All Rights Reserved.

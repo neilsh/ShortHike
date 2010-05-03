@@ -1,0 +1,7 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP sources guilib ;
+
+AddLocalCppSources ShortHike ;
+AddLocalCppSources SelfTest ;
+

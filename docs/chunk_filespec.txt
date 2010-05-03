@@ -1,0 +1,209 @@
+This documents the CHUNK filespec.
+
+Header
+8 bytes SHD signature
+4 bytes file FourCC
+
+ShortHike signature (mimics the PNG signature to find transmission errors)
+
+HEX   94  53  48  44  0d  0a  1a  0a
+Ascii      S   H   D  \r  \n \032 \n
+
+SHD = ShortHike Data
+
+
+Chunk structure
+4 bytes  Length of Chunk
+4 bytes  Chunk FourCC
+0-n DATA
+4 bytes CRC of FourCC and DATA (excluding chunk length)
+
+- Chunks are on a single level through the file (no nesting of chunks is
+allowed
+- All chunks are considered equal in that none are required for a valid .shd
+file.
+- Chunk ordering is important. Even if all chunks are freestanding they might
+relate to a chunk defined earlier in the file. As an example an image chunk might
+implicitly be associated with the preceding LOD definition chunk. Even so, it
+might be relevant to scan through a file for only a subset of chunks.
+- The bit5 of the last FourCC letter is used as flag for zlib compression. Compression
+is transparent to readers but writers can decide on a case by case basis if they
+want to compress.
+- Strings are stored in Pascal style:
+4 bytes length
+n bytes string data
+- 
+
+
+// ================================================================================
+
+FILE TYPES
+
+// --------------------------------------------------------------------------------
+
+MOD1 Simple SH module
+
+IRGB - Icon 128x128
+PORT - Port specification
+MESH - Module mesh
+COLL - Mesh collision data
+IRGB - Module preshaded texture
+
+
+
+
+// ================================================================================
+
+CHUNK TYPES
+
+
+FEND (Must be last)
+0 bytes
+
+ This marks the proper end of a file.
+
+
+CACHEMANAGER CHUNKS
+
+ The Cache file is a standard SHD data file with the exception that the main data part
+contains all the file data from the system. These files might be SHD or not, the CacheManager
+frankly doesn't care. The CacheManager capitalizes on the fact that most of ShortHike
+file I/O is reading. Thus all files are read like they were resident in memory (CM optimizing
+the access as it best sees fit). All file writing is again using standard file streams as
+we always need a specific target.
+
+FILE (File information)
+4 bytes  Last modification date (low)
+4 bytes  (high)
+4 bytes  Offset into data
+4 bytes  Total file size
+string   Name of file
+
+A file chunk defines one entry in the Cache file. The last modification date is used
+when the file is loaded to check if it has changed on disk.
+
+
+COMPRESSED DATA (and order)
+
+Compression is a generic data layout for handling a large bunch of raw data. The
+creator of the compressed stream can specify the proper compression method, but
+the client just reads what comes in.
+ Compression types:
+
+0 - No compression, raw data
+1 - zlib deflate compression
+2 - JPEG2000 compression
+
+<compressed>
+4 bytes  Compression type
+
+<type specific RAW = 0>
+4 bytes  Data size
+n bytes  Data
+
+<type specific DEFLATE = 1>
+4 bytes  Original size
+4 bytes  Compressed size
+n bytes  Data
+
+<type specific JPEG2000 = 2>
+4 bytes  Original size
+4 bytes  Compressed size
+</compressed>
+
+
+
+// --------------------------------------------------------------------------------
+SCM1 (Scheme code)
+
+// --------------------------------------------------------------------------------
+
+
+MESH (Mesh vertices)
+4 bytes int number of vertices
+4 bytes int number of indices
+3 x 4 bytes (float) min extent of AABB
+3 x 4 bytes (float) max extent of AABB
+4 bytes int index where transparent surfaces start, this is equal to numIndex if no transparency
+<compressed>
+n * 9 * 4 bytes (float) pos(3), normal(3), 2 uv coordinates and 4 bytes animdata
+</compressed>
+<compressed>
+n * 4 bytes (int) indices
+</compressed>
+
+COLL (Mesh collision data, a KDTree of triangles)
+4 bytes int number of nodes
+4 bytes total number triangles
+<compressed>
+3 x 4 bytes (float) min extent of node
+3 x 4 bytes (float) max extent of node
+4 bytes (int) index to start of my triangles
+4 bytes (int) number of my triangles
+4 bytes (int) left child, 0 = no children
+4 bytes (int) right child, 0 = no children
+</compressed>
+<compressed>
+3 * 3 * 4 bytes (3 vector float) pos0, edge1 and edge2
+4 bytes (int) 1 byte flags, 3 bytes triangle index
+</compressed>
+
+// --------------------------------------------------------------------------------
+
+IRGB (ARGB Image data) (This is a bit like PNG files)
+4 bytes  Width
+4 bytes  Height
+<compressed>
+4 * w * h bytes  ARGB image data.
+</compressed>
+
+
+// --------------------------------------------------------------------------------
+
+PORT (Port specification)
+
+types currently supported:
+1 Standard docking port
+
+4 bytes int number of ports
+<n times>
+4 bytes port type
+3 * 4 bytes (float) Position
+4 * 4 bytes (float) Orientation
+</n times>
+
+// --------------------------------------------------------------------------------
+
+LOCATION format
+
+All the background objects are rendered sorted using alpha blending
+
+LGHT Light information (Before icon if present)
+3 x 4 bytes (float) Primary light Position
+4 x 4 bytes (4 float) primary light color
+3 x 4 bytes (float) Secondary light Position
+4 x 4 bytes (4 float) Secondary light color
+4 bytes (float) Secondary light angle
+
+IRGB icon image (First image if present)
+
+First MESH chunk signifies stat of sky objects
+
+SKY Objects. All MESH/IRGB pairs before the first PLNT are assumed to be Sky Objects
+n times MESH chunk
+n times IRGB texture chunk
+
+PLNT Planet information
+4 bytes float planet radius (km)
+4 bytes float orbit radius (km)
+4 bytes float rad/sec rotation speed
+4 bytes int number of planet meshes
+
+IRGB chunk athmospheric haze over ground
+IRGB chunk athmospheric haze over clouds
+
+<n times>
+MESH ground mesh chunk
+IRGB ground texture chunk (alpha blended)
+MESH cloud mesh chunk
+IRGB cloud texture chunk (alpha blended)

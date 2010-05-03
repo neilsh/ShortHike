@@ -1,0 +1,232 @@
+module vector;
+import intrinsic;
+import math;
+
+public:
+
+template VecTemplate(tfloat, int dim)
+{
+	struct Vector
+	{
+		tfloat d[dim];
+		
+		void set(tfloat[dim] r) { for (int i=0; i<dim; ++i) d[i] = r[i]; }
+		// comparison (a == b, a != b)
+		bit eq(Vector b) { for (int i=0; i<dim; ++i) if (d[i] != b.d[i]) return false; return true; }
+		// negate (-a)
+		Vector neg() { Vector r; for (int i=0; i<dim; ++i) r.d[i] = -d[i]; return r;  }
+		// complement (~a) returns any perpendicular vector 
+		Vector com() { Vector r; for (int i=0; i<dim; ++i) r.d[i] = d[(i+1)%dim]; d[0] = -d[0]; return r;  }
+		// add (a + b)
+		Vector add(Vector b) { Vector r; for (int i=0; i<dim; ++i) r.d[i] = d[i] + b.d[i]; return r;  }
+		// addto (a += b)
+		Vector addass(Vector b) { for (int i=0; i<dim; ++i) d[i] += b.d[i]; return *this; }
+		// subtract (a - b)
+		Vector sub(Vector b) { Vector r; for (int i=0; i<dim; ++i) r.d[i] = d[i] - b.d[i]; return r;  }
+		// multiply by scalar (a * 2.0)
+		Vector mul(tfloat b) { Vector r; for (int i=0; i<dim; ++i) r.d[i] = d[i] * b; return r;  }
+		// divide by scalar (a / b)
+		Vector div(tfloat b) { return *this * (1/b);  }
+		// dot product (a * b)
+		tfloat mul(Vector b) { tfloat r=0; for (int i=0; i<dim; ++i) r += d[i]; return r;  }
+		// outer product (a ^ b)
+		//Vector xor(Vector b) { Vector r; for (int i=0; i<dim; ++i) r += d[i]; return r;  }
+	}
+
+	tfloat sqr(Vector v)
+	{
+		return v * v;
+	}
+
+	tfloat abs(Vector v)
+	{
+		return sqrt(sqr(v));
+	}
+
+	Vector norm(Vector v)
+	{
+		return v / abs(v);
+	}
+
+	/*
+	void length(Vector v)
+	{
+		return abs(v);
+	}
+
+	void distance(Vector a, Vector b)
+	{
+		return abs(b - a);
+	}
+	*/
+
+	void print(Vector v)
+	{
+		for (int i=0; i<dim; ++i) printf("%f ", v.d[i]); printf("\n");
+	}
+}
+
+// VECTOR 
+
+typedef instance VecTemplate(float,2).Vector Vector2;
+typedef instance VecTemplate(float,3).Vector Vector3;
+typedef instance VecTemplate(float,4).Vector Vector4;
+
+unittest
+{
+	float n;
+	Vector2 a,b,c;
+	a[0]=0; a[1]=1;
+	b[0]=1; b[1]=0;
+	c = a - b;
+	c = a * b;
+	c *= 2.0f;
+	n = sqr(a);
+	n = abs(a);
+	c = a / n;
+	n = abs(b-a);
+	c = norm(a+b);
+}
+
+// POINT
+
+typedef instance VecTemplate(float,2).Vector Point2;
+typedef instance VecTemplate(float,3).Vector Point3;
+typedef instance VecTemplate(float,4).Vector Point4;
+
+/*
+// MATRIX
+ 
+alias vector1[1] matrix1x1;
+alias vector2[2] matrix2x2;
+alias vector3[2] matrix2x3;
+alias vector2[3] matrix3x2;
+alias vector3[3] matrix3x3;
+alias vector4[3] matrix3x4;
+alias vector3[4] matrix4x3;
+alias vector4[4] matrix4x4;
+
+// QUATERNION
+
+typedef vector3 normal;
+typedef vector4 quaternion;
+
+// LINE / PLANE
+
+alias vector2 plane1; // ax = b
+alias vector3 plane2; // ax+by = c
+alias plane2 line2;
+alias vector4 plane3; // ax+by+cz = d
+alias plane3 plane;
+
+// SPHERE
+
+struct sphere1
+{
+	point1 center;
+	float radius;
+	invariant //()
+	{
+		assert(radius >= 0);
+	}
+	unittest
+	{
+	}
+}
+alias sphere1 centeredrange;
+
+struct sphere2
+{
+	point2 center;
+	float radius;
+}
+alias sphere2 circle;
+
+struct sphere3
+{
+	point3 center;
+	float radius;
+}
+alias sphere3 sphere;
+
+struct sphere4
+{
+	point4 center;
+	float radius;
+}
+
+// SPHERE TO SPHERE DISTANCE
+
+float distance(sphere1 a, sphere1 b)
+{
+	return distance(a.center, b.center) - (a.radius + b.radius);
+}
+
+float distance(sphere2 a, sphere2 b)
+{
+	return distance(a.center, b.center) - (a.radius + b.radius);
+}
+
+float distance(sphere3 a, sphere3 b)
+{
+	return distance(a.center, b.center) - (a.radius + b.radius);
+}
+
+
+float distance(sphere4 a, sphere4 b)
+{
+	return distance(a.center, b.center) - (a.radius + b.radius);
+}
+
+// RAY
+
+struct ray1
+{
+	point1 from;
+	vector1 to;
+}
+
+struct ray2
+{
+	point2 from;
+	vector2 to;
+}
+
+struct ray3
+{
+	point3 from;
+	vector3 to;
+}
+
+struct ray4
+{
+	point4 from;
+	vector4 to;
+}
+
+// RECT/BOX
+
+struct box1
+{
+	point1 p1,p2;
+}
+alias box1 range;
+
+struct box2
+{
+	point2 p1,p2;
+}
+alias box2 rect;
+
+struct box3
+{
+	point3 p1,p2;
+}
+alias box3 box;
+
+struct box4
+{
+	point4 p1,p2;
+}
+
+*/

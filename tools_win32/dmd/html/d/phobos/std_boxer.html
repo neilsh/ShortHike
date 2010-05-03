@@ -1,0 +1,465 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<!--
+	Copyright (c) 1999-2006 by Digital Mars
+	All Rights Reserved
+	Written by Walter Bright
+	www.digitalmars.com
+  -->
+
+
+<!-- Mirrored from www.shorthike.com/trac/browser/trunk/tools_win32/dmd/html/d/phobos/std_boxer.html?format=raw by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 01 May 2010 04:40:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" >
+<title>Digital Mars - The D Programming Language - std.boxer</title>
+<link rel="stylesheet" type="text/css" href="../style.html">
+</head>
+
+<body>
+<div id="heading">
+	<a href="http://www.digitalmars.com/"><img src="../dmlogo.html" width="270" height="53" border="0" alt="www.digitalmars.com"></a>
+
+
+	<div id="headingNav">
+	<ul>	<li><a href="http://www.prowiki.org/wiki4d/wiki.cgi?DocComments/Phobos/StdBoxer" title="Read/write comments and feedback">Comments</a></li>
+	<li><a href="../index.html" title="D Programming Language" class="dlink">D</a></li>
+	<li><a href="http://www.digitalmars.com/advancedsearch.html" title="Search Digital Mars web site">Search</a></li>
+	<li><a href="http://www.digitalmars.com/" title="www.digitalmars.com">Home</a></li>
+	</ul>
+	</div>
+
+	<div id="lastupdate">Last update Fri Jun 30 17:14:18 2006
+</div>
+</div>
+
+
+
+<div id="navigation">
+    
+<div class="navblock">
+<form method="get" action="http://www.google.com/search">
+<div id="searchbox">
+<input id="q" name="q" size="10" value="RTL Search" onFocus='if(this.value == "RTL Search"){this.value="";}'>
+<input type="hidden" id="domains" name="domains" value="www.digitalmars.com">
+<input type="hidden" id="sitesearch" name="sitesearch" value="www.digitalmars.com/d/phobos">
+<input type="hidden" id="sourceid" name="sourceid" value="google-search">
+<input type="submit" id="submit" name="submit" value="Go">
+</div>
+</form>
+<div id="toctop">
+    <ul>	<li><a href="../index.html" title="D Programming Language">D ...</a></li>
+	<li><a href="../lex.html" title="D Language Specification">Language ...</a></li>
+	<li><a href="phobos.html" title="D Runtime Library">Phobos ...</a></li>
+	<li><a href="../comparison.html" title="Language Comparisons">Comparisons ...</a></li>
+    </ul>
+</div>
+</div>
+
+    
+<div class="navblock">
+    <ul>	<li><a href="object.html" title="root of object heirarchy">object</a></li>
+    </ul>
+    <h2><a href="phobos.html#std" title="D standard modules">std</a></h2>
+    <ul>	<li><a href="std_base64.html" title="Encode/decode base64 format">std.base64</a></li>
+	<li><a href="std_boxer.html" title="Box/unbox types">std.boxer</a></li>
+	<li><a href="std_compiler.html" title="Information about the D compiler implementation">std.compiler</a></li>
+	<li><a href="std_conv.html" title="Conversion of strings to integers">std.conv</a></li>
+	<li><a href="std_cover.html" title="D coverage analyzer">std.cover</a></li>
+	<li><a href="std_ctype.html" title="Simple character classification">std.ctype</a></li>
+	<li><a href="std_date.html" title="Date and time functions">std.date</a></li>
+	<li><a href="std_demangle.html" title="Demangle D names">std.demangle</a></li>
+	<li><a href="std_file.html" title="Basic file operations">std.file</a></li>
+	<li><a href="std_format.html" title="Formatted conversions of values to strings">std.format</a></li>
+	<li><a href="std_gc.html" title="Control the garbage collector">std.gc</a></li>
+	<li><a href="std_intrinsic.html" title="Compiler built in intrinsic functions">std.intrinsic</a></li>
+	<li><a href="std_math.html" title="the usual math functions">std.math</a></li>
+	<li><a href="std_md5.html" title="Compute MD5 digests">std.md5</a></li>
+	<li><a href="std_mmfile.html" title="Memory mapped files">std.mmfile</a></li>
+	<li><a href="std_openrj.html" title="Basic database">std.openrj</a></li>
+	<li><a href="std_outbuffer.html" title="Assemble data into an array of bytes">std.outbuffer</a></li>
+	<li><a href="std_path.html" title="Manipulate file names, path names, etc.">std.path</a></li>
+	<li><a href="std_process.html" title="Create/destroy threads">std.process</a></li>
+	<li><a href="std_random.html" title="Random number generation">std.random</a></li>
+	<li><a href="std_regexp.html" title="regular expressions">std.regexp</a></li>
+	<li><a href="std_socket.html" title="Sockets">std.socket</a></li>
+	<li><a href="std_socketstream.html" title="Stream for a blocking, connected Socket">std.socketstream</a></li>
+	<li><a href="std_stdint.html" title="Integral types for various purposes">std.stdint</a></li>
+	<li><a href="std_stdio.html" title="Standard I/O">std.stdio</a></li>
+	<li><a href="std_cstream.html" title="Stream I/O">std.cstream</a></li>
+	<li><a href="std_stream.html" title="Stream I/O">std.stream</a></li>
+	<li><a href="std_string.html" title="Basic string operations">std.string</a></li>
+	<li><a href="std_system.html" title="Inquire about the CPU, operating system">std.system</a></li>
+	<li><a href="std_thread.html" title="Thread operations">std.thread</a></li>
+	<li><a href="std_uni.html" title="Unicode classification">std.uni</a></li>
+	<li><a href="std_uri.html" title="Encode and decode Uniform Resource Identifiers (URIs)">std.uri</a></li>
+	<li><a href="std_utf.html" title="Encode and decode utf character encodings">std.utf</a></li>
+	<li><a href="std_zip.html" title="Read/write zip archives">std.zip</a></li>
+	<li><a href="std_zlib.html" title="Compression / Decompression of data">std.zlib</a></li>
+	<li><a href="std_c_fenv.html" title="Floating point environment">std.c.fenv</a></li>
+	<li><a href="std_c_math.html" title="Math">std.c.math</a></li>
+	<li><a href="std_c_process.html" title="Process">std.c.process</a></li>
+	<li><a href="std_c_stdarg.html" title="Variadic arguments">std.c.stdarg</a></li>
+	<li><a href="std_c_stddef.html" title="Standard definitions">std.c.stddef</a></li>
+	<li><a href="std_c_stdio.html" title="Standard I/O">std.c.stdio</a></li>
+	<li><a href="std_c_stdlib.html" title="Standard library">std.c.stdlib</a></li>
+	<li><a href="std_c_string.html" title="Strings">std.c.string</a></li>
+	<li><a href="std_c_time.html" title="Time">std.c.time</a></li>
+	<li><a href="std_c_wcharh.html" title="Wide characters">std.c.wcharh</a></li>
+	<li><a href="std_windows_charset.html" title="Conversion to/from Windows character sets">std.windows.charset</a></li>
+	<li><a href="phobos.html#std_windows" title="Modules specific to Windows">std.windows</a></li>
+	<li><a href="phobos.html#std_linux" title="Modules specific to Windows">std.linux</a></li>
+	<li><a href="phobos.html#std_c_windows" title="C Windows API">std.c.windows</a></li>
+	<li><a href="phobos.html#std_c_linux" title="C Linux API">std.c.linux</a></li>
+    </ul>
+</div>
+
+</div>
+<div id="content">
+    <h1>std.boxer</h1>
+    <!-- Generated by Ddoc from std\boxer.d -->
+This module is a set of types and functions for converting any object (value
+ or heap) into a generic box type, allowing the user to pass that object
+ around without knowing what's in the box, and then allowing him to recover
+ the value afterwards.
+<br><br>
+<b>Example:</b><br>
+<pre class="d_code"><span class="d_comment">// Convert the integer 45 into a box.
+</span>Box b = box(45);
+
+<span class="d_comment">// Recover the integer and cast it to real.
+</span><span class="d_keyword">real</span> r = unbox!(<span class="d_keyword">real</span>)(b);
+</pre>
+
+ That is the basic interface and will usually be all that you need to
+ understand. If it cannot unbox the object to the given type, it throws
+ UnboxException. As demonstrated, it uses implicit casts to behave in the exact
+ same way that static types behave. So for example, you can unbox from int to
+ real, but you cannot unbox from real to int: that would require an explicit
+ cast.
+<br><br>
+
+ This therefore means that attempting to unbox an int as a string will throw
+ an error instead of formatting it. In general, you can call the toString method
+ on the box and receive a good result, depending upon whether std.string.format
+ accepts it.
+<br><br>
+
+ Boxes can be compared to one another and they can be used as keys for
+ associative arrays.
+<br><br>
+
+ There are also functions for converting to and from arrays of boxes.
+
+<br><br>
+<b>Example:</b><br>
+<pre class="d_code"><span class="d_comment">// Convert arguments into an array of boxes.
+</span>Box[] a = boxArray(1, 45.4, <span class="d_string">"foobar"</span>);
+
+<span class="d_comment">// Convert an array of boxes back into arguments.
+</span>TypeInfo[] arg_types;
+<span class="d_keyword">void</span>* arg_data;
+
+boxArrayToArguments(a, arg_types, arg_data);
+
+<span class="d_comment">// Convert the arguments back into boxes using a
+</span><span class="d_comment">// different form of the function.
+</span>a = boxArray(arg_types, arg_data);
+</pre>
+ One use of this is to support a variadic function more easily and robustly;
+ simply call "boxArray(arguments, argptr)", then do whatever you need to do
+ with the array.
+
+<br><br>
+<b>Authors:</b><br>
+Burton Radons
+<br><br>
+<b>License:</b><br>
+Public Domain
+<br><br>
+
+<dl><dt><big>enum <u>TypeClass</u>;
+</big></dt>
+<dd>The type class returned from Box.findTypeClass; the order of entries is important. 
+<br><br>
+
+<dl><dt><big><u>Bool</u></big></dt>
+<dd>&lt; bool 
+<br><br>
+
+</dd>
+<dt><big><u>Integer</u></big></dt>
+<dd>&lt; byte, ubyte, short, ushort, int, uint, long, ulong 
+<br><br>
+
+</dd>
+<dt><big><u>Float</u></big></dt>
+<dd>&lt; float, double, real 
+<br><br>
+
+</dd>
+<dt><big><u>Complex</u></big></dt>
+<dd>&lt; cfloat, cdouble, creal 
+<br><br>
+
+</dd>
+<dt><big><u>Imaginary</u></big></dt>
+<dd>&lt; ifloat, idouble, ireal 
+<br><br>
+
+</dd>
+<dt><big><u>Class</u></big></dt>
+<dd>&lt; Inherits from Object 
+<br><br>
+
+</dd>
+<dt><big><u>Pointer</u></big></dt>
+<dd>&lt; <u>Pointer</u> type (T *) 
+<br><br>
+
+</dd>
+<dt><big><u>Array</u></big></dt>
+<dd>&lt; <u>Array</u> type (T []) 
+<br><br>
+
+</dd>
+<dt><big><u>Other</u></big></dt>
+<dd>&lt; Any other type, such as delegates, function pointers, struct, void... 
+<br><br>
+
+</dd>
+</dl>
+</dd>
+<dt><big>struct <u>Box</u>;
+</big></dt>
+<dd><u>Box</u> is a generic container for objects (both value and heap), allowing the
+ user to box them in a generic form and recover them later.
+ A box object contains a value in a generic fashion, allowing it to be
+ passed from one place to another without having to know its type.  It is
+ created by calling the box function, and you can recover the value by
+ instantiating the unbox template.
+ 
+<br><br>
+
+<dl><dt><big>bool <u>unboxable</u>(TypeInfo <i>test</i>);
+</big></dt>
+<dd>Return whether this value could be unboxed as the given type without throwing. 
+<br><br>
+
+</dd>
+<dt><big>TypeInfo <u>type</u>();
+</big></dt>
+<dd>Property for the <u>type</u> contained by the box.
+ This is initially <b>null</b> and cannot be assigned directly.
+<br><br>
+<b>Returns:</b><br>
+the <u>type</u> of the contained object.
+     
+<br><br>
+
+</dd>
+<dt><big>void[] <u>data</u>();
+</big></dt>
+<dd>Property for the <u>data</u> pointer to the value of the box.
+ This is initially <b>null</b> and cannot be assigned directly.
+<br><br>
+<b>Returns:</b><br>
+the <u>data</u> array.
+     
+<br><br>
+
+</dd>
+<dt><big>char[] <u>toString</u>();
+</big></dt>
+<dd>Attempt to convert the boxed value into a string using std.string.format;
+ this will throw if that function cannot handle it. If the box is
+ uninitialized then this returns "".
+     
+<br><br>
+
+</dd>
+<dt><big>bool <u>opEquals</u>(Box <i>other</i>);
+</big></dt>
+<dd>Compare this box's value with another box. This implicitly casts if the
+ types are different, identical to the regular type system.
+     
+<br><br>
+
+</dd>
+<dt><big>float <u>opCmp</u>(Box <i>other</i>);
+</big></dt>
+<dd>Compare this box's value with another box. This implicitly casts if the
+ types are different, identical to the regular type system.
+     
+<br><br>
+
+</dd>
+<dt><big>uint <u>toHash</u>();
+</big></dt>
+<dd>Return the value's hash.
+     
+<br><br>
+
+</dd>
+</dl>
+</dd>
+<dt><big>Box  <u>box</u>(...);
+</big></dt>
+<dd>Box the single argument passed to the function. If more or fewer than one
+ argument is passed, this will assert.
+ 
+<br><br>
+
+</dd>
+<dt><big>Box  <u>box</u>(TypeInfo <i>type</i>, void* <i>data</i>);
+</big></dt>
+<dd>Box the explicitly-defined object. <i>type</i> must not be <b>null</b>; <i>data</i> must not be
+ <b>null</b> if the <i>type</i>'s size is greater than zero.
+ The <i>data</i> is copied.
+ 
+<br><br>
+
+</dd>
+<dt><big>Box [] <u>boxArray</u>(TypeInfo[] <i>types</i>, void* <i>data</i>);
+</big></dt>
+<dd>Convert a list of arguments into a list of boxes.
+ 
+<br><br>
+
+</dd>
+<dt><big>Box [] <u>boxArray</u>(...);
+</big></dt>
+<dd>Box each argument passed to the function, returning an array of boxes.
+ 
+<br><br>
+
+</dd>
+<dt><big>void <u>boxArrayToArguments</u>(Box [] <i>arguments</i>, out TypeInfo[] <i>types</i>, out void* <i>data</i>);
+</big></dt>
+<dd>Convert an array of boxes into an array of <i>arguments</i>.
+ 
+<br><br>
+
+</dd>
+<dt><big>class <u>UnboxException</u>: object.Exception;
+</big></dt>
+<dd>This class is thrown if unbox is unable to cast the value into the desired
+ result.
+ 
+<br><br>
+
+<dl><dt><big>Box <u>object</u>;
+</big></dt>
+<dd>This is the box that the user attempted to unbox.
+<br><br>
+
+</dd>
+<dt><big>TypeInfo <u>outputType</u>;
+</big></dt>
+<dd>This is the type that the user attempted to unbox the value as.
+<br><br>
+
+</dd>
+<dt><big>this(Box <i>object</i>, TypeInfo <i>outputType</i>);
+</big></dt>
+<dd>Assign parameters and create the message in the form
+ <tt>"Could not unbox from type ... to ... ."</tt>
+     
+<br><br>
+
+</dd>
+</dl>
+</dd>
+<dt><big>template unboxCastReal(T)</big></dt>
+<dd>A generic unboxer for the real numeric types. 
+<br><br>
+
+<dl></dl>
+</dd>
+<dt><big>template unboxCastInteger(T)</big></dt>
+<dd>A generic unboxer for the integral numeric types. 
+<br><br>
+
+<dl></dl>
+</dd>
+<dt><big>template unboxCastComplex(T)</big></dt>
+<dd>A generic unboxer for the complex numeric types. 
+<br><br>
+
+<dl></dl>
+</dd>
+<dt><big>template unboxCastImaginary(T)</big></dt>
+<dd>A generic unboxer for the imaginary numeric types. 
+<br><br>
+
+<dl></dl>
+</dd>
+<dt><big>template unbox(T)</big></dt>
+<dd>The <u>unbox</u> template takes a type parameter and returns a function that
+ takes a box object and returns the specified type.
+<br><br>
+To use it, instantiate the template with the desired result type, and then
+ call the function with the box to convert.
+ This will implicitly cast base types as necessary and in a way consistent
+ with static types - for example, it will cast a boxed byte into int, but it
+ won't cast a boxed float into short.
+
+<br><br>
+<b>Throws:</b><br>
+UnboxException if it cannot cast
+
+<br><br>
+<b>Example:</b><br>
+<pre class="d_code"> Box b = box(4.5);
+ bit u = unboxable!(<span class="d_keyword">real</span>)(b); <span class="d_comment">// This is true.
+</span> <span class="d_keyword">real</span> r = <span class="d_psymbol">unbox</span>!(<span class="d_keyword">real</span>)(b);
+
+ Box y = box(4);
+ <span class="d_keyword">int</span> x = <span class="d_psymbol">unbox</span>!(<span class="d_keyword">int</span>) (y);
+</pre>
+ 
+<br><br>
+
+<dl></dl>
+</dd>
+<dt><big>template unboxable(T)</big></dt>
+<dd>Return whether the value can be unboxed as the given type; if this returns
+ <b>false</b>, attempting to do so will throw UnboxException.
+ 
+<br><br>
+
+<dl></dl>
+</dd>
+</dl>
+
+    
+<br><br>
+<br><br>
+<!-- Google ad -->
+<script type="text/javascript"><!--
+/**/google_ad_client = "pub-5628673096434613";
+/**/google_ad_width = 728;
+/**/google_ad_height = 90;
+/**/google_ad_format = "728x90_as";
+/**/google_ad_channel ="6203743411";
+/**/google_page_url = document.location;
+//--></script>
+<script type="text/javascript" src="../../../../../../../../../pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+ 
+</div>
+
+
+<div id="copyright">
+Copyright &copy; 1999-2006 by Digital Mars, All Rights Reserved |
+Page generated by <a href="http://www.digitalmars.com/d/ddoc.html">Ddoc</a>.
+</div>
+
+</body>
+
+<!-- Mirrored from www.shorthike.com/trac/browser/trunk/tools_win32/dmd/html/d/phobos/std_boxer.html?format=raw by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 01 May 2010 04:40:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>
+

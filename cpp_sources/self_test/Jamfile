@@ -1,0 +1,6 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP sources self_test ;
+
+AddLocalCppSources SelfTest ;
+

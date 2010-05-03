@@ -1,0 +1,827 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<!--
+	Copyright (c) 1999-2006 by Digital Mars
+	All Rights Reserved
+	Written by Walter Bright
+	www.digitalmars.com
+  -->
+
+
+<!-- Mirrored from www.shorthike.com/trac/browser/trunk/tools_win32/dmd/html/d/phobos/std_string.html?format=raw by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 01 May 2010 04:40:13 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" >
+<title>Digital Mars - The D Programming Language - std.string</title>
+<link rel="stylesheet" type="text/css" href="../style.html">
+</head>
+
+<body>
+<div id="heading">
+	<a href="http://www.digitalmars.com/"><img src="../dmlogo.html" width="270" height="53" border="0" alt="www.digitalmars.com"></a>
+
+
+	<div id="headingNav">
+	<ul>	<li><a href="http://www.prowiki.org/wiki4d/wiki.cgi?DocComments/Phobos/StdString" title="Read/write comments and feedback">Comments</a></li>
+	<li><a href="../index.html" title="D Programming Language" class="dlink">D</a></li>
+	<li><a href="http://www.digitalmars.com/advancedsearch.html" title="Search Digital Mars web site">Search</a></li>
+	<li><a href="http://www.digitalmars.com/" title="www.digitalmars.com">Home</a></li>
+	</ul>
+	</div>
+
+	<div id="lastupdate">Last update Fri Jun 30 17:14:17 2006
+</div>
+</div>
+
+
+
+<div id="navigation">
+    
+<div class="navblock">
+<form method="get" action="http://www.google.com/search">
+<div id="searchbox">
+<input id="q" name="q" size="10" value="RTL Search" onFocus='if(this.value == "RTL Search"){this.value="";}'>
+<input type="hidden" id="domains" name="domains" value="www.digitalmars.com">
+<input type="hidden" id="sitesearch" name="sitesearch" value="www.digitalmars.com/d/phobos">
+<input type="hidden" id="sourceid" name="sourceid" value="google-search">
+<input type="submit" id="submit" name="submit" value="Go">
+</div>
+</form>
+<div id="toctop">
+    <ul>	<li><a href="../index.html" title="D Programming Language">D ...</a></li>
+	<li><a href="../lex.html" title="D Language Specification">Language ...</a></li>
+	<li><a href="phobos.html" title="D Runtime Library">Phobos ...</a></li>
+	<li><a href="../comparison.html" title="Language Comparisons">Comparisons ...</a></li>
+    </ul>
+</div>
+</div>
+
+    
+<div class="navblock">
+    <ul>	<li><a href="object.html" title="root of object heirarchy">object</a></li>
+    </ul>
+    <h2><a href="phobos.html#std" title="D standard modules">std</a></h2>
+    <ul>	<li><a href="std_base64.html" title="Encode/decode base64 format">std.base64</a></li>
+	<li><a href="std_boxer.html" title="Box/unbox types">std.boxer</a></li>
+	<li><a href="std_compiler.html" title="Information about the D compiler implementation">std.compiler</a></li>
+	<li><a href="std_conv.html" title="Conversion of strings to integers">std.conv</a></li>
+	<li><a href="std_cover.html" title="D coverage analyzer">std.cover</a></li>
+	<li><a href="std_ctype.html" title="Simple character classification">std.ctype</a></li>
+	<li><a href="std_date.html" title="Date and time functions">std.date</a></li>
+	<li><a href="std_demangle.html" title="Demangle D names">std.demangle</a></li>
+	<li><a href="std_file.html" title="Basic file operations">std.file</a></li>
+	<li><a href="std_format.html" title="Formatted conversions of values to strings">std.format</a></li>
+	<li><a href="std_gc.html" title="Control the garbage collector">std.gc</a></li>
+	<li><a href="std_intrinsic.html" title="Compiler built in intrinsic functions">std.intrinsic</a></li>
+	<li><a href="std_math.html" title="the usual math functions">std.math</a></li>
+	<li><a href="std_md5.html" title="Compute MD5 digests">std.md5</a></li>
+	<li><a href="std_mmfile.html" title="Memory mapped files">std.mmfile</a></li>
+	<li><a href="std_openrj.html" title="Basic database">std.openrj</a></li>
+	<li><a href="std_outbuffer.html" title="Assemble data into an array of bytes">std.outbuffer</a></li>
+	<li><a href="std_path.html" title="Manipulate file names, path names, etc.">std.path</a></li>
+	<li><a href="std_process.html" title="Create/destroy threads">std.process</a></li>
+	<li><a href="std_random.html" title="Random number generation">std.random</a></li>
+	<li><a href="std_regexp.html" title="regular expressions">std.regexp</a></li>
+	<li><a href="std_socket.html" title="Sockets">std.socket</a></li>
+	<li><a href="std_socketstream.html" title="Stream for a blocking, connected Socket">std.socketstream</a></li>
+	<li><a href="std_stdint.html" title="Integral types for various purposes">std.stdint</a></li>
+	<li><a href="std_stdio.html" title="Standard I/O">std.stdio</a></li>
+	<li><a href="std_cstream.html" title="Stream I/O">std.cstream</a></li>
+	<li><a href="std_stream.html" title="Stream I/O">std.stream</a></li>
+	<li><a href="std_string.html" title="Basic string operations">std.string</a></li>
+	<li><a href="std_system.html" title="Inquire about the CPU, operating system">std.system</a></li>
+	<li><a href="std_thread.html" title="Thread operations">std.thread</a></li>
+	<li><a href="std_uni.html" title="Unicode classification">std.uni</a></li>
+	<li><a href="std_uri.html" title="Encode and decode Uniform Resource Identifiers (URIs)">std.uri</a></li>
+	<li><a href="std_utf.html" title="Encode and decode utf character encodings">std.utf</a></li>
+	<li><a href="std_zip.html" title="Read/write zip archives">std.zip</a></li>
+	<li><a href="std_zlib.html" title="Compression / Decompression of data">std.zlib</a></li>
+	<li><a href="std_c_fenv.html" title="Floating point environment">std.c.fenv</a></li>
+	<li><a href="std_c_math.html" title="Math">std.c.math</a></li>
+	<li><a href="std_c_process.html" title="Process">std.c.process</a></li>
+	<li><a href="std_c_stdarg.html" title="Variadic arguments">std.c.stdarg</a></li>
+	<li><a href="std_c_stddef.html" title="Standard definitions">std.c.stddef</a></li>
+	<li><a href="std_c_stdio.html" title="Standard I/O">std.c.stdio</a></li>
+	<li><a href="std_c_stdlib.html" title="Standard library">std.c.stdlib</a></li>
+	<li><a href="std_c_string.html" title="Strings">std.c.string</a></li>
+	<li><a href="std_c_time.html" title="Time">std.c.time</a></li>
+	<li><a href="std_c_wcharh.html" title="Wide characters">std.c.wcharh</a></li>
+	<li><a href="std_windows_charset.html" title="Conversion to/from Windows character sets">std.windows.charset</a></li>
+	<li><a href="phobos.html#std_windows" title="Modules specific to Windows">std.windows</a></li>
+	<li><a href="phobos.html#std_linux" title="Modules specific to Windows">std.linux</a></li>
+	<li><a href="phobos.html#std_c_windows" title="C Windows API">std.c.windows</a></li>
+	<li><a href="phobos.html#std_c_linux" title="C Linux API">std.c.linux</a></li>
+    </ul>
+</div>
+
+</div>
+<div id="content">
+    <h1>std.string</h1>
+    <!-- Generated by Ddoc from std\string.d -->
+String handling functions.
+<br><br>
+To copy or not to copy?
+ When a function takes a <u>string</u> as a parameter, and returns a <u>string</u>,
+ is that <u>string</u> the same as the input <u>string</u>, modified in place, or
+ is it a modified copy of the input <u>string</u>? The D array convention is
+ "copy-on-write". This means that if no modifications are done, the
+ original <u>string</u> (or slices of it) can be returned. If any modifications
+ are done, the returned <u>string</u> is a copy.
+
+<br><br>
+
+<dl><dt><big>class <u>StringException</u>: object.Exception;
+</big></dt>
+<dd>Thrown on errors in string functions.
+<br><br>
+
+<dl></dl>
+</dd>
+<dt><big>const char[16] <u>hexdigits</u>;
+</big></dt>
+<dd>0..9A..F
+<br><br>
+
+</dd>
+<dt><big>const char[10] <u>digits</u>;
+</big></dt>
+<dd>0..9
+<br><br>
+
+</dd>
+<dt><big>const char[8] <u>octdigits</u>;
+</big></dt>
+<dd>0..7
+<br><br>
+
+</dd>
+<dt><big>const char[26] <u>lowercase</u>;
+</big></dt>
+<dd>a..z
+<br><br>
+
+</dd>
+<dt><big>const char[26] <u>uppercase</u>;
+</big></dt>
+<dd>A..Z
+<br><br>
+
+</dd>
+<dt><big>const char[52] <u>letters</u>;
+</big></dt>
+<dd>A..Za..z
+<br><br>
+
+</dd>
+<dt><big>const char[6] <u>whitespace</u>;
+</big></dt>
+<dd>ASCII <u>whitespace</u>
+<br><br>
+
+</dd>
+<dt><big>const dchar <u>LS</u>;
+</big></dt>
+<dd>UTF line separator
+<br><br>
+
+</dd>
+<dt><big>const dchar <u>PS</u>;
+</big></dt>
+<dd>UTF paragraph separator
+<br><br>
+
+</dd>
+<dt><big>const char[2] <u>newline</u>;
+</big></dt>
+<dd>Newline sequence for this system
+<br><br>
+
+</dd>
+<dt><big>int <u>iswhite</u>(dchar <i>c</i>);
+</big></dt>
+<dd>Returns !=0 if <i>c</i> is whitespace
+ 
+<br><br>
+
+</dd>
+<dt><big>long <u>atoi</u>(char[] <i>s</i>);
+</big></dt>
+<dd>Convert string to integer.
+ 
+<br><br>
+
+</dd>
+<dt><big>real <u>atof</u>(char[] <i>s</i>);
+</big></dt>
+<dd>Convert string to real.
+ 
+<br><br>
+
+</dd>
+<dt><big>int <u>cmp</u>(char[] <i>s1</i>, char[] <i>s2</i>);
+<br>int <u>icmp</u>(char[] <i>s1</i>, char[] <i>s2</i>);
+</big></dt>
+<dd>Compare two strings. <u>cmp</u> is case sensitive, icmp is case insensitive.
+<br><br>
+<b>Returns:</b><br>
+<table border=1 cellpadding=4 cellspacing=0>
+	<tr><td>&lt; 0</td>	<td><i>s1</i> &lt; <i>s2</i></td></tr>
+	<tr><td>= 0</td>	<td><i>s1</i> == <i>s2</i></td></tr>
+	<tr><td>&gt; 0</td>	<td><i>s1</i> &gt; <i>s2</i></td></tr>
+	</table>
+ 
+<br><br>
+
+</dd>
+<dt><big>char* <u>toStringz</u>(char[] <i>s</i>);
+</big></dt>
+<dd>Convert array of chars <i>s</i>[] to a C-style 0 terminated string.
+ 
+<br><br>
+
+</dd>
+<dt><big>int <u>find</u>(char[] <i>s</i>, dchar <i>c</i>);
+<br>int <u>ifind</u>(char[] <i>s</i>, dchar <i>c</i>);
+<br>int <u>rfind</u>(char[] <i>s</i>, dchar <i>c</i>);
+<br>int <u>irfind</u>(char[] <i>s</i>, dchar <i>c</i>);
+</big></dt>
+<dd><u>find</u>, ifind find first occurrance of <i>c</i> in string <i>s</i>.
+ rfind, irfind find last occurrance of <i>c</i> in string <i>s</i>.
+<br><br>
+<u>find</u>, rfind are case sensitive; ifind, irfind are case insensitive.
+<br><br>
+<b>Returns:</b><br>
+Index in <i>s</i> where <i>c</i> is found, -1 if not found.
+ 
+<br><br>
+
+</dd>
+<dt><big>int <u>find</u>(char[] <i>s</i>, char[] <i>sub</i>);
+<br>int <u>ifind</u>(char[] <i>s</i>, char[] <i>sub</i>);
+<br>int <u>rfind</u>(char[] <i>s</i>, char[] <i>sub</i>);
+<br>int <u>irfind</u>(char[] <i>s</i>, char[] <i>sub</i>);
+</big></dt>
+<dd><u>find</u>, ifind find first occurrance of <i>sub</i>[] in string <i>s</i>[].
+ rfind, irfind find last occurrance of <i>sub</i>[] in string <i>s</i>[].
+<br><br>
+<u>find</u>, rfind are case sensitive; ifind, irfind are case insensitive.
+<br><br>
+<b>Returns:</b><br>
+Index in <i>s</i> where c is found, -1 if not found.
+ 
+<br><br>
+
+</dd>
+<dt><big>char[] <u>tolower</u>(char[] <i>s</i>);
+</big></dt>
+<dd>Convert string <i>s</i>[] to lower case.
+ 
+<br><br>
+
+</dd>
+<dt><big>char[] <u>toupper</u>(char[] <i>s</i>);
+</big></dt>
+<dd>Convert string <i>s</i>[] to upper case.
+ 
+<br><br>
+
+</dd>
+<dt><big>char[] <u>capitalize</u>(char[] <i>s</i>);
+</big></dt>
+<dd>Capitalize first character of string <i>s</i>[], convert rest of string <i>s</i>[]
+ to lower case.
+ 
+<br><br>
+
+</dd>
+<dt><big>char[] <u>capwords</u>(char[] <i>s</i>);
+</big></dt>
+<dd>Capitalize all words in string <i>s</i>[].
+ Remove leading and trailing whitespace.
+ Replace all sequences of whitespace with a single space.
+ 
+<br><br>
+
+</dd>
+<dt><big>char[] <u>repeat</u>(char[] <i>s</i>, uint <i>n</i>);
+</big></dt>
+<dd>Return a string that consists of <i>s</i>[] repeated <i>n</i> times.
+ 
+<br><br>
+
+</dd>
+<dt><big>char[] <u>join</u>(char[][] <i>words</i>, char[] <i>sep</i>);
+</big></dt>
+<dd>Concatenate all the strings in <i>words</i>[] together into one
+ string; use <i>sep</i>[] as the separator.
+ 
+<br><br>
+
+</dd>
+<dt><big>char[][] <u>split</u>(char[] <i>s</i>);
+</big></dt>
+<dd>Split <i>s</i>[] into an array of words,
+ using whitespace as the delimiter.
+ 
+<br><br>
+
+</dd>
+<dt><big>char[][] <u>split</u>(char[] <i>s</i>, char[] <i>delim</i>);
+</big></dt>
+<dd>Split <i>s</i>[] into an array of words,
+ using <i>delim</i>[] as the delimiter.
+ 
+<br><br>
+
+</dd>
+<dt><big>char[][] <u>splitlines</u>(char[] <i>s</i>);
+</big></dt>
+<dd>Split <i>s</i>[] into an array of lines,
+ using CR, LF, or CR-LF as the delimiter.
+ The delimiter is not included in the line.
+ 
+<br><br>
+
+</dd>
+<dt><big>char[] <u>stripl</u>(char[] <i>s</i>);
+<br>char[] <u>stripr</u>(char[] <i>s</i>);
+<br>char[] <u>strip</u>(char[] <i>s</i>);
+</big></dt>
+<dd>Strips leading or trailing whitespace, or both.
+ 
+<br><br>
+
+</dd>
+<dt><big>char[] <u>chomp</u>(char[] <i>s</i>, char[] <i>delimiter</i> = null);
+</big></dt>
+<dd>Returns <i>s</i>[] sans trailing <i>delimiter</i>[], if any.
+ If <i>delimiter</i>[] is <b>null</b>, removes trailing CR, LF, or CRLF, if any.
+ 
+<br><br>
+
+</dd>
+<dt><big>char[] <u>chop</u>(char[] <i>s</i>);
+</big></dt>
+<dd>Returns <i>s</i>[] sans trailing character, if there is one.
+ If last two characters are CR-LF, then both are removed.
+ 
+<br><br>
+
+</dd>
+<dt><big>char[] <u>ljustify</u>(char[] <i>s</i>, int <i>width</i>);
+<br>char[] <u>rjustify</u>(char[] <i>s</i>, int <i>width</i>);
+<br>char[] <u>center</u>(char[] <i>s</i>, int <i>width</i>);
+</big></dt>
+<dd>Left justify, right justify, or center string <i>s</i>[]
+ in field <i>width</i> chars wide.
+ 
+<br><br>
+
+</dd>
+<dt><big>char[] <u>zfill</u>(char[] <i>s</i>, int <i>width</i>);
+</big></dt>
+<dd>Same as rjustify(), but fill with '0'<i>s</i>.
+ 
+<br><br>
+
+</dd>
+<dt><big>char[] <u>replace</u>(char[] <i>s</i>, char[] <i>from</i>, char[] <i>to</i>);
+</big></dt>
+<dd>Replace occurrences of <i>from</i>[] with <i>to</i>[] in <i>s</i>[].
+ 
+<br><br>
+
+</dd>
+<dt><big>char[] <u>replaceSlice</u>(char[] <i>string</i>, char[] <i>slice</i>, char[] <i>replacement</i>);
+</big></dt>
+<dd>Return a string that is <i>string</i>[] with <i>slice</i>[] replaced by <i>replacement</i>[].
+ 
+<br><br>
+
+</dd>
+<dt><big>char[] <u>insert</u>(char[] <i>s</i>, uint <i>index</i>, char[] <i>sub</i>);
+</big></dt>
+<dd>Insert <i>sub</i>[] into <i>s</i>[] at location <i>index</i>.
+ 
+<br><br>
+
+</dd>
+<dt><big>uint <u>count</u>(char[] <i>s</i>, char[] <i>sub</i>);
+</big></dt>
+<dd>Count up all instances of <i>sub</i>[] in <i>s</i>[].
+ 
+<br><br>
+
+</dd>
+<dt><big>char[] <u>expandtabs</u>(char[] <i>string</i>, int <i>tabsize</i> = 8);
+</big></dt>
+<dd>Replace tabs with the appropriate number of spaces.
+ <i>tabsize</i> is the distance between tab stops.
+ 
+<br><br>
+
+</dd>
+<dt><big>char[] <u>entab</u>(char[] <i>string</i>, int <i>tabsize</i> = 8);
+</big></dt>
+<dd>Replace spaces in <i>string</i> with the optimal number of tabs.
+ Trailing spaces or tabs in a line are removed.
+<br><br>
+<b>Params:</b><br>
+<table><tr><td>char[] <i>string</i></td>
+<td>String to convert.</td></tr>
+<tr><td>int <i>tabsize</i></td>
+<td>Tab columns are <i>tabsize</i> spaces apart. <i>tabsize</i> defaults to 8.</td></tr>
+</table><br>
+
+</dd>
+<dt><big>char[] <u>maketrans</u>(char[] <i>from</i>, char[] <i>to</i>);
+</big></dt>
+<dd>Construct translation table for translate().
+<br><br>
+<b>BUG:</b><br>
+only works with ASCII
+ 
+<br><br>
+
+</dd>
+<dt><big>char[] <u>translate</u>(char[] <i>s</i>, char[] <i>transtab</i>, char[] <i>delchars</i>);
+</big></dt>
+<dd>Translate characters in <i>s</i>[] using table created by maketrans().
+ Delete chars in <i>delchars</i>[].
+<br><br>
+<b>BUG:</b><br>
+only works with ASCII
+ 
+<br><br>
+
+</dd>
+<dt><big>char[] <u>toString</u>(bool <i>b</i>);
+<br>char[] <u>toString</u>(char <i>c</i>);
+<br>char[] <u>toString</u>(ubyte <i>ub</i>);
+<br>char[] <u>toString</u>(ushort <i>us</i>);
+<br>char[] <u>toString</u>(uint <i>u</i>);
+<br>char[] <u>toString</u>(ulong <i>u</i>);
+<br>char[] <u>toString</u>(byte <i>b</i>);
+<br>char[] <u>toString</u>(short <i>s</i>);
+<br>char[] <u>toString</u>(int <i>i</i>);
+<br>char[] <u>toString</u>(long <i>i</i>);
+<br>char[] <u>toString</u>(float <i>f</i>);
+<br>char[] <u>toString</u>(double <i>d</i>);
+<br>char[] <u>toString</u>(real <i>r</i>);
+<br>char[] <u>toString</u>(ifloat <i>f</i>);
+<br>char[] <u>toString</u>(idouble <i>d</i>);
+<br>char[] <u>toString</u>(ireal <i>r</i>);
+<br>char[] <u>toString</u>(cfloat <i>f</i>);
+<br>char[] <u>toString</u>(cdouble <i>d</i>);
+<br>char[] <u>toString</u>(creal <i>r</i>);
+</big></dt>
+<dd>Convert to char[].
+ 
+<br><br>
+
+</dd>
+<dt><big>char[] <u>toString</u>(long <i>value</i>, uint <i>radix</i>);
+<br>char[] <u>toString</u>(ulong <i>value</i>, uint <i>radix</i>);
+</big></dt>
+<dd>Convert <i>value</i> to string in radix <i>radix</i>.
+<br><br>
+<i>radix</i> must be a <i>value</i> from 2 to 36.
+ <i>value</i> is treated as a signed <i>value</i> only if <i>radix</i> is 10.
+ The characters A through Z are used to represent values 10 through 36.
+ 
+<br><br>
+
+</dd>
+<dt><big>char[] <u>toString</u>(char* <i>s</i>);
+</big></dt>
+<dd>Convert C-style 0 terminated string <i>s</i> to char[] string.
+ 
+<br><br>
+
+</dd>
+<dt><big>char[] <u>format</u>(...);
+</big></dt>
+<dd>Format arguments into a string.
+ 
+<br><br>
+
+</dd>
+<dt><big>char[] <u>sformat</u>(char[] <i>s</i>,...);
+</big></dt>
+<dd>Format arguments into string <i><i>s</i></i> which must be large
+ enough to hold the result. Throws ArrayBoundsError if it is not.
+<br><br>
+<b>Returns:</b><br>
+<i>s</i>
+ 
+<br><br>
+
+</dd>
+<dt><big>int <u>inPattern</u>(dchar <i>c</i>, char[] <i>pattern</i>);
+</big></dt>
+<dd>See if character <i>c</i> is in the <i>pattern</i>.
+<br><br>
+<b>Patterns:</b><br>
+A <i><i>pattern</i></i> is an array of characters much like a <i>character
+	class</i> in regular expressions. A sequence of characters
+	can be given, such as "abcde". The '-' can represent a range
+	of characters, as "a-e" represents the same <i>pattern</i> as "abcde".
+	"a-fA-F0-9" represents all the hex characters.
+	If the first character of a <i>pattern</i> is '^', then the <i>pattern</i>
+	is negated, i.e. "^0-9" means any character except a digit.
+	The functions <u>inPattern</u>, <b>countchars</b>, <b>removeschars</b>,
+	and <b>squeeze</b>
+	use patterns.
+
+<br><br>
+<b>Note:</b><br>
+In the future, the <i>pattern</i> syntax may be improved
+	to be more like regular expression character classes.
+ 
+<br><br>
+
+</dd>
+<dt><big>int <u>inPattern</u>(dchar <i>c</i>, char[][] <i>patterns</i>);
+</big></dt>
+<dd>See if character <i>c</i> is in the intersection of the <i>patterns</i>.
+ 
+<br><br>
+
+</dd>
+<dt><big>uint <u>countchars</u>(char[] <i>s</i>, char[] <i>pattern</i>);
+</big></dt>
+<dd>Count characters in <i>s</i> that match <i>pattern</i>.
+ 
+<br><br>
+
+</dd>
+<dt><big>char[] <u>removechars</u>(char[] <i>s</i>, char[] <i>pattern</i>);
+</big></dt>
+<dd>Return string that is <i>s</i> with all characters removed that match <i>pattern</i>.
+ 
+<br><br>
+
+</dd>
+<dt><big>char[] <u>squeeze</u>(char[] <i>s</i>, char[] <i>pattern</i> = null);
+</big></dt>
+<dd>Return string where sequences of a character in <i>s</i>[] from <i>pattern</i>[]
+ are replaced with a single instance of that character.
+ If <i>pattern</i> is <b>null</b>, it defaults to all characters.
+ 
+<br><br>
+
+</dd>
+<dt><big>char[] <u>succ</u>(char[] <i>s</i>);
+</big></dt>
+<dd>Return string that is the 'successor' to <i>s</i>[].
+ If the rightmost character is a-zA-Z0-9, it is incremented within
+ its case or digits. If it generates a carry, the process is
+ repeated with the one to its immediate left.
+ 
+<br><br>
+
+</dd>
+<dt><big>char[] <u>tr</u>(char[] <i>str</i>, char[] <i>from</i>, char[] <i>to</i>, char[] <i>modifiers</i> = null);
+</big></dt>
+<dd>Replaces characters in <i>str</i>[] that are in <i>from</i>[]
+ with corresponding characters in <i>to</i>[] and returns the resulting
+ string.
+<br><br>
+<b>Params:</b><br>
+<table><tr><td>char[] <i>modifiers</i></td>
+<td>a string of modifier characters</td></tr>
+</table><br>
+<b>Modifiers:</b><br>
+<table border=1 cellspacing=0 cellpadding=5>
+		<tr> <th>Modifier <th>Description
+		<tr> <td><b>c</b> <td>Complement the list of characters in <i>from</i>[]
+		<tr> <td><b>d</b> <td>Removes matching characters with no corresponding replacement in <i>to</i>[]
+		<tr> <td><b>s</b> <td>Removes adjacent duplicates in the replaced characters
+		</table>
+<br><br>
+
+	If modifier <b>d</b> is present, then the number of characters
+	in <i>to</i>[] may be only 0 or 1.
+<br><br>
+
+	If modifier <b>d</b> is not present and <i>to</i>[] is <b>null</b>,
+	then <i>to</i>[] is taken to be the same as <i>from</i>[].
+<br><br>
+
+	If modifier <b>d</b> is not present and <i>to</i>[] is shorter
+	than <i>from</i>[], then <i>to</i>[] is extended by replicating the
+	last character in <i>to</i>[].
+<br><br>
+
+	Both <i>from</i>[] and <i>to</i>[] may contain ranges using the <b>-</b>
+	character, for example <b>a-d</b> is synonymous with <b>abcd</b>.
+	Neither accept a leading <b>^</b> as meaning the complement of
+	the string (use the <b>c</b> modifier for that).
+ 
+<br><br>
+
+</dd>
+<dt><big>final bool <u>isNumeric</u>(char[] <i>s</i>, bool <i>bAllowSep</i> = false);
+</big></dt>
+<dd>[in] char[] <i>s</i> can be formatted in the following ways:
+<br><br>
+Integer Whole Number:
+ (for byte, ubyte, short, ushort, int, uint, long, and ulong)
+ ['+'|'-']digit(<i>s</i>)[U|L|UL]
+
+<br><br>
+<b>Examples:</b><br>
+123, 123UL, 123L, +123U, -123L
+<br><br>
+
+ Floating-Point Number:
+ (for float, double, real, ifloat, idouble, and ireal)
+ ['+'|'-']digit(<i>s</i>)[.][digit(<i>s</i>)][[e-|e+]digit(<i>s</i>)][i|f|L|Li|fi]]
+      or [nan|nani|inf|-inf]
+
+<br><br>
+<b>Examples:</b><br>
++123., -123.01, 123.3e-10f, 123.3e-10fi, 123.3e-10L
+<br><br>
+
+ (for cfloat, cdouble, and creal)
+ ['+'|'-']digit(<i>s</i>)[.][digit(<i>s</i>)][[e-|e+]digit(<i>s</i>)][+]
+         [digit(<i>s</i>)[.][digit(<i>s</i>)][[e-|e+]digit(<i>s</i>)][i|f|L|Li|fi]]
+      or [nan|nani|nan+nani|inf|-inf]
+
+<br><br>
+<b>Examples:</b><br>
+nan, -123e-1+456.9e-10Li, +123e+10+456i, 123+456
+<br><br>
+
+ [in] bool <i>bAllowSep</i>
+ False by default, but when set to <b>true</b> it will accept the
+ separator characters "," and "" within the string, but these
+ characters should be stripped from the string before using any
+ of the conversion functions like toInt(), toFloat(), and etc
+ else an error will occur.
+<br><br>
+
+ Also please note, that no spaces are allowed within the string
+ anywhere whether it'<i>s</i> a leading, trailing, or embedded space(<i>s</i>),
+ thus they too must be stripped from the string before using this
+ function, or any of the conversion functions.
+ 
+<br><br>
+
+</dd>
+<dt><big>bool <u>isNumeric</u>(...);
+</big></dt>
+<dd>Allow any object as a parameter
+<br><br>
+
+</dd>
+<dt><big>bool <u>isNumeric</u>(TypeInfo[] <i>_arguments</i>, void* <i>_argptr</i>);
+</big></dt>
+<dd>Check only the first parameter, all others will be ignored. 
+<br><br>
+
+</dd>
+<dt><big>char[] <u>soundex</u>(char[] <i>string</i>, char[] <i>buffer</i> = null);
+</big></dt>
+<dd>Soundex algorithm.
+<br><br>
+The Soundex algorithm converts a word into 4 characters
+ based on how the word sounds phonetically. The idea is that
+ two spellings that sound alike will have the same Soundex
+ value, which means that Soundex can be used for fuzzy matching
+ of names.
+
+<br><br>
+<b>Params:</b><br>
+<table><tr><td>char[] <i>string</i></td>
+<td>String to convert to Soundex representation.</td></tr>
+<tr><td>char[] <i>buffer</i></td>
+<td>Optional 4 char array to put the resulting Soundex
+		characters into. If <b>null</b>, the return value
+		<i>buffer</i> will be allocated on the heap.</td></tr>
+</table><br>
+<b>Returns:</b><br>
+The four character array with the Soundex result in it.
+	Returns <b>null</b> if there is no Soundex representation for the <i>string</i>.
+
+<br><br>
+<b>See Also:</b><br>
+<a href="http://en.wikipedia.org/wiki/Soundex">Wikipedia</a>,
+	<a href="http://www.archives.gov/publications/general-info-leaflets/55.html">The Soundex Indexing System</a>
+
+<br><br>
+<span style="color:red">BUGS:</span><br>
+Only works well with English names.
+	There are other arguably better Soundex algorithms,
+	but this one is the standard one.
+ 
+<br><br>
+
+</dd>
+<dt><big>char[][char[]] <u>abbrev</u>(char[][] <i>values</i>);
+</big></dt>
+<dd>Construct an associative array consisting of all
+ abbreviations that uniquely map to the strings in <i>values</i>.
+<br><br>
+This is useful in cases where the user is expected to type
+ in one of a known set of strings, and the program will helpfully
+ autocomplete the string once sufficient characters have been
+ entered that uniquely identify it.
+<br><br>
+<b>Example:</b><br>
+<pre class="d_code"> <span class="d_keyword">import</span> std.stdio;
+ <span class="d_keyword">import</span> std.string;
+
+ <span class="d_keyword">void</span> main()
+ {
+    <span class="d_keyword">static</span> <span class="d_keyword">char</span>[][] list = [ <span class="d_string">"food"</span>, <span class="d_string">"foxy"</span> ];
+
+    <span class="d_keyword">auto</span> abbrevs = std.string.<span class="d_psymbol">abbrev</span>(list);
+
+    <span class="d_keyword">foreach</span> (key, value; abbrevs)
+    {
+       writefln(<span class="d_string">"%s =&gt; %s"</span>, key, value);
+    }
+ }
+</pre>
+ produces the output:
+ <pre>
+ fox =&gt; foxy
+ food =&gt; food
+ foxy =&gt; foxy
+ foo =&gt; food
+ </pre>
+ 
+<br><br>
+
+</dd>
+<dt><big>uint <u>column</u>(char[] <i>string</i>, int <i>tabsize</i> = 8);
+</big></dt>
+<dd>Compute <u>column</u> number after <i>string</i> if <i>string</i> starts in the
+ leftmost <u>column</u>, which is numbered starting from 0.
+ 
+<br><br>
+
+</dd>
+<dt><big>char[] <u>wrap</u>(char[] <i>s</i>, int <i>columns</i> = 80, char[] <i>firstindent</i> = null, char[] <i>indent</i> = null, int <i>tabsize</i> = 8);
+</big></dt>
+<dd>Wrap text into a paragraph.
+<br><br>
+The input text string <i>s</i> is formed into a paragraph
+ by breaking it up into a sequence of lines, delineated
+ by \n, such that the number of <i>columns</i> is not exceeded
+ on each line.
+ The last line is terminated with a \n.
+<br><br>
+<b>Params:</b><br>
+<table><tr><td>char[] <i>s</i></td>
+<td>text string to be wrapped</td></tr>
+<tr><td>int <i>columns</i></td>
+<td>maximum number of columns in the paragraph</td></tr>
+<tr><td>char[] <i>firstindent</i></td>
+<td>string used to indent first line of the paragraph</td></tr>
+<tr><td>char[] <i>indent</i></td>
+<td>string to use to indent following lines of the paragraph</td></tr>
+<tr><td>int <i>tabsize</i></td>
+<td>column spacing of tabs</td></tr>
+</table><br>
+<b>Returns:</b><br>
+The resulting paragraph.
+ 
+<br><br>
+
+</dd>
+</dl>
+
+    
+<br><br>
+<br><br>
+<!-- Google ad -->
+<script type="text/javascript"><!--
+/**/google_ad_client = "pub-5628673096434613";
+/**/google_ad_width = 728;
+/**/google_ad_height = 90;
+/**/google_ad_format = "728x90_as";
+/**/google_ad_channel ="6203743411";
+/**/google_page_url = document.location;
+//--></script>
+<script type="text/javascript" src="../../../../../../../../../pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+ 
+</div>
+
+
+<div id="copyright">
+Copyright &copy; 1999-2006 by Digital Mars, All Rights Reserved |
+Page generated by <a href="http://www.digitalmars.com/d/ddoc.html">Ddoc</a>.
+</div>
+
+</body>
+
+<!-- Mirrored from www.shorthike.com/trac/browser/trunk/tools_win32/dmd/html/d/phobos/std_string.html?format=raw by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 01 May 2010 04:40:13 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>
+

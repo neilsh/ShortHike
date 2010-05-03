@@ -1,0 +1,6 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP sources config ;
+
+AddLocalCppSources ShortHike ;
+AddLocalCppSources SelfTest ;

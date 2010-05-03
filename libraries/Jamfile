@@ -1,0 +1,10 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP libraries ;
+
+AddDImportDirectory ShortHike ;
+AddLocalDSources ShortHike ;
+
+if $(OS) = "NT" {
+  SubInclude TOP libraries win32 ;
+}

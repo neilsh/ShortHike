@@ -1,0 +1,14 @@
+# --------------------------------------------------------------------------------
+# ECW and JPG2000 Compression/Decompression from ER-Mapper
+
+ECWJ2_DIR = [ FDirName $(LIBRARIES_DIR) libecwj2 ] ;
+
+rule LibECWJ2
+{
+  PROGRAM_NAME = $(1) ;
+  
+  ProgramLibraryFlags $(PROGRAM_NAME) : [ FLibPath $(ECWJ2_DIR) lib ] ;
+  ProgramLibraryFlags $(PROGRAM_NAME) : libecwj2S_d.lib : libecwj2S.lib ;
+
+  CPPFLAGS on $(PROGRAM_NAME) += [ FIncPath $(ECWJ2_DIR) Source include ] [ FDefines ENABLE_ECWJ2 ] ;
+}

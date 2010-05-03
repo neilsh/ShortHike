@@ -1,0 +1,84 @@
+# --------------------------------------------------------------------------------
+# Jam file for ShortHike
+
+# include local configuration
+include [ FDirName $(TOP) config.jam ] ;
+
+# Force read of Jamrules first
+SubDir TOP ;
+
+SubInclude TOP assets ;
+SubInclude TOP libraries ;
+SubInclude TOP scm ;
+SubInclude TOP sources ;
+
+# Force back our local settings
+SubDir TOP ;
+
+
+#--------------------------------------------------------------------------------
+# Set target distributions for program. This needs to be first
+
+DISTRIBUTIONS on ShortHike += binary ;
+DISTRIBUTIONS on HotCopy += binary ;
+
+LIBRARIES_DIR = [ FDirName $(TOP) libraries ] ;
+
+# ================================================================================
+# ShortHike
+
+ProgramExeName ShortHike : ShortHike ;
+
+Program ShortHike ;
+UnitTest ShortHike ;
+
+if $(OS) = "NT" {
+#  ReleaseDLL ShortHike : $(WINDOWS_DIR) : DbgHelp.dll ;
+SingleDLL ShortHike : [ FDirName $(LIBRARIES_DIR) win32 ] : fmod.dll ;
+SingleDLL ShortHike : [ FDirName $(LIBRARIES_DIR) win32 ] : freetype.dll ;
+SingleDLL ShortHike : [ FDirName $(LIBRARIES_DIR) win32 ] : libpng13.dll ;
+SingleDLL ShortHike : [ FDirName $(LIBRARIES_DIR) win32 ] : zlib1.dll ;
+}
+
+# ================================================================================
+# HotCopy, the tool used to copy over the exe files and relaunch ShortHike
+
+# Program HotCopy ;
+
+
+# ================================================================================
+# Target directories
+
+TargetDirectory assets : assets ;
+TargetDirectory scm : scm ;
+TargetDirectory binary : binary_win32 ;
+
+#RSYNC_ROOT_URL = "kai@www.shorthike.com:/home/www/test_update/trunk" ;
+#RSYNC_SERVER_URL = "rsync://127.0.0.1:51010/home" ;
+
+#ServerDistribute [ FDirName target_assets-standard assets ] : : "$(RSYNC_ROOT_URL)/assets_standard" ;
+#ServerDistribute [ FDirName target_assets-complete assets ] : : "$(RSYNC_ROOT_URL)/assets_complete" ;
+#ServerDistribute [ FDirName target_binary binary_win32 ] : : "$(RSYNC_ROOT_URL)/binary_win32" ;
+
+#ServerDistribute [ FDirName target_server server ] : : server : "$(RSYNC_SERVER_URL)/server/test_server" ;
+
+#ServerDistribute [ FDirName target_assets-standard assets ] : :
+#[ FDirName $(SVN_SHORTHIKE_PUBLIC_DEVELOPER) assets_standard ] :
+#"$(SVN_SHORTHIKE_PUBLIC_URL)/assets_standard" ;
+
+#ServerDistribute [ FDirName target_assets-complete assets ] : :
+#[ FDirName $(SVN_SHORTHIKE_PUBLIC_DEVELOPER) assets_complete ] :
+#"$(SVN_SHORTHIKE_PUBLIC_URL)/assets_complete" ;
+
+#ServerDistribute [ FDirName target_binary binary_win32 ] : :
+#[ FDirName $(SVN_SHORTHIKE_PUBLIC_DEVELOPER) binary_win32 ] :
+#"$(SVN_SHORTHIKE_PUBLIC_URL)/binary_win32" ;
+
+
+InstallerWin32
+[ FDirName target_assets assets filelist.txt ]
+[ FDirName target_binary binary_win32 filelist.txt ]
+[ FDirName target_scm scm filelist.txt ]
+:
+[ FDirName $(TOP) target_installer ] ;
+

@@ -1,0 +1,6 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP sources layers ;
+
+AddLocalCppSources ShortHike ;
+AddLocalCppSources SelfTest ;

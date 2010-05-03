@@ -1,0 +1,59 @@
+# --------------------------------------------------------------------------------
+# OGRE is the base library providing rendering capabilities to the project
+
+OGRE_DIR = [ FDirName $(LIBRARIES_DIR) OGRE ] ;
+DEVIL_DIR = [ FDirName $(LIBRARIES_DIR) DevIL win32 ] ;
+
+#----------
+# Ogre
+
+rule OGRELibrary
+{
+	local PROGRAM_NAME = $(1) ;
+	local LIBRARY_DIR = $(2) ;
+	local DLL_NAME = $(3) ;
+	local INCLUDE_DIR = [ FDirName $(OGRE_DIR) $(4) ] ;
+
+	Library $(PROGRAM_NAME) : [ FDirName $(INCLUDE_DIR) ] :
+		[ FDirName $(OGRE_DIR) $(LIBRARY_DIR) Debug ] : [ FDirName $(OGRE_DIR) $(LIBRARY_DIR) Release ] :
+		$(DLL_NAME) : $(DLL_NAME) ;
+}
+
+
+rule LibOGRE
+{
+  PROGRAM_NAME = $(1) ;
+  
+  LibOGRECore $(PROGRAM_NAME) ;
+  
+#  OGRELibrary $(PROGRAM_NAME) : RenderSystems Direct3D9 bin : RenderSystem_Direct3D9.dll ;
+  OGRELibrary $(PROGRAM_NAME) : RenderSystems GL bin : RenderSystem_GL.dll ;
+  OGRELibrary $(PROGRAM_NAME) : Plugins CgProgramManager bin : Plugin_CgProgramManager.dll ;
+  #OGRELibrary $(PROGRAM_NAME) : Plugins ParticleFX bin : Plugin_ParticleFX.dll ;
+  
+  OGRELibrary $(PROGRAM_NAME) : Plugins OctreeSceneManager bin : Plugin_OctreeSceneManager.dll : PlugIns OctreeSceneManager include ;
+  ProgramLibraryFlags $(PROGRAM_NAME) : Plugin_OctreeSceneManager.lib : Plugin_OctreeSceneManager.lib ;
+  
+  # DevIL
+  CPPFLAGS on $(PROGRAM_NAME) += [ FIncPath $(DEVIL_DIR) include ] ;
+  ProgramLibraryFlags $(PROGRAM_NAME) : [ FLibPath $(DEVIL_DIR) lib ] ;
+  ProgramLibraryFlags $(PROGRAM_NAME) : DevIL.lib ILU.lib ;
+  SingleDLL $(PROGRAM_NAME) : [ FDirName $(DEVIL_DIR) lib ] : devil.dll ;
+  SingleDLL $(PROGRAM_NAME) : [ FDirName $(DEVIL_DIR) lib ] : ilu.dll ;
+#  SingleDLL $(PROGRAM_NAME) : [ FDirName $(DEVIL_DIR) lib ] : ilut.dll ;
+  CPPFLAGS on $(PROGRAM_NAME) += [ FDefines ENABLE_OGRE ] ;
+}
+
+rule LibOGRECore
+{
+	Library $(PROGRAM_NAME) : [ FDirName $(OGRE_DIR) OgreMain include ] :
+	[ FDirName $(OGRE_DIR) OgreMain Lib Debug ] : 	[ FDirName $(OGRE_DIR) OgreMain Lib Release ] :
+	OgreMain_d.dll : OgreMain.dll ;
+
+	Library $(PROGRAM_NAME) : :
+	[ FDirName $(OGRE_DIR) Samples Common bin Debug ] : 	[ FDirName $(OGRE_DIR) Samples Common bin Release ] :
+	OgrePlatform_d.dll : OgrePlatform.dll ;
+
+	OGRELibrary $(PROGRAM_NAME) : Dependencies lib : cg.dll ;
+	ProgramLibraryFlags $(PROGRAM_NAME) : OgreMain_d.lib : OgreMain.lib ;
+}

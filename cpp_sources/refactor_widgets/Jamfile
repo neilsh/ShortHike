@@ -1,0 +1,6 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP sources widgets ;
+
+AddLocalCppSources ShortHike ;
+AddCppSources SelfTest : CollisionManager.cpp : CollisionManager.hpp ;

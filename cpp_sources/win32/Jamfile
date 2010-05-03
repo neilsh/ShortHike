@@ -1,0 +1,6 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP sources win32 ;
+
+AddLocalCppSources ShortHike ;
+AddCppSources SelfTest : PlatformWin32.cpp : PlatformWin32.hpp  ;

@@ -1,0 +1,408 @@
+# --------------------------------------------------------------------------------
+# Rules for C++ compilation and linking
+
+
+
+# --------------------------------------------------------------------------------
+# Adding headers and library paths
+
+rule FIncPath
+{
+	local _DIR = [ FDirName $(1) ] ;
+	return -I$(_DIR) ;
+}
+
+rule FLibPath
+{
+	local _DIR = [ FDirName $(1) ] ;
+	return /LIBPATH:$(_DIR) ;
+}
+
+
+# --------------------------------------------------------------------------------
+# Compiler Options
+
+# removed /EHa
+{
+  CPPFLAGS on all += /nologo /FD /EHsc /W4 /WX /GR /D _WINDOWS  /D WIN32 ;
+  
+  CPPFLAGS on debug += /D "_DEBUG" /RTC1 /ZI /Gm /MTd ;
+  CPPFLAGS on release += /MT /Zi ;
+}
+
+# --------------------------------------------------------------------------------
+# Linker Options
+
+# SHFolder.dll needs to be before shell32 to fix cases 338/372
+# DEBUG
+
+{
+  LDFLAGS on all = 
+  /INCREMENTAL /MACHINE:x86 /SUBSYSTEM:WINDOWS
+  user32.lib comdlg32.lib Winmm.lib Wininet.lib Dbghelp.lib Advapi32.lib
+#Used by libecwj2
+#  advapi32.lib oleaut32.lib shlwapi.lib Version.lib Crypt32.lib Ws2_32.lib
+# Probably not needing this either /STACK:10000000 
+# Slightly shorter lib dependency list .. Eh ..
+#	kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib SHFolder.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib comctl32.lib rpcrt4.lib winmm.lib Ws2_32.lib version.lib Wininet.lib Iphlpapi.lib Dbghelp.lib ;
+  ;
+}
+
+
+
+# --------------------------------------------------------------------------------
+# Directories and file names
+
+rule GetBuildDirectory
+{
+	local BUILD_NAME = "$(1)_$(2)" ;
+	local BUILD_DIRECTORY = [ FDirName $(TOP) $(BUILD_NAME) ] ;
+	return $(BUILD_DIRECTORY) ;
+}
+
+
+
+rule GetExecutableName
+{
+  local BUILD_TYPE = $(1) ;
+  local PROGRAM_NAME = $(2) ;
+  
+  on $(PROGRAM_NAME) {
+    if $(EXECUTABLE_TARGET) != "" {
+      return [ FDirName [ GetBuildDirectory $(BUILD_TYPE) : $(PROGRAM_NAME) ] $(EXECUTABLE_TARGET)$(SUFEXE) ] ;
+    }
+    else {
+      return [ FDirName [ GetBuildDirectory $(BUILD_TYPE) : $(PROGRAM_NAME) ] $(PROGRAM_NAME)$(SUFEXE) ] ;
+    }
+  }
+}
+
+rule GetExecutableTargets
+{
+  local PROGRAM_NAME = $(1) ;
+  return [ GetExecutableName release : $(PROGRAM_NAME) ] ;
+}
+
+# --------------------------------------------------------------------------------
+# Precompiled headers
+
+rule PrecompileHeader
+{
+	local PROGRAM_NAME = $(1) ;
+	local PRECOMPILE_STUB = $(2) ;
+	local PRECOMPILE_HEADER_FILE = $(3) ;
+	local PRECOMPILE_HEADER = $(4) ;
+	
+	CPPFLAGS on $(PROGRAM_NAME) += /Yu$(PRECOMPILE_HEADER) ;
+	
+	PrecompileBuild $(PROGRAM_NAME) : debug : $(PRECOMPILE_STUB) : $(PRECOMPILE_HEADER_FILE) : $(PRECOMPILE_HEADER) ;
+	PrecompileBuild $(PROGRAM_NAME) : release : $(PRECOMPILE_STUB) : $(PRECOMPILE_HEADER_FILE) : $(PRECOMPILE_HEADER) ;
+}
+
+rule PrecompileBuild
+{
+	local PROGRAM_NAME = $(1) ;
+	local BUILD_TYPE = $(2) ;
+	local BUILD_DIRECTORY = [ GetBuildDirectory $(BUILD_TYPE) : $(PROGRAM_NAME) ] ;
+	local PRECOMPILE_STUB = $(3) ;
+	local PRECOMPILE_HEADER_FILE = $(4) ;
+	local PRECOMPILE_HEADER = $(5) ;
+	local PRECOMPILED_OBJECT = [ FDirName $(BUILD_DIRECTORY) $(PRECOMPILE_STUB:D=:S=.obj) ] ;
+
+	local EXECUTABLE_NAME = [ GetExecutableName $(BUILD_TYPE) : $(PROGRAM_NAME) ] ;
+
+	Depends $(EXECUTABLE_NAME) : $(PRECOMPILED_OBJECT) ;
+	Depends $(PRECOMPILED_OBJECT) : $(PRECOMPILE_STUB) ;
+	Depends $(PRECOMPILED_OBJECT) : $(PRECOMPILE_HEADER_FILE) ;
+	on $(BUILD_TYPE)-$(PROGRAM_NAME) {
+		Depends $(PRECOMPILED_OBJECT) : $(HEADERS) ;
+	}
+	
+	CppLoadDefaultFlags $(PRECOMPILED_OBJECT) : $(PROGRAM_NAME) : $(BUILD_TYPE) : $(BUILD_DIRECTORY) ;
+	CppPreCompile $(PRECOMPILED_OBJECT) : $(PRECOMPILE_STUB) : $(PRECOMPILE_HEADER) : $(BUILD_DIRECTORY) ;
+}
+
+rule CppPreCompile
+{
+	local PRECOMPILE_OBJECT = $(1) ;
+	local PRECOMPILE_HEADER = $(3) ;
+	local BUILDDIR = $(4) ;
+	PRECOMPILE_HEADER on $(PRECOMPILE_OBJECT) = $(PRECOMPILE_HEADER) ;
+	BUILDDIR on $(PRECOMPILE_OBJECT) = $(BUILD_DIRECTORY) ;
+}
+
+
+actions CppPreCompile
+{
+	$(CPP) $(CPPFLAGS) /Fp$(BUILDDIR)\ /Fd$(BUILDDIR)\ /c /Yc$(PRECOMPILE_HEADER) $(2)
+}
+
+
+
+# --------------------------------------------------------------------------------
+# Programs and Builds
+
+rule CppLoadDefaultFlags
+{
+	local TARGET = $(1) ;
+	local PROGRAM_NAME = $(2) ;
+	local BUILD_TYPE = $(3) ;
+	local BUILD_DIR = $(4) ;
+	local BUILD_TARGET = $(BUILD_TYPE)-$(PROGRAM_NAME) ;
+	
+	on all {
+		CPPFLAGS on $(TARGET) = $(CPPFLAGS) ;
+		LDFLAGS on $(TARGET) = $(LDFLAGS) ;
+	}	
+	on $(PROGRAM_NAME) {
+		CPPFLAGS on $(TARGET) += $(CPPFLAGS) ;
+		LDFLAGS on $(TARGET) += $(LDFLAGS) ;
+		RUN_TEST_DIR on $(TARGET) = $(RUN_TEST_DIR) ;
+	}
+	on $(BUILD_TARGET) {
+		CPPFLAGS on $(TARGET) += $(CPPFLAGS) ;
+		LDFLAGS on $(TARGET) += $(LDFLAGS) ;		
+	}
+	on $(BUILD_TYPE) {
+		CPPFLAGS on $(TARGET) += $(CPPFLAGS) /Fo$(BUILD_DIR)\\ ;
+		LDFLAGS on $(TARGET) += $(LDFLAGS) ;
+	}
+
+	BUILDDIR on $(TARGET) = $(BUILD_DIR) ;
+}
+
+actions CppCompile
+{
+	$(CPP) $(CPPFLAGS) /Fp$(BUILDDIR)\ /Fd$(BUILDDIR)\ /Fe$(1) $(2) /link $(LDFLAGS)
+}
+
+# --------------------------------------------------------------------------------
+
+rule DCompile
+{
+  local DFLAGS = $(3) ;
+  DFLAGS on $(1) = $(3) ;
+}
+
+actions DCompile
+{
+  build -DCPATHtools_win32\dmd\bin -T $(1) $(DFLAGS) $(2)
+}
+
+# --------------------------------------------------------------------------------
+
+
+rule BuildConfiguration
+{
+  local BUILD_TYPE = $(1) ;
+  local PROGRAM_NAME = $(2) ;
+  local BUILD_NAME = $(BUILD_TYPE)-$(PROGRAM_NAME) ;
+  local SOURCE_FILES = $(3) ;
+  local BUILD_DIRECTORY = [ GetBuildDirectory $(BUILD_TYPE) : $(PROGRAM_NAME) ] ;
+  local EXECUTABLE_NAME = [ GetExecutableName $(BUILD_TYPE) : $(PROGRAM_NAME) ] ;
+
+
+  
+#  on $(BUILD_NAME) {
+#    SOURCE_FILES += $(SOURCES) ;
+# FIXME: Generated headers
+#    HEADER_FILES += $(HEADERS) $(GENERATED_HEADERS) ;
+#  }
+  
+  CreateBuildDirectory $(BUILD_DIRECTORY) : $(BUILD_NAME) : $(BUILD_TYPE) ;
+  
+  Depends $(PROGRAM_NAME) : $(BUILD_NAME) ;
+  Depends $(BUILD_TYPE) : $(BUILD_NAME) ;
+  Depends $(BUILD_NAME) : $(EXECUTABLE_NAME) ;
+  Depends $(EXECUTABLE_NAME) : $(BUILD_DIRECTORY) ;
+  Depends $(EXECUTABLE_NAME) : $(SOURCE_FILES) ;
+
+  on $(PROGRAM_NAME) {
+    Depends $(EXECUTABLE_NAME) : $(MAIN_SOURCE) ;
+  }
+  on $(BUILD_NAME) {
+    Depends $(EXECUTABLE_NAME) : $(GENERATED_HEADERS) ;
+  }
+
+#  Depends $(EXECUTABLE_NAME) : $(HEADER_FILES) ;
+  
+#  CppLoadDefaultFlags $(EXECUTABLE_NAME) : $(PROGRAM_NAME) : $(BUILD_TYPE) : $(BUILD_DIRECTORY) ;
+#  CppCompile $(EXECUTABLE_NAME) : $(SOURCE_FILES) ;
+  local DFLAGS = "" ;
+  if $(OS) = "NT" {
+    DFLAGS += [ FDirName $(TOP) libraries dx80sdk lib d3d8.lib ] [ FIncPath $(TOP) libraries dx80sdk import ] ;
+    DFLAGS += comdlg32.lib Winmm.lib User32.lib kernel32.lib uuid.lib ws2_32.lib ;
+  }
+
+  on $(PROGRAM_NAME) {
+    local IMPORT_FLAGS = "" ;
+    for IMPORT in $(IMPORT_DIRECTORIES) {
+      IMPORT_FLAGS += -I$(IMPORT) ;
+    }
+    if $(BUILD_TYPE) = "debug" {
+      DCompile $(EXECUTABLE_NAME) : $(MAIN_SOURCE) : "-g -debug -w -version=Unstable" $(DFLAGS) $(IMPORT_FLAGS) ; 
+    }
+    else {
+      DCompile $(EXECUTABLE_NAME) : $(MAIN_SOURCE) : "-g -w -O -version=Unstable" $(DFLAGS) $(IMPORT_FLAGS) ; 
+    }
+  }
+}
+
+
+
+#rule BuildConfiguration
+#{
+#  local BUILD_TYPE = $(1) ;
+#  local PROGRAM_NAME = $(2) ;
+#  local BUILD_NAME = $(BUILD_TYPE)-$(PROGRAM_NAME) ;
+#  local SOURCE_FILES = $(3) ;
+#  local HEADER_FILES = $(4) ;
+#  local BUILD_DIRECTORY = [ GetBuildDirectory $(BUILD_TYPE) : $(PROGRAM_NAME) ] ;
+#  local EXECUTABLE_NAME = [ GetExecutableName $(BUILD_TYPE) : $(PROGRAM_NAME) ] ;
+#  
+#  on $(BUILD_NAME) {
+#    SOURCE_FILES += $(SOURCES) ;
+#    HEADER_FILES += $(HEADERS) $(GENERATED_HEADERS) ;
+#  }
+#  
+#  CreateBuildDirectory $(BUILD_DIRECTORY) : $(BUILD_NAME) : $(BUILD_TYPE) ;
+#  
+#  Depends $(PROGRAM_NAME) : $(BUILD_NAME) ;
+#  Depends $(BUILD_TYPE) : $(BUILD_NAME) ;
+#  Depends $(BUILD_NAME) : $(EXECUTABLE_NAME) ;
+#  Depends $(EXECUTABLE_NAME) : $(BUILD_DIRECTORY) ;
+#  Depends $(EXECUTABLE_NAME) : $(SOURCE_FILES) ;
+#  Depends $(EXECUTABLE_NAME) : $(HEADER_FILES) ;
+#  
+#  CppLoadDefaultFlags $(EXECUTABLE_NAME) : $(PROGRAM_NAME) : $(BUILD_TYPE) : $(BUILD_DIRECTORY) ;
+#  CppCompile $(EXECUTABLE_NAME) : $(SOURCE_FILES) ;
+#}
+
+
+rule Program
+{
+  local PROGRAM_NAME = $(1) ;
+  
+#  local SOURCE_FILES ;
+#  local HEADER_FILES ;
+#  
+#  on $(PROGRAM_NAME) {
+#    SOURCE_FILES += $(SOURCES) ;
+#    HEADER_FILES += $(HEADERS) $(GENERATED_HEADERS) ;
+#  }
+
+  local SOURCE_FILES ;
+  on $(PROGRAM_NAME) {
+    SOURCE_FILES += $(SOURCES) ;
+  }
+  
+  Depends all : $(PROGRAM_NAME) ;
+  RUN_TEST_DIR on $(PROGRAM_NAME) = $(SEARCH_SOURCE) ;
+  
+  BuildConfiguration debug : $(PROGRAM_NAME) : $(SOURCE_FILES) ;
+  BuildConfiguration release : $(PROGRAM_NAME) : $(SOURCE_FILES) ;
+
+#  BuildConfiguration debug : $(PROGRAM_NAME) : $(SOURCE_FILES) : $(HEADER_FILES) ;
+#  BuildConfiguration release : $(PROGRAM_NAME) : $(SOURCE_FILES) : $(HEADER_FILES) ;
+  
+  Tags [ FDirName $(SEARCH_SOURCE) tags-$(PROGRAM_NAME) ] :  : $(SOURCE_FILES) $(HEADER_FILES) : $(PROGRAM_NAME) ;
+
+  # Add the release executable and debug files to any distributions
+  on $(PROGRAM_NAME) {
+    if $(DISTRIBUTIONS) != "" {
+      for TARGET_DISTRIBUTION in $(DISTRIBUTIONS) {
+	AddTargetFilesDirect $(TARGET_DISTRIBUTION) : [ GetExecutableTargets $(PROGRAM_NAME) ] ;
+      }
+    }
+  }
+}
+
+
+rule ProgramExeName
+{
+	local PROGRAM_NAME = $(1) ;
+	local EXECUTABLE_TARGET = $(2) ;
+	
+	if $(EXECUTABLE_TARGET) != "" {
+		EXECUTABLE_TARGET on $(PROGRAM_NAME) = $(EXECUTABLE_TARGET) ;
+	}
+}
+
+
+
+# --------------------------------------------------------------------------------
+# Windows 32 Resource files
+
+rule ResourceFile
+{
+	local TARGET_RES = [ FDirName $(SEARCH_SOURCE) $(1) ] ;
+	local SOURCE_RC = [ FDirName $(SEARCH_SOURCE) $(2) ] ;
+	local PROGRAM_NAME = $(3) ;
+
+	SOURCES on $(PROGRAM_NAME) += $(TARGET_RES) ;
+
+	ResourceFileCompile $(TARGET_RES) : $(SOURCE_RC) ;
+}
+
+rule ResourceFileCompile
+{
+	Depends $(1) : $(2) ;
+}
+
+actions ResourceFileCompile
+{
+	rc /fo$(1) $(2)
+}
+
+# --------------------------------------------------------------------------------
+
+rule AddLocalDSources
+{
+  local PROGRAM_NAME = $(1) ;
+  SOURCES on $(PROGRAM_NAME) += [ Glob [ FDirName $(SEARCH_SOURCE) ] : *.d ] ;
+}
+
+rule AddDSources
+{
+  local PROGRAM_NAME = $(1) ;
+  local LOCAL_SOURCES = $(2) ;
+  for SOURCE in $(LOCAL_SOURCES) {
+    SOURCES on $(PROGRAM_NAME) += [ FDirName $(SEARCH_SOURCE) $(SOURCE) ] ;
+  }
+}
+
+rule SetDMainSource
+{
+  local PROGRAM_NAME = $(1) ;
+  MAIN_SOURCE on $(PROGRAM_NAME) = [ FDirName $(SEARCH_SOURCE) $(2) ] ;
+}
+
+rule AddDImportDirectory
+{
+  local PROGRAM_NAME = $(1) ;
+  IMPORT_DIRECTORIES on $(PROGRAM_NAME) += [ FDirName $(SEARCH_SOURCE) ] ;
+}
+
+# --------------------------------------------------------------------------------
+
+#rule AddLocalCppSources
+#{
+#	local PROGRAM_NAME = $(1) ;
+#	SOURCES on $(PROGRAM_NAME) += [ Glob [ FDirName $(SEARCH_SOURCE) ] : *.cpp ] ;
+#	HEADERS on $(PROGRAM_NAME) += [ Glob [ FDirName $(SEARCH_SOURCE) ] : *.hpp ] ;
+#}
+#
+#rule AddCppSources
+#{
+#	local PROGRAM_NAME = $(1) ;
+#	local CPP_FILES = $(2) ;
+#	local HPP_FILES = $(3) ;
+#
+#	for CPP_FILE in $(CPP_FILES) {
+#		SOURCES on $(PROGRAM_NAME) += [ FDirName $(SEARCH_SOURCE) $(CPP_FILE) ] ;
+#	}
+#
+#	for HPP_FILE in $(HPP_FILES) {
+#		HEADERS on $(PROGRAM_NAME) += [ FDirName $(SEARCH_SOURCE) $(HPP_FILE) ] ;
+#	}
+#}

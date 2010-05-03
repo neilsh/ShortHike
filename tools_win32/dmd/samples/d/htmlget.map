@@ -1,0 +1,95 @@
+..\..\lib\phobos.lib(socket) 
+ Error 42: Symbol Undefined _getprotobyname@4
+..\..\lib\phobos.lib(socket) 
+ Error 42: Symbol Undefined _getprotobynumber@4
+..\..\lib\phobos.lib(socket) 
+ Error 42: Symbol Undefined _getservbyname@8
+..\..\lib\phobos.lib(socket) 
+ Error 42: Symbol Undefined _getservbyport@8
+..\..\lib\phobos.lib(socket) 
+ Error 42: Symbol Undefined _WSAGetLastError@0
+..\..\lib\phobos.lib(socket) 
+ Error 42: Symbol Undefined _gethostbyname@4
+..\..\lib\phobos.lib(socket) 
+ Error 42: Symbol Undefined _gethostbyaddr@12
+..\..\lib\phobos.lib(socket) 
+ Error 42: Symbol Undefined _inet_addr@4
+..\..\lib\phobos.lib(socket) 
+ Error 42: Symbol Undefined _inet_ntoa@4
+..\..\lib\phobos.lib(socket) 
+ Error 42: Symbol Undefined _ioctlsocket@12
+..\..\lib\phobos.lib(socket) 
+ Error 42: Symbol Undefined _getsockopt@20
+..\..\lib\phobos.lib(socket) 
+ Error 42: Symbol Undefined _bind@12
+..\..\lib\phobos.lib(socket) 
+ Error 42: Symbol Undefined _connect@12
+..\..\lib\phobos.lib(socket) 
+ Error 42: Symbol Undefined _listen@8
+..\..\lib\phobos.lib(socket) 
+ Error 42: Symbol Undefined _accept@12
+..\..\lib\phobos.lib(socket) 
+ Error 42: Symbol Undefined _closesocket@4
+..\..\lib\phobos.lib(socket) 
+ Error 42: Symbol Undefined _shutdown@8
+..\..\lib\phobos.lib(socket) 
+ Error 42: Symbol Undefined _getpeername@12
+..\..\lib\phobos.lib(socket) 
+ Error 42: Symbol Undefined _getsockname@12
+..\..\lib\phobos.lib(socket) 
+ Error 42: Symbol Undefined _send@16
+..\..\lib\phobos.lib(socket) 
+ Error 42: Symbol Undefined _sendto@24
+..\..\lib\phobos.lib(socket) 
+ Error 42: Symbol Undefined _recv@16
+..\..\lib\phobos.lib(socket) 
+ Error 42: Symbol Undefined _recvfrom@24
+..\..\lib\phobos.lib(socket) 
+ Error 42: Symbol Undefined _setsockopt@20
+..\..\lib\phobos.lib(socket) 
+ Error 42: Symbol Undefined _socket@12
+..\..\lib\phobos.lib(socket) 
+ Error 42: Symbol Undefined _WSAStartup@8
+..\..\lib\phobos.lib(socket) 
+ Error 42: Symbol Undefined _WSACleanup@0
+
+ Start         Length     Name                   Class
+ 0002:00000000 000180B8H  _TEXT                  CODE 32-bit
+ 0002:000180B8 00000162H  ICODE                  ICODE 32-bit
+ 0003:00000000 00000004H  .CRT$XIA               DATA 32-bit
+ 0003:00000010 00000004H  .CRT$XIZ               DATA 32-bit
+ 0003:00000020 00000004H  .CRT$XCA               DATA 32-bit
+ 0003:00000030 00000004H  .CRT$XCZ               DATA 32-bit
+ 0003:00000040 00000004H  .CRT$XPA               DATA 32-bit
+ 0003:00000050 00000004H  .CRT$XPZ               DATA 32-bit
+ 0003:00000060 00000004H  .CRT$XTA               DATA 32-bit
+ 0003:00000070 00000004H  .CRT$XTZ               DATA 32-bit
+ 0003:00000074 00000000H  IMP__DATA              IMP__DATA 32-bit
+ 0003:00000080 00009B60H  _DATA                  DATA 32-bit
+ 0003:00009BE0 00000000H  FMB                    DATA 32-bit
+ 0003:00009BE0 00000078H  FM                     DATA 32-bit
+ 0003:00009C58 00000000H  FME                    DATA 32-bit
+ 0003:00009C58 00000000H  XIB                    DATA 32-bit
+ 0003:00009C58 00000018H  XI                     DATA 32-bit
+ 0003:00009C70 00000000H  XIE                    DATA 32-bit
+ 0003:00009C70 00000000H  XCB                    DATA 32-bit
+ 0003:00009C70 00000010H  XC                     DATA 32-bit
+ 0003:00009C80 00000000H  XCE                    DATA 32-bit
+ 0003:00009C80 00000000H  XIFCB                  DATA 32-bit
+ 0003:00009C80 00000004H  XIFU                   DATA 32-bit
+ 0003:00009C84 00000000H  XIFL                   DATA 32-bit
+ 0003:00009C84 00000004H  XIFM                   DATA 32-bit
+ 0003:00009C88 00000000H  XIFCE                  DATA 32-bit
+ 0003:00009C90 00000000H  CONST                  CONST 32-bit
+ 0003:00009C90 00000000H  EEND                   ENDBSS 32-bit
+ 0003:00009C90 00002B10H  _BSS                   BSS 32-bit
+ 0003:0000C7A0 00000000H  XOB                    BSS 32-bit
+ 0003:0000C7A0 00000004H  XO                     BSS 32-bit
+ 0003:0000C7A4 00000000H  XOE                    BSS 32-bit
+ 0003:0000C7A4 00000000H  XOFB                   BSS 32-bit
+ 0003:0000C7A4 00000108H  XOF                    BSS 32-bit
+ 0003:0000C8AC 00000000H  XOFE                   BSS 32-bit
+ 0003:0000C8B0 00000415H  c_common               BSS 32-bit
+ 0003:0000CCD0 00000000H  STACK                  STACK 32-bit
+
+Program entry point at 00010C14 

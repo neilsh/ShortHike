@@ -1,0 +1,9 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP assets ;
+
+SubInclude TOP assets gui ;
+SubInclude TOP assets icons ;
+SubInclude TOP assets locations ;
+SubInclude TOP assets map ;
+SubInclude TOP assets modules ;

@@ -1,0 +1,14 @@
+# --------------------------------------------------------------------------------
+# freetype
+
+FREETYPE_DIR = [ FDirName $(LIBRARIES_DIR) freetype ] ;
+
+rule LibFreeType
+{
+  PROGRAM_NAME = $(1) ;
+
+  ProgramLibraryFlags $(PROGRAM_NAME) : [ FLibPath $(FREETYPE_DIR) objs ] ;
+  ProgramLibraryFlags $(PROGRAM_NAME) : freetype219_D.lib : freetype219.lib ;
+
+  CPPFLAGS on $(PROGRAM_NAME) += [ FDefines ENABLE_FREETYPE ] [ FIncPath $(FREETYPE_DIR) include ] ;
+}

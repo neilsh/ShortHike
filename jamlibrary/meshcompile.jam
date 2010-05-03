@@ -1,0 +1,35 @@
+# --------------------------------------------------------------------------------
+# Mesh compilation directives
+
+#----------
+# Compiling meshes
+
+
+rule MeshCompile
+{
+	local BINARY_MESH = $(1) ;
+	local XML_MESH = $(2) ;
+	Depends assets : $(BINARY_MESH) ;
+	Depends publish : $(BINARY_MESH) ;
+	Depends all : $(BINARY_MESH) ;
+	Depends debug : assets ;
+	Depends release : assets ;
+	Depends $(BINARY_MESH) : $(XML_MESH) ;
+}
+
+actions MeshCompile
+{
+	$(OGRE_XML_CONVERTER) $(2) $(1)
+}
+
+
+rule MeshGroup
+{
+	local XML_MESH_FILES = $(1) ;
+	for XML_MESH in $(XML_MESH_FILES) {
+		local BINARY_MESH = $(XML_MESH:S=.mesh} ;
+		MeshCompile $(BINARY_MESH) : $(XML_MESH) ;
+	}
+}
+
+

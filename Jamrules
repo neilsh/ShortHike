@@ -1,0 +1,32 @@
+# REFACTOR: Split the old Jamrules file into more manageable subcomponents
+# and make this binding Jamrules file just include module specific component.
+
+if $(OS) = "NT" {
+  WINDOWS_DIR = [ FDirName C: windows system32 ] ;
+  CYGWIN_DIRECTORY = [ FDirName C: bin ] ;
+  ISCC = [ FDirName C: "Program Files" "Inno Setup 5" ISCC.exe ] ;
+#  VISUAL_CPP_DIR = [ FDirName C: "Program Files" "Microsoft Visual Studio .NET 2003" "Visual C++ .NET Standard 2003 - English" ] ;
+}
+
+include [ FDirName $(TOP) jamlibrary tools.jam ] ;
+include [ FDirName $(TOP) jamlibrary directory.jam ] ;
+
+include [ FDirName $(TOP) jamlibrary compilation.jam ] ;
+include [ FDirName $(TOP) jamlibrary libraries.jam ] ;
+include [ FDirName $(TOP) jamlibrary distribution.jam ] ;
+include [ FDirName $(TOP) jamlibrary version.jam ] ;
+include [ FDirName $(TOP) jamlibrary testing.jam ] ;
+
+include [ FDirName $(TOP) jamlibrary graphics.jam ] ;
+include [ FDirName $(TOP) jamlibrary tags.jam ] ;
+
+# --------------------
+# libraries
+
+include [ FDirName $(TOP) jamlibrary lib_antigrain.jam ] ;
+include [ FDirName $(TOP) jamlibrary lib_coldet.jam ] ;
+include [ FDirName $(TOP) jamlibrary lib_fmod.jam ] ;
+include [ FDirName $(TOP) jamlibrary lib_freetype.jam ] ;
+include [ FDirName $(TOP) jamlibrary lib_jasper.jam ] ;
+include [ FDirName $(TOP) jamlibrary lib_png.jam ] ;
+include [ FDirName $(TOP) jamlibrary lib_zlib.jam ] ;

@@ -1,0 +1,47 @@
+# --------------------------------------------------------------------------------
+# Rules for managing different types of build and other directories
+
+rule CreateBuildDirectory
+{
+	local DIRECTORY_NAME = $(1) ;
+	local BUILD_NAME = $(2) ;
+	local BUILD_TYPE = $(3) ;
+	local CLEAN_TARGET = "$(BUILD_TYPE)-clean" ;
+
+	Depends $(BUILD_NAME) : $(DIRECTORY_NAME) ;
+	Clean $(CLEAN_TARGET) : $(DIRECTORY_NAME) ;
+	Depends clean : $(CLEAN_TARGET) ;
+}
+
+actions CreateBuildDirectory
+{
+	MkDir $(1)
+}
+
+rule RemoveBuildDirectory
+{
+	local TARGET_DIRECTORY = $(1) ;
+	local TARGET_NAME = $(2) ;
+	local GLOBAL_TARGET = $(3) ;
+	local CLEAN_TARGET_NAME = "clean-$(TARGET_NAME)" ;
+
+	if $(GLOBAL_TARGET) != "" {
+		Depends $(GLOBAL_TARGET) : $(CLEAN_TARGET_NAME) ;
+	}
+
+	TARGET_DIRECTORY on $(CLEAN_TARGET_NAME) = $(TARGET_DIRECTORY) ;
+	RemoveDirectory $(CLEAN_TARGET_NAME) ;
+}
+
+
+rule RemoveDirectory
+{
+	local CLEAN_TARGET_NAME = $(1) ;
+	Depends clean : $(CLEAN_TARGET_NAME) ;
+}
+
+actions RemoveDirectory
+{
+	if exist $(TARGET_DIRECTORY) rmdir /S /Q $(TARGET_DIRECTORY)
+}
+

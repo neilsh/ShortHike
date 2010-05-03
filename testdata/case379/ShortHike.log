@@ -1,0 +1,913 @@
+00:18:36: Creating resource group General
+00:18:36: Registering ResourceManager for type Material
+00:18:36: Registering ResourceManager for type Mesh
+00:18:36: Registering ResourceManager for type Skeleton
+00:18:36: Loading library OgrePlatform.dll
+00:18:36: OverlayElementFactory for type Panel registered.
+00:18:36: OverlayElementFactory for type BorderPanel registered.
+00:18:36: OverlayElementFactory for type TextArea registered.
+00:18:36: Registering ResourceManager for type Font
+00:18:36: ArchiveFactory for archive type FileSystem registered.
+00:18:36: ArchiveFactory for archive type Zip registered.
+00:18:36: DevIL version: Developer's Image Library (DevIL) 1.6.5
+00:18:36: DevIL image formats: bmp dib cut dcx dds gif ico cur jpg jpe jpeg lif mdl mng jng pcx pic pix png pbm pgm pnm ppm psd pdd psp pxr sgi bw rgb rgba tga vda icb vst tif tiff wal xpm raw 
+00:18:36: Registering ResourceManager for type HighLevelGpuProgram
+00:18:36: *-*-* OGRE Initialising
+00:18:36: *-*-* Version 1.0.0 (Azathoth)
+00:18:36: ShortHike [Build Information]
+ Version: 2.1.5
+ Revision: r1117
+ Build: Thu, 14 Apr 2005 17:41:30 +0300
+
+00:18:37: DirectX version: 9.0c
+00:18:37: Loading library RenderSystem_Direct3D9
+00:18:37: D3D9 : Direct3D9 Rendering SubSystem created.
+00:18:37: D3D9: Driver Detection Starts
+00:18:37: D3D9: Driver Detection Ends
+00:18:37: Loading library RenderSystem_GL
+00:18:37: OpenGL Rendering Subsystem created.
+00:18:37: Loading library Plugin_CgProgramManager
+00:18:37: D3D9 : RenderSystem Option: Anti aliasing = None
+00:18:37: D3D9 : RenderSystem Option: Floating-point mode = Fastest
+00:18:37: D3D9 : RenderSystem Option: Full Screen = Yes
+00:18:37: D3D9 : RenderSystem Option: Rendering Device = NVIDIA GeForce 6800 Ultra
+00:18:37: D3D9 : RenderSystem Option: VSync = No
+00:18:37: D3D9 : RenderSystem Option: Video Mode = 1280 x 1024 @ 32-bit colour
+00:18:38: D3D9 : Subsystem Initialising
+00:18:38: D3D9RenderSystem::createRenderWindow "ShortHike", 1280x1024 fullscreen  miscParams: FSAA=0 FSAAQuality=0 colourDepth=32 vsync=false 
+00:18:38: D3D9 : Created D3D9 Rendering Window 'ShortHike' : 1280x1024, 32bpp
+00:18:38: Registering ResourceManager for type Texture
+00:18:38: Registering ResourceManager for type GpuProgram
+00:18:38: RenderSystem capabilities
+00:18:38: -------------------------
+00:18:38:  * Hardware generation of mipmaps: yes
+00:18:38:  * Texture blending: yes
+00:18:38:  * Anisotropic texture filtering: yes
+00:18:38:  * Dot product texture operation: yes
+00:18:38:  * Cube mapping: yes
+00:18:38:  * Hardware stencil buffer: yes
+00:18:38:    - Stencil depth: 8
+00:18:38:    - Two sided stencil support: yes
+00:18:38:    - Wrap stencil values: yes
+00:18:38:  * Hardware vertex / index buffers: yes
+00:18:38:  * Vertex programs: yes
+00:18:38:    - Max vertex program version: vs_3_0
+00:18:38:  * Fragment programs: yes
+00:18:38:    - Max fragment program version: ps_3_0
+00:18:38:  * Texture Compression: yes
+00:18:38:    - DXT: yes
+00:18:38:    - VTC: no
+00:18:38:  * Scissor Rectangle: yes
+00:18:38:  * Hardware Occlusion Query: yes
+00:18:38:  * User clip planes: yes
+00:18:38:  * VET_UBYTE4 vertex element type: yes
+00:18:38:  * Infinite far plane projection: no
+00:18:38:  * Hardware render-to-texture: yes
+00:18:38:  * Floating point textures: no
+00:18:38:  * Non-power-of-two textures: yes
+00:18:38:  * Volume textures: yes
+00:18:38: ***************************************
+00:18:38: *** D3D9 : Subsystem Initialised OK ***
+00:18:38: ***************************************
+00:18:38: ResourceBackgroundQueue - threading disabled
+00:18:38: Particle Renderer Type 'billboard' registered
+00:18:38: Added resource location 'assets/' of type 'FileSystem' to resource group 'General' with recursive option
+00:18:38: Added resource location 'add-on/' of type 'FileSystem' to resource group 'General' with recursive option
+00:18:38: Directory add-on added successfully.
+00:18:38: Opening package zip files
+00:18:38: Added resource location 'local' of type 'FileSystem' to resource group 'General' with recursive option
+00:18:38: Parsing scripts for resource group General
+00:18:39: Parsing script materials/program/OffsetMapping.program
+00:18:39: Parsing script materials/program/PlanetSurface.program
+00:18:39: Parsing script modules/mars/material/biosphere.material
+00:18:39: Parsing script modules/mars/material/crew.material
+00:18:39: Parsing script modules/mars/material/dome.material
+00:18:39: Parsing script modules/mars/material/explorer_camp.material
+00:18:39: Parsing script modules/mars/material/factory.material
+00:18:39: Parsing script modules/mars/material/fuel_cell.material
+00:18:39: Parsing script modules/mars/material/geothermal_site.material
+00:18:39: Parsing script modules/mars/material/greenhouse.material
+00:18:39: Parsing script modules/mars/material/habitation.material
+00:18:39: Parsing script modules/mars/material/mechanical_shop.material
+00:18:39: Parsing script modules/mars/material/mine.material
+00:18:39: Parsing script modules/mars/material/nuclear_reactor.material
+00:18:39: Parsing script modules/mars/material/pump.material
+00:18:39: Parsing script modules/mars/material/research_station.material
+00:18:39: Parsing script modules/mars/material/solar_panel.material
+00:18:39: Parsing script modules/mars/material/water_tents.material
+00:18:39: Parsing script modules/mars/material/windmill.material
+00:18:39: Parsing script modules/orbit/material/algaetank.material
+00:18:39: Parsing script modules/orbit/material/crew.material
+00:18:39: Parsing script modules/orbit/material/factory.material
+00:18:39: Parsing script modules/orbit/material/heatpipes.material
+00:18:39: Parsing script modules/orbit/material/keel.material
+00:18:39: Parsing script modules/orbit/material/LifeSupport.material
+00:18:39: Parsing script modules/orbit/material/node.material
+00:18:39: Parsing script modules/orbit/material/RadiatorPanel.material
+00:18:39: Parsing script sites/planet_ground.material
+00:18:39: Parsing script sites/skybox.material
+00:18:39: Parsing script tiles/tiles.material
+00:18:39: Parsing script user_interface/GroundScreen.material
+00:18:39: Parsing script user_interface/manipulators.material
+00:18:39: Parsing script modules/mars/script/biosphere.lua
+00:18:39: Parsing script modules/mars/script/dome.lua
+00:18:39: Parsing script modules/mars/script/explorer_camp.lua
+00:18:39: Parsing script modules/mars/script/factory.lua
+00:18:39: Parsing script modules/mars/script/fuel_cell.lua
+00:18:39: Parsing script modules/mars/script/geothermal_site.lua
+00:18:39: Parsing script modules/mars/script/greenhouse.lua
+00:18:39: Parsing script modules/mars/script/habitation.lua
+00:18:39: Parsing script modules/mars/script/mechanical_shop.lua
+00:18:39: Parsing script modules/mars/script/mine.lua
+00:18:39: Parsing script modules/mars/script/nuclear_reactor.lua
+00:18:39: Parsing script modules/mars/script/pump.lua
+00:18:39: Parsing script modules/mars/script/research_station.lua
+00:18:39: Parsing script modules/mars/script/solar_panel.lua
+00:18:39: Parsing script modules/mars/script/water_tents.lua
+00:18:39: Parsing script modules/mars/script/windmill.lua
+00:18:39: Parsing script modules/orbit/script/AlgaeTank.lua
+00:18:39: LuaRoot::parseModule - modules/orbit/script/AlgaeTank.lua
+00:18:39: Mesh: Loading modules/orbit/mesh/algaetank.mesh.
+00:18:39: WARNING: modules/orbit/mesh/algaetank.mesh is an older format ([MeshSerializer_v1.20]); you should upgrade it as soon as possible using the OgreMeshUpgrade tool.
+00:18:39: Parsing script modules/orbit/script/Crew.lua
+00:18:39: LuaRoot::parseModule - modules/orbit/script/Crew.lua
+00:18:39: Mesh: Loading modules/orbit/mesh/crew.mesh.
+00:18:39: WARNING: modules/orbit/mesh/crew.mesh is an older format ([MeshSerializer_v1.20]); you should upgrade it as soon as possible using the OgreMeshUpgrade tool.
+00:18:39: Parsing script modules/orbit/script/Factory.lua
+00:18:39: LuaRoot::parseModule - modules/orbit/script/Factory.lua
+00:18:39: Mesh: Loading modules/orbit/mesh/factory.mesh.
+00:18:39: WARNING: modules/orbit/mesh/factory.mesh is an older format ([MeshSerializer_v1.20]); you should upgrade it as soon as possible using the OgreMeshUpgrade tool.
+00:18:39: Parsing script modules/orbit/script/Heatpipes.lua
+00:18:39: LuaRoot::parseModule - modules/orbit/script/Heatpipes.lua
+00:18:39: Mesh: Loading modules/orbit/mesh/heatpipes.mesh.
+00:18:39: WARNING: modules/orbit/mesh/heatpipes.mesh is an older format ([MeshSerializer_v1.20]); you should upgrade it as soon as possible using the OgreMeshUpgrade tool.
+00:18:39: Parsing script modules/orbit/script/Keel.lua
+00:18:39: LuaRoot::parseModule - modules/orbit/script/Keel.lua
+00:18:39: Mesh: Loading modules/orbit/mesh/keel.mesh.
+00:18:39: WARNING: modules/orbit/mesh/keel.mesh is an older format ([MeshSerializer_v1.20]); you should upgrade it as soon as possible using the OgreMeshUpgrade tool.
+00:18:39: Parsing script modules/orbit/script/LifeSupport.lua
+00:18:39: LuaRoot::parseModule - modules/orbit/script/LifeSupport.lua
+00:18:39: Mesh: Loading modules/orbit/mesh/LifeSupport.mesh.
+00:18:39: WARNING: modules/orbit/mesh/LifeSupport.mesh is an older format ([MeshSerializer_v1.20]); you should upgrade it as soon as possible using the OgreMeshUpgrade tool.
+00:18:39: Parsing script modules/orbit/script/node.lua
+00:18:39: LuaRoot::parseModule - modules/orbit/script/node.lua
+00:18:39: Mesh: Loading modules/orbit/mesh/node.mesh.
+00:18:39: WARNING: modules/orbit/mesh/node.mesh is an older format ([MeshSerializer_v1.20]); you should upgrade it as soon as possible using the OgreMeshUpgrade tool.
+00:18:39: Parsing script modules/orbit/script/RadiatorPanel.lua
+00:18:39: LuaRoot::parseModule - modules/orbit/script/RadiatorPanel.lua
+00:18:39: Mesh: Loading modules/orbit/mesh/RadiatorPanel.mesh.
+00:18:39: WARNING: modules/orbit/mesh/RadiatorPanel.mesh is an older format ([MeshSerializer_v1.20]); you should upgrade it as soon as possible using the OgreMeshUpgrade tool.
+00:18:39: Parsing script scripts/Main.lua
+00:18:39: Parsing script tiles/tileLua.lua
+00:18:39: Finished parsing scripts for resource group General
+00:18:39: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,16x16x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,16x16x1.
+00:18:40: Texture: frame_texture_FileDialog: Loading 1 faces(PF_A8B8G8R8,16x16x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,16x16x1.
+00:18:40: Texture: sites\starmap_fr.jpg: Loading 1 faces(PF_B8G8R8,2048x2048x1) with 11 generated mipmaps from Image. Internal format is PF_X8R8G8B8,2048x2048x1.
+00:18:40: Texture: sites\starmap_bk.jpg: Loading 1 faces(PF_B8G8R8,2048x2048x1) with 11 generated mipmaps from Image. Internal format is PF_X8R8G8B8,2048x2048x1.
+00:18:41: Texture: sites\starmap_lf.jpg: Loading 1 faces(PF_B8G8R8,2048x2048x1) with 11 generated mipmaps from Image. Internal format is PF_X8R8G8B8,2048x2048x1.
+00:18:41: Texture: sites\starmap_rt.jpg: Loading 1 faces(PF_B8G8R8,2048x2048x1) with 11 generated mipmaps from Image. Internal format is PF_X8R8G8B8,2048x2048x1.
+00:18:42: Texture: sites\starmap_up.jpg: Loading 1 faces(PF_B8G8R8,2048x2048x1) with 11 generated mipmaps from Image. Internal format is PF_X8R8G8B8,2048x2048x1.
+00:18:42: Texture: sites\starmap_dn.jpg: Loading 1 faces(PF_B8G8R8,2048x2048x1) with 11 generated mipmaps from Image. Internal format is PF_X8R8G8B8,2048x2048x1.
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_0_0: Loading 1 faces(PF_R8G8B8A8,64x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,64x64x1.
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_1_0: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_2_0: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_3_0: Loading 1 faces(PF_R8G8B8A8,64x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,64x64x1.
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_0_1: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_1_1: Loading 1 faces(PF_R8G8B8A8,256x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x256x1.
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_2_1: Loading 1 faces(PF_R8G8B8A8,256x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x256x1.
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_3_1: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_0_2: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_1_2: Loading 1 faces(PF_R8G8B8A8,256x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x256x1.
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_2_2: Loading 1 faces(PF_R8G8B8A8,256x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x256x1.
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_3_2: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_0_3: Loading 1 faces(PF_R8G8B8A8,64x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,64x64x1.
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_1_3: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_2_3: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_3_3: Loading 1 faces(PF_R8G8B8A8,64x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,64x64x1.
+00:18:42: Texture: materials/texture/placeholder_normalmap.tga: Loading 1 faces(PF_A8R8G8B8,64x64x1) with 0 generated mipmaps from Image. Internal format is PF_A8R8G8B8,64x64x1.
+00:18:42: Texture: materials/texture/patch_fader.png: Loading 1 faces(PF_A8B8G8R8,512x512x1) with 9 generated mipmaps from Image. Internal format is PF_A8R8G8B8,512x512x1.
+00:18:42: PlanetMesh frontBuffer initialized
+00:18:42: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_0_0: Loading 1 faces(PF_R8G8B8A8,64x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,64x64x1.
+00:18:42: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_1_0: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:42: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_2_0: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:42: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_3_0: Loading 1 faces(PF_R8G8B8A8,64x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,64x64x1.
+00:18:42: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_0_1: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:42: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_1_1: Loading 1 faces(PF_R8G8B8A8,256x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x256x1.
+00:18:42: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_2_1: Loading 1 faces(PF_R8G8B8A8,256x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x256x1.
+00:18:42: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_3_1: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:42: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_0_2: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:42: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_1_2: Loading 1 faces(PF_R8G8B8A8,256x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x256x1.
+00:18:42: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_2_2: Loading 1 faces(PF_R8G8B8A8,256x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x256x1.
+00:18:42: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_3_2: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:42: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_0_3: Loading 1 faces(PF_R8G8B8A8,64x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,64x64x1.
+00:18:42: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_1_3: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:42: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_2_3: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:42: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_3_3: Loading 1 faces(PF_R8G8B8A8,64x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,64x64x1.
+00:18:42: PlanetMesh backBuffer initialized
+00:18:42: ECW SetView Error: ECW error SetView() Error - Specified image region has a zero width or height
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_0_0: Unloading Image
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_0_0: Loading 1 faces(PF_R8G8B8A8,64x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,64x64x1.
+00:18:42: ECW SetView Error: ECW error SetView() Error - Specified image region has a zero width or height
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_1_0: Unloading Image
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_1_0: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:42: ECW SetView Error: ECW error SetView() Error - Specified image region has a zero width or height
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_2_0: Unloading Image
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_2_0: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:42: ECW SetView Error: ECW error SetView() Error - Specified image region has a zero width or height
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_3_0: Unloading Image
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_3_0: Loading 1 faces(PF_R8G8B8A8,64x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,64x64x1.
+00:18:42: ECW SetView Error: ECW error SetView() Error - Specified image region has a zero width or height
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_0_1: Unloading Image
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_0_1: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:42: ECW SetView Error: ECW error SetView() Error - Specified image region has a zero width or height
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_1_1: Unloading Image
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_1_1: Loading 1 faces(PF_R8G8B8A8,256x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x256x1.
+00:18:42: ECW SetView Error: ECW error SetView() Error - Specified image region has a zero width or height
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_2_1: Unloading Image
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_2_1: Loading 1 faces(PF_R8G8B8A8,256x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x256x1.
+00:18:42: ECW SetView Error: ECW error SetView() Error - Specified image region has a zero width or height
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_3_1: Unloading Image
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_3_1: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:42: ECW SetView Error: ECW error SetView() Error - Specified image region has a zero width or height
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_0_2: Unloading Image
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_0_2: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:42: ECW SetView Error: ECW error SetView() Error - Specified image region has a zero width or height
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_1_2: Unloading Image
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_1_2: Loading 1 faces(PF_R8G8B8A8,256x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x256x1.
+00:18:42: ECW SetView Error: ECW error SetView() Error - Specified image region has a zero width or height
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_2_2: Unloading Image
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_2_2: Loading 1 faces(PF_R8G8B8A8,256x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x256x1.
+00:18:42: ECW SetView Error: ECW error SetView() Error - Specified image region has a zero width or height
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_3_2: Unloading Image
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_3_2: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:42: ECW SetView Error: ECW error SetView() Error - Specified image region has a zero width or height
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_0_3: Unloading Image
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_0_3: Loading 1 faces(PF_R8G8B8A8,64x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,64x64x1.
+00:18:42: ECW SetView Error: ECW error SetView() Error - Specified image region has a zero width or height
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_1_3: Unloading Image
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_1_3: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:42: ECW SetView Error: ECW error SetView() Error - Specified image region has a zero width or height
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_2_3: Unloading Image
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_2_3: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:42: ECW SetView Error: ECW error SetView() Error - Specified image region has a zero width or height
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_3_3: Unloading Image
+00:18:42: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_3_3: Loading 1 faces(PF_R8G8B8A8,64x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,64x64x1.
+00:18:43: ECW SetView Error: ECW error SetView() Error - Specified image region has a zero width or height
+00:18:43: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,16x16x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,16x16x1.
+00:18:43: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,16x16x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,16x16x1.
+00:18:43: Mesh: Loading user_interface/selection.mesh.
+00:18:43: Texture: user_interface/SelectionColor.png: Loading 1 faces(PF_A8B8G8R8,128x128x1) with 7 generated mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:43: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_0_0: Unloading Image
+00:18:43: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_0_0: Loading 1 faces(PF_R8G8B8A8,64x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,64x64x1.
+00:18:43: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_1_0: Unloading Image
+00:18:43: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_1_0: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:43: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_2_0: Unloading Image
+00:18:43: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_2_0: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:43: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_3_0: Unloading Image
+00:18:43: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_3_0: Loading 1 faces(PF_R8G8B8A8,64x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,64x64x1.
+00:18:43: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_0_1: Unloading Image
+00:18:43: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_0_1: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:43: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_1_1: Unloading Image
+00:18:43: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_1_1: Loading 1 faces(PF_R8G8B8A8,256x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x256x1.
+00:18:43: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_2_1: Unloading Image
+00:18:43: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_2_1: Loading 1 faces(PF_R8G8B8A8,256x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x256x1.
+00:18:43: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_3_1: Unloading Image
+00:18:43: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_3_1: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:44: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_0_2: Unloading Image
+00:18:44: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_0_2: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:44: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_1_2: Unloading Image
+00:18:44: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_1_2: Loading 1 faces(PF_R8G8B8A8,256x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x256x1.
+00:18:44: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_2_2: Unloading Image
+00:18:44: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_2_2: Loading 1 faces(PF_R8G8B8A8,256x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x256x1.
+00:18:44: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_3_2: Unloading Image
+00:18:44: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_3_2: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:44: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_0_3: Unloading Image
+00:18:44: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_0_3: Loading 1 faces(PF_R8G8B8A8,64x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,64x64x1.
+00:18:44: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_1_3: Unloading Image
+00:18:44: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_1_3: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:44: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_2_3: Unloading Image
+00:18:44: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_2_3: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:44: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_3_3: Unloading Image
+00:18:44: Texture: PlanetMesh_frontBuffer_sites/earth_diffuse.ecw0_sites/earth_diffuse.ecw_3_3: Loading 1 faces(PF_R8G8B8A8,64x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,64x64x1.
+00:18:44: LUA: Initializing scripting system
+00:18:44: LUA: Main.lua loaded
+00:18:44: LUA: Executing main()
+00:18:44: LUA: Entering main initialization file
+00:18:44: LUA: Loading script file: assets/modules/mars/script/biosphere.lua
+00:18:44: LUA: Registering module: modules/biosphere
+00:18:44: LUA: Loading script file: assets/modules/mars/script/dome.lua
+00:18:44: LUA: Registering module: modules/dome
+00:18:44: LUA: Loading script file: assets/modules/mars/script/explorer_camp.lua
+00:18:44: LUA: Registering module: modules/explorer_camp
+00:18:44: LUA: Loading script file: assets/modules/mars/script/factory.lua
+00:18:44: LUA: Loading script file: assets/modules/mars/script/fuel_cell.lua
+00:18:44: LUA: Registering module: modules/fuel_cell
+00:18:44: LUA: Loading script file: assets/modules/mars/script/geothermal_site.lua
+00:18:44: LUA: Registering module: modules/geothermal_site
+00:18:44: LUA: Loading script file: assets/modules/mars/script/greenhouse.lua
+00:18:44: LUA: Registering module: modules/greenhouse
+00:18:44: LUA: Loading script file: assets/modules/mars/script/habitation.lua
+00:18:44: LUA: Registering module: modules/habitation
+00:18:44: LUA: Loading script file: assets/modules/mars/script/mechanical_shop.lua
+00:18:44: LUA: Registering module: modules/mechanical_shop
+00:18:44: LUA: Loading script file: assets/modules/mars/script/mine.lua
+00:18:44: LUA: Registering module: modules/mine
+00:18:44: LUA: Loading script file: assets/modules/mars/script/nuclear_reactor.lua
+00:18:44: LUA: Registering module: modules/nuclear_reactor
+00:18:44: LUA: Loading script file: assets/modules/mars/script/pump.lua
+00:18:44: LUA: Registering module: modules/pump
+00:18:44: LUA: Loading script file: assets/modules/mars/script/research_station.lua
+00:18:44: LUA: Registering module: modules/research_station
+00:18:44: LUA: Loading script file: assets/modules/mars/script/solar_panel.lua
+00:18:44: LUA: Registering module: modules/solar_panel
+00:18:44: LUA: Loading script file: assets/modules/mars/script/water_tents.lua
+00:18:44: LUA: Registering module: modules/water_tents
+00:18:44: LUA: Loading script file: assets/modules/mars/script/windmill.lua
+00:18:44: LUA: Registering module: modules/windmill
+00:18:44: LUA: Loading script file: assets/modules/orbit/script/AlgaeTank.lua
+00:18:44: LUA: Loading script file: assets/modules/orbit/script/Crew.lua
+00:18:44: LUA: Loading script file: assets/modules/orbit/script/Factory.lua
+00:18:44: LUA: Loading script file: assets/modules/orbit/script/Heatpipes.lua
+00:18:44: LUA: Loading script file: assets/modules/orbit/script/Keel.lua
+00:18:44: LUA: Loading script file: assets/modules/orbit/script/LifeSupport.lua
+00:18:44: LUA: Loading script file: assets/modules/orbit/script/RadiatorPanel.lua
+00:18:44: LUA: Loading script file: assets/modules/orbit/script/node.lua
+00:18:44: LUA: main() returned
+00:18:44: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,16x16x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,16x16x1.
+00:18:44: Texture: frame_texture_DesignerMode_HudMenu0: Loading 1 faces(PF_A8B8G8R8,16x16x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,16x16x1.
+00:18:44: Texture: frame_texture_DesignerMode_HudMenu1: Loading 1 faces(PF_A8B8G8R8,16x16x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,16x16x1.
+00:18:44: sources\property\DataFile.cpp(80) : SQLite3 error: no such table: info
+00:18:44: sources\property\DataFile.cpp(81) : SQLite3 error: no such table: info
+00:18:44: sources\property\DataFile.cpp(83) : SQLite3 error: no such table: item
+00:18:44: sources\property\DataFile.cpp(84) : SQLite3 error: no such table: item
+00:18:44: sources\property\DataFile.cpp(87) : SQLite3 error: no such table: property_string
+00:18:44: sources\property\DataFile.cpp(88) : SQLite3 error: no such table: property_real
+00:18:44: sources\property\DataFile.cpp(89) : SQLite3 error: no such table: property_item
+00:18:44: sources\property\DataFile.cpp(91) : SQLite3 error: no such table: property_item_vector
+00:18:44: sources\property\DataFile.cpp(93) : SQLite3 error: no such table: property_vector3
+00:18:44: sources\property\DataFile.cpp(95) : SQLite3 error: no such table: property_quaternion
+00:18:44: sources\property\DataFile.cpp(97) : SQLite3 error: no such table: property_string
+00:18:44: sources\property\DataFile.cpp(98) : SQLite3 error: no such table: property_real
+00:18:44: sources\property\DataFile.cpp(99) : SQLite3 error: no such table: property_item
+00:18:44: sources\property\DataFile.cpp(101) : SQLite3 error: no such table: property_item_vector
+00:18:44: sources\property\DataFile.cpp(103) : SQLite3 error: no such table: property_vector3
+00:18:44: sources\property\DataFile.cpp(105) : SQLite3 error: no such table: property_quaternion
+00:18:44: Texture: modules/orbit/texture/node_normalmap.tga: Loading 1 faces(PF_A8R8G8B8,512x512x1) with 0 generated mipmaps from Image. Internal format is PF_A8R8G8B8,512x512x1.
+00:18:44: Texture: modules/orbit/texture/node_diffuse.jpg: Loading 1 faces(PF_B8G8R8,512x512x1) with 9 generated mipmaps from Image. Internal format is PF_X8R8G8B8,512x512x1.
+00:18:44: Mesh: Loading user_interface/port.mesh.
+00:18:44: Creating viewport on target 'ShortHike', rendering from camera 'UserCamera', relative dimensions L: 0.00 T: 0.00 W: 1.00 H: 1.00 ZOrder: 0
+00:18:44: Viewport for camera 'UserCamera', actual dimensions L: 0 T: 0 W: 1280 H: 1024
+00:18:44: Texture: spot_shadow_fade.png: Loading 1 faces(PF_B8G8R8,128x128x1) with 7 generated mipmaps from Image. Internal format is PF_X8R8G8B8,128x128x1.
+00:18:44: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:45: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:45: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:45: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:45: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:45: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_0_0: Unloading Image
+00:18:45: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_0_0: Loading 1 faces(PF_R8G8B8A8,64x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,64x64x1.
+00:18:45: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:45: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:45: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:45: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:45: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:45: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:45: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:45: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:45: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:45: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:45: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_1_0: Unloading Image
+00:18:45: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_1_0: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:45: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:45: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:45: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:45: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:45: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:45: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:45: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:45: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:45: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:45: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:45: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_2_0: Unloading Image
+00:18:45: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_2_0: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:45: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:45: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:45: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:45: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:45: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:45: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:45: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:45: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:45: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:45: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:45: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:45: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:45: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:45: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:46: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_3_0: Unloading Image
+00:18:46: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_3_0: Loading 1 faces(PF_R8G8B8A8,64x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,64x64x1.
+00:18:46: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:46: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:46: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:46: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:46: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:46: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:46: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:46: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:46: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:46: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:46: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:46: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:46: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:46: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:46: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:46: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:46: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:46: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:46: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:46: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:46: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:46: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:46: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:46: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:46: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:46: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:46: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:46: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:46: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:46: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:46: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_0_1: Unloading Image
+00:18:46: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_0_1: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:46: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:46: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:46: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:46: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:46: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:46: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:46: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:46: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:46: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:46: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:46: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:46: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:46: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:46: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:46: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:46: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:46: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:46: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:46: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:46: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:46: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:46: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:46: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:46: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:46: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:46: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:46: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:46: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:46: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:46: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:46: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:46: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:46: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:46: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:46: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:46: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu0: Loading 1 faces(PF_A8B8G8R8,256x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x128x1.
+00:18:46: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:46: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:46: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:46: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:46: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:46: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu0: Unloading Image
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu0: Loading 1 faces(PF_A8B8G8R8,256x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x128x1.
+00:18:46: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:46: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:46: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:46: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:46: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:46: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu0: Unloading Image
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu0: Loading 1 faces(PF_A8B8G8R8,256x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x128x1.
+00:18:46: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:46: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:46: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:46: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:46: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:46: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu0: Unloading Image
+00:18:46: Texture: frame_texture_DesignerMode_HudMenu0: Loading 1 faces(PF_A8B8G8R8,256x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x128x1.
+00:18:47: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:47: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:47: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:47: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:47: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:47: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu0: Unloading Image
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu0: Loading 1 faces(PF_A8B8G8R8,256x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x128x1.
+00:18:47: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:47: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:47: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:47: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:47: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:47: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu0: Unloading Image
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu0: Loading 1 faces(PF_A8B8G8R8,256x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x128x1.
+00:18:47: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_1_1: Unloading Image
+00:18:47: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_1_1: Loading 1 faces(PF_R8G8B8A8,256x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x256x1.
+00:18:47: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:47: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:47: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:47: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:47: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:47: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu0: Unloading Image
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu0: Loading 1 faces(PF_A8B8G8R8,256x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x128x1.
+00:18:47: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:47: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:47: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:47: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:47: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:47: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu0: Unloading Image
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu0: Loading 1 faces(PF_A8B8G8R8,256x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x128x1.
+00:18:47: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:47: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:47: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:47: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:47: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:47: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu0: Unloading Image
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu0: Loading 1 faces(PF_A8B8G8R8,256x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x128x1.
+00:18:47: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:47: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:47: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:47: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:47: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:47: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu0: Unloading Image
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu0: Loading 1 faces(PF_A8B8G8R8,256x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x128x1.
+00:18:47: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:47: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:47: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:47: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:47: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:47: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu0: Unloading Image
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu0: Loading 1 faces(PF_A8B8G8R8,256x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x128x1.
+00:18:47: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:47: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:47: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:47: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:47: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:47: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu0: Unloading Image
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu0: Loading 1 faces(PF_A8B8G8R8,256x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x128x1.
+00:18:47: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:47: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:47: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:47: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:47: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:47: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu0: Unloading Image
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu0: Loading 1 faces(PF_A8B8G8R8,256x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x128x1.
+00:18:47: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:47: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:47: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:47: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:47: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:47: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu0: Unloading Image
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu0: Loading 1 faces(PF_A8B8G8R8,256x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x128x1.
+00:18:47: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:47: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:47: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:47: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:47: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:47: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu0: Unloading Image
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu0: Loading 1 faces(PF_A8B8G8R8,256x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x128x1.
+00:18:47: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:47: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:47: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:47: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:47: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:47: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu: Unloading Image
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu: Loading 1 faces(PF_A8B8G8R8,256x64x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x64x1.
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu0: Unloading Image
+00:18:47: Texture: frame_texture_DesignerMode_HudMenu0: Loading 1 faces(PF_A8B8G8R8,256x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x128x1.
+00:18:47: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:47: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:47: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:47: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:47: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:47: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:47: Texture: frame_texture_FileDialog: Loading 1 faces(PF_A8B8G8R8,512x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x512x1.
+00:18:48: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_2_1: Unloading Image
+00:18:48: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_2_1: Loading 1 faces(PF_R8G8B8A8,256x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x256x1.
+00:18:48: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:48: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:48: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:48: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:48: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:48: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:48: Texture: frame_texture_FileDialog: Unloading Image
+00:18:48: Texture: frame_texture_FileDialog: Loading 1 faces(PF_A8B8G8R8,512x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x512x1.
+00:18:48: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:48: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:48: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:48: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:48: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:48: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:48: Texture: frame_texture_FileDialog: Unloading Image
+00:18:48: Texture: frame_texture_FileDialog: Loading 1 faces(PF_A8B8G8R8,512x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x512x1.
+00:18:48: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:48: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:48: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:48: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:48: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:48: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:48: Texture: frame_texture_FileDialog: Unloading Image
+00:18:48: Texture: frame_texture_FileDialog: Loading 1 faces(PF_A8B8G8R8,512x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x512x1.
+00:18:48: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:48: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:48: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:48: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:48: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:48: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:48: Texture: frame_texture_FileDialog: Unloading Image
+00:18:48: Texture: frame_texture_FileDialog: Loading 1 faces(PF_A8B8G8R8,512x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x512x1.
+00:18:48: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:48: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:48: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:48: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:48: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:48: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:48: Texture: frame_texture_FileDialog: Unloading Image
+00:18:48: Texture: frame_texture_FileDialog: Loading 1 faces(PF_A8B8G8R8,512x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x512x1.
+00:18:48: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_3_1: Unloading Image
+00:18:48: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_3_1: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:48: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:48: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:48: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:48: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:48: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:48: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:48: Texture: frame_texture_FileDialog: Unloading Image
+00:18:48: Texture: frame_texture_FileDialog: Loading 1 faces(PF_A8B8G8R8,512x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x512x1.
+00:18:48: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:48: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:48: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:48: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:48: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:48: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:48: Texture: frame_texture_FileDialog: Unloading Image
+00:18:48: Texture: frame_texture_FileDialog: Loading 1 faces(PF_A8B8G8R8,512x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x512x1.
+00:18:48: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:48: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:48: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:48: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:48: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:48: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:48: Texture: frame_texture_FileDialog: Unloading Image
+00:18:48: Texture: frame_texture_FileDialog: Loading 1 faces(PF_A8B8G8R8,512x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x512x1.
+00:18:48: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:48: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:48: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:48: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:48: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:48: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:48: Texture: frame_texture_FileDialog: Unloading Image
+00:18:48: Texture: frame_texture_FileDialog: Loading 1 faces(PF_A8B8G8R8,512x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x512x1.
+00:18:49: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:49: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:49: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:49: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:49: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:49: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:49: Texture: frame_texture_FileDialog: Unloading Image
+00:18:49: Texture: frame_texture_FileDialog: Loading 1 faces(PF_A8B8G8R8,512x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x512x1.
+00:18:49: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_0_2: Unloading Image
+00:18:49: Texture: PlanetMesh_backBuffer_sites/earth_diffuse.ecw1_sites/earth_diffuse.ecw_0_2: Loading 1 faces(PF_R8G8B8A8,128x128x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,128x128x1.
+00:18:49: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:49: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:49: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:49: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:49: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:49: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:49: Texture: frame_texture_FileDialog: Unloading Image
+00:18:49: Texture: frame_texture_FileDialog: Loading 1 faces(PF_A8B8G8R8,512x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x512x1.
+00:18:49: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:49: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:49: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:49: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:49: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:49: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:49: Texture: frame_texture_FileDialog: Unloading Image
+00:18:49: Texture: frame_texture_FileDialog: Loading 1 faces(PF_A8B8G8R8,512x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x512x1.
+00:18:49: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:49: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:49: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:49: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:49: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:49: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:49: Texture: frame_texture_FileDialog: Unloading Image
+00:18:49: Texture: frame_texture_FileDialog: Loading 1 faces(PF_A8B8G8R8,512x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x512x1.
+00:18:49: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:49: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:49: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:49: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:49: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:49: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:49: Texture: frame_texture_FileDialog: Unloading Image
+00:18:49: Texture: frame_texture_FileDialog: Loading 1 faces(PF_A8B8G8R8,512x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x512x1.
+00:18:49: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:49: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:49: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:49: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:49: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:49: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:49: Texture: frame_texture_FileDialog: Unloading Image
+00:18:49: Texture: frame_texture_FileDialog: Loading 1 faces(PF_A8B8G8R8,512x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x512x1.
+00:18:49: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:49: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:49: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:49: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:49: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:49: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:49: Texture: frame_texture_FileDialog: Unloading Image
+00:18:49: Texture: frame_texture_FileDialog: Loading 1 faces(PF_A8B8G8R8,512x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x512x1.
+00:18:49: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:49: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:49: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:49: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:49: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:49: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:49: Texture: frame_texture_FileDialog: Unloading Image
+00:18:49: Texture: frame_texture_FileDialog: Loading 1 faces(PF_A8B8G8R8,512x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x512x1.
+00:18:50: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:50: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:50: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:50: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:50: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:50: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:50: Texture: frame_texture_FileDialog: Unloading Image
+00:18:50: Texture: frame_texture_FileDialog: Loading 1 faces(PF_A8B8G8R8,512x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x512x1.
+00:18:50: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:50: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:50: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:50: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:50: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:50: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:50: Texture: frame_texture_FileDialog: Unloading Image
+00:18:50: Texture: frame_texture_FileDialog: Loading 1 faces(PF_A8B8G8R8,512x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x512x1.
+00:18:50: Texture: frame_texture_PrototypePalette: Unloading Image
+00:18:50: Texture: frame_texture_PrototypePalette: Loading 1 faces(PF_A8B8G8R8,256x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,256x512x1.
+00:18:50: Texture: frame_texture_OrbitScreen/StateInfo: Unloading Image
+00:18:50: Texture: frame_texture_OrbitScreen/StateInfo: Loading 1 faces(PF_A8B8G8R8,1024x32x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,1024x32x1.
+00:18:50: Texture: frame_texture_OrbitScreen/OrbitInfo: Unloading Image
+00:18:50: Texture: frame_texture_OrbitScreen/OrbitInfo: Loading 1 faces(PF_A8B8G8R8,512x256x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x256x1.
+00:18:50: Texture: frame_texture_FileDialog: Unloading Image
+00:18:50: Texture: frame_texture_FileDialog: Loading 1 faces(PF_A8B8G8R8,512x512x1) with 0 custom mipmaps from Image. Internal format is PF_A8R8G8B8,512x512x1.
+00:18:50: An exception has been thrown!
+
+-----------------------------------
+Details:
+-----------------------------------
+Error #: 9
+Function: checkConditional
+Description: newValue->getClassName() == classNameItem has valid class. 
+File: c:\work\shorthike\sources\property\ItemProperty.hpp
+Line: 31
+Stack unwinding: <<beginning of stack>>
+00:18:50: An exception has been thrown!
+
+-----------------------------------
+Details:
+-----------------------------------
+Error #: 9
+Function: checkConditional
+Description: newValue->getClassName() == classNameItem has valid class. 
+File: c:\work\shorthike\sources\property\ItemProperty.hpp
+Line: 31
+Stack unwinding: <<beginning of stack>>
+

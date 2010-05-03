@@ -1,0 +1,16 @@
+DATATYPES
+int
+string
+
+
+ Objects are extended using behaviours. Behaviours
+are
+
+Interface: Objects (supported by all objects)
+list interfaces(a set of interfaces supported)
+
+Container
+
+ -> Item
+     -> Room (Can hold people and other object
+     -> Container

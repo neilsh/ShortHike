@@ -1,0 +1,15 @@
+# --------------------------------------------------------------------------------
+# jasper
+
+JASPER_DIR = [ FDirName $(LIBRARIES_DIR) jasper ] ;
+
+rule LibJasper
+{
+  PROGRAM_NAME = $(1) ;
+
+  ProgramLibraryFlags $(PROGRAM_NAME) : [ FLibPath $(JASPER_DIR) src msvc win32_debug ] libjasper.lib
+  :  [ FLibPath $(JASPER_DIR) src msvc win32_release ] libjasper.lib ;
+
+  CPPFLAGS on $(PROGRAM_NAME) += [ FIncPath $(JASPER_DIR) src libjasper include ] [ FDefines ENABLE_JASPER ]
+  [ FDefines JAS_WIN_MSVC_BUILD ] ;
+}

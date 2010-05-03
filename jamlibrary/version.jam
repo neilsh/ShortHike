@@ -1,0 +1,27 @@
+#--------------------------------------------------------------------------------
+# Tools for managing build and version information
+
+rule RevisionHeader
+{
+  local HEADER_NAME = $(1) ;
+  local PROGRAM_NAME = $(2) ;
+  local HEADER_FILE = [ FDirName $(SEARCH_SOURCE) $(HEADER_NAME) ] ;
+  
+  GENERATED_HEADERS on release-$(PROGRAM_NAME) += $(HEADER_FILE) ;
+#  GENERATED_HEADERS on debug-$(PROGRAM_NAME) += $(HEADER_FILE) ;
+  BuildRevisionHeader $(HEADER_FILE) ;
+}
+
+rule BuildRevisionHeader
+{
+	ALWAYS $(HEADER_FILE) ;
+}
+
+
+actions BuildRevisionHeader
+{
+	bash -c 'echo const char[] BUILD_REVISION = \"`svn info .|grep Revision|cut -c 11-`\"\;' >$(1)
+	bash -c 'echo const char[] BUILD_DATE = \"`cyg_date -R`\"\;' >>$(1)
+	bash -c 'echo const int BUILD_DATE_INTEGER = `cyg_date +%%Y%%m%%d`\;' >>$(1)
+}
+

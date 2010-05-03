@@ -1,0 +1,6 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP sources file ;
+
+AddDImportDirectory ShortHike ;
+AddLocalDSources ShortHike ;

@@ -1,0 +1,5 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP assets gui ;
+
+AddTargetFiles assets : *.png *.shd *.ttf ;

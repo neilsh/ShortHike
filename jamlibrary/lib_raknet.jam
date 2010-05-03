@@ -1,0 +1,14 @@
+# --------------------------------------------------------------------------------
+# RakNet
+
+RAKNET_DIR = [ FDirName $(LIBRARIES_DIR) raknet ] ;
+
+rule LibRakNet
+{
+  PROGRAM_NAME = $(1) ;
+
+  CPPFLAGS on $(PROGRAM_NAME) += [ FIncPath $(RAKNET_DIR) Source ] ;
+  ProgramLibraryFlags $(PROGRAM_NAME) : [ FLibPath $(RAKNET_DIR) lib ] ;
+  ProgramLibraryFlags $(PROGRAM_NAME) : RakNetDLL.lib ;
+  SingleDLL $(PROGRAM_NAME) : [ FDirName $(RAKNET_DIR) lib ] : RakNet.dll ;
+}

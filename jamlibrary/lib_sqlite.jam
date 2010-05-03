@@ -1,0 +1,16 @@
+#----------
+# SQLite 3
+
+SQLITE3_DIR = [ FDirName $(LIBRARIES_DIR) sqlite ] ;
+
+rule LibSQLite3
+{  
+  local PROGRAM_NAME = $(1) ;
+  
+  Library $(PROGRAM_NAME) : [ FDirName $(SQLITE3_DIR) ] :
+  [ FDirName $(SQLITE3_DIR) debug ] : [ FDirName $(SQLITE3_DIR) release ] :
+  sqlite.dll : sqlite.dll ;
+
+  ProgramLibraryFlags $(PROGRAM_NAME) : sqlite.lib  ;
+  CPPFLAGS on $(PROGRAM_NAME) += [ FDefines ENABLE_SQLITE3 ] ;
+}

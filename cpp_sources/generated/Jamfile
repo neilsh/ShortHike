@@ -1,0 +1,9 @@
+# --------------------------------------------------------------------------------
+# Automatically generated version headers
+
+SubDir TOP sources generated ;
+
+RevisionHeader build_info.hpp : ShortHike ;
+
+AddLocalCppSources Launcher ;
+

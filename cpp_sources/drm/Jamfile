@@ -1,0 +1,6 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP sources drm ;
+
+AddLocalCppSources ShortHike ;
+AddLocalCppSources SelfTest ;

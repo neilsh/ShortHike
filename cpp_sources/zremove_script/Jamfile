@@ -1,0 +1,7 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP sources script ;
+
+AddLocalCppSources ShortHike ;
+AddCppSources SelfTest : LuaManager.cpp : LuaManager.hpp ;
+

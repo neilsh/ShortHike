@@ -1,0 +1,8 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP sources main ;
+
+AddLocalCppSources ShortHike ;
+AddCppSources SelfTest : Main.cpp Root.cpp Platform.cpp PlatformWin32.cpp ModuleEditor.cpp GamePlay.cpp :
+Main.hpp Root.hpp Platform.hpp PlatformWin32.hpp ModuleEditor.hpp GamePlay.hpp ;
+

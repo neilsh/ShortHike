@@ -1,0 +1,14 @@
+# --------------------------------------------------------------------------------
+# ColDet collision detection library
+
+COLDET_DIR = [ FDirName $(LIBRARIES_DIR) coldet ] ;
+
+rule LibColDet
+{
+  PROGRAM_NAME = $(1) ;
+  
+  CPPFLAGS on $(PROGRAM_NAME) += [ FIncPath $(COLDET_DIR) src ] [ FDefines ENABLE_COLDET ] ;
+  ProgramLibraryFlags $(PROGRAM_NAME) : [ FLibPath $(COLDET_DIR) src Debug ] : [ FLibPath $(COLDET_DIR) src Release ] ;
+  ProgramLibraryFlags $(PROGRAM_NAME) : coldet.lib ;
+  MultiDLL $(PROGRAM_NAME) : [ FDirName $(COLDET_DIR) src Debug ] : [ FDirName $(COLDET_DIR) src Release ] :  coldet.dll :  coldet.dll ;
+}

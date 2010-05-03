@@ -1,0 +1,6 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP sources win32 ;
+
+AddLocalDSources ShortHike ;
+SetDMainSource ShortHike : EntryWin32.d ;

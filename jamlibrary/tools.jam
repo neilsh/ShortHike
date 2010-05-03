@@ -1,0 +1,15 @@
+# --------------------------------------------------------------------------------
+# Tool definitions
+
+CPP = CL ;
+CP = copy /Y ;
+CTAGS = ctags -e ;
+CONVERT = convert ;
+
+FIND = [ FDirName $(CYGWIN_DIRECTORY) find.exe ] ;
+
+GREP = [ FDirName $(CYGWIN_DIRECTORY) grep.exe ] ;
+HEAD = [ FDirName $(CYGWIN_DIRECTORY) head.exe ] ;
+CUT = [ FDirName $(CYGWIN_DIRECTORY) cut.exe ] ;
+
+GLOWCODE = [ FDirName c: "Program Files" "GlowCode 5.1" gcLoad.exe ] ;

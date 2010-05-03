@@ -1,0 +1,7 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP sources math ;
+
+AddDImportDirectory ShortHike ;
+AddLocalDSources ShortHike ;
+

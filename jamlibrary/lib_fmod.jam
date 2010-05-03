@@ -1,0 +1,15 @@
+# --------------------------------------------------------------------------------
+# fmod
+
+FMOD_DIR = [ FDirName $(LIBRARIES_DIR) fmod api ] ;
+
+#----------
+# FMod
+
+rule LibFmod
+{
+  PROGRAM_NAME = $(1) ;
+  SingleBuildLibrary $(PROGRAM_NAME) : [ FDirName $(FMOD_DIR) inc ] : [ FDirName $(FMOD_DIR) lib ] : [ FDirName $(FMOD_DIR) ] : fmod.dll ;
+  ProgramLibraryFlags $(PROGRAM_NAME) : [ FLibPath $(FMOD_DIR) lib ] fmodvc.lib ;
+  CPPFLAGS on $(PROGRAM_NAME) += [ FDefines ENABLE_FMOD ] ;
+}

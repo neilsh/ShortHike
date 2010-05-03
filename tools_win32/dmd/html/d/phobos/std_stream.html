@@ -1,0 +1,1131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<!--
+	Copyright (c) 1999-2006 by Digital Mars
+	All Rights Reserved
+	Written by Walter Bright
+	www.digitalmars.com
+  -->
+
+
+<!-- Mirrored from www.shorthike.com/trac/browser/trunk/tools_win32/dmd/html/d/phobos/std_stream.html?format=raw by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 01 May 2010 04:40:13 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" >
+<title>Digital Mars - The D Programming Language - std.stream</title>
+<link rel="stylesheet" type="text/css" href="../style.html">
+</head>
+
+<body>
+<div id="heading">
+	<a href="http://www.digitalmars.com/"><img src="../dmlogo.html" width="270" height="53" border="0" alt="www.digitalmars.com"></a>
+
+
+	<div id="headingNav">
+	<ul>	<li><a href="http://www.prowiki.org/wiki4d/wiki.cgi?DocComments/Phobos/StdStream" title="Read/write comments and feedback">Comments</a></li>
+	<li><a href="../index.html" title="D Programming Language" class="dlink">D</a></li>
+	<li><a href="http://www.digitalmars.com/advancedsearch.html" title="Search Digital Mars web site">Search</a></li>
+	<li><a href="http://www.digitalmars.com/" title="www.digitalmars.com">Home</a></li>
+	</ul>
+	</div>
+
+	<div id="lastupdate">Last update Fri Jun 30 17:14:17 2006
+</div>
+</div>
+
+
+
+<div id="navigation">
+    
+<div class="navblock">
+<form method="get" action="http://www.google.com/search">
+<div id="searchbox">
+<input id="q" name="q" size="10" value="RTL Search" onFocus='if(this.value == "RTL Search"){this.value="";}'>
+<input type="hidden" id="domains" name="domains" value="www.digitalmars.com">
+<input type="hidden" id="sitesearch" name="sitesearch" value="www.digitalmars.com/d/phobos">
+<input type="hidden" id="sourceid" name="sourceid" value="google-search">
+<input type="submit" id="submit" name="submit" value="Go">
+</div>
+</form>
+<div id="toctop">
+    <ul>	<li><a href="../index.html" title="D Programming Language">D ...</a></li>
+	<li><a href="../lex.html" title="D Language Specification">Language ...</a></li>
+	<li><a href="phobos.html" title="D Runtime Library">Phobos ...</a></li>
+	<li><a href="../comparison.html" title="Language Comparisons">Comparisons ...</a></li>
+    </ul>
+</div>
+</div>
+
+    
+<div class="navblock">
+    <ul>	<li><a href="object.html" title="root of object heirarchy">object</a></li>
+    </ul>
+    <h2><a href="phobos.html#std" title="D standard modules">std</a></h2>
+    <ul>	<li><a href="std_base64.html" title="Encode/decode base64 format">std.base64</a></li>
+	<li><a href="std_boxer.html" title="Box/unbox types">std.boxer</a></li>
+	<li><a href="std_compiler.html" title="Information about the D compiler implementation">std.compiler</a></li>
+	<li><a href="std_conv.html" title="Conversion of strings to integers">std.conv</a></li>
+	<li><a href="std_cover.html" title="D coverage analyzer">std.cover</a></li>
+	<li><a href="std_ctype.html" title="Simple character classification">std.ctype</a></li>
+	<li><a href="std_date.html" title="Date and time functions">std.date</a></li>
+	<li><a href="std_demangle.html" title="Demangle D names">std.demangle</a></li>
+	<li><a href="std_file.html" title="Basic file operations">std.file</a></li>
+	<li><a href="std_format.html" title="Formatted conversions of values to strings">std.format</a></li>
+	<li><a href="std_gc.html" title="Control the garbage collector">std.gc</a></li>
+	<li><a href="std_intrinsic.html" title="Compiler built in intrinsic functions">std.intrinsic</a></li>
+	<li><a href="std_math.html" title="the usual math functions">std.math</a></li>
+	<li><a href="std_md5.html" title="Compute MD5 digests">std.md5</a></li>
+	<li><a href="std_mmfile.html" title="Memory mapped files">std.mmfile</a></li>
+	<li><a href="std_openrj.html" title="Basic database">std.openrj</a></li>
+	<li><a href="std_outbuffer.html" title="Assemble data into an array of bytes">std.outbuffer</a></li>
+	<li><a href="std_path.html" title="Manipulate file names, path names, etc.">std.path</a></li>
+	<li><a href="std_process.html" title="Create/destroy threads">std.process</a></li>
+	<li><a href="std_random.html" title="Random number generation">std.random</a></li>
+	<li><a href="std_regexp.html" title="regular expressions">std.regexp</a></li>
+	<li><a href="std_socket.html" title="Sockets">std.socket</a></li>
+	<li><a href="std_socketstream.html" title="Stream for a blocking, connected Socket">std.socketstream</a></li>
+	<li><a href="std_stdint.html" title="Integral types for various purposes">std.stdint</a></li>
+	<li><a href="std_stdio.html" title="Standard I/O">std.stdio</a></li>
+	<li><a href="std_cstream.html" title="Stream I/O">std.cstream</a></li>
+	<li><a href="std_stream.html" title="Stream I/O">std.stream</a></li>
+	<li><a href="std_string.html" title="Basic string operations">std.string</a></li>
+	<li><a href="std_system.html" title="Inquire about the CPU, operating system">std.system</a></li>
+	<li><a href="std_thread.html" title="Thread operations">std.thread</a></li>
+	<li><a href="std_uni.html" title="Unicode classification">std.uni</a></li>
+	<li><a href="std_uri.html" title="Encode and decode Uniform Resource Identifiers (URIs)">std.uri</a></li>
+	<li><a href="std_utf.html" title="Encode and decode utf character encodings">std.utf</a></li>
+	<li><a href="std_zip.html" title="Read/write zip archives">std.zip</a></li>
+	<li><a href="std_zlib.html" title="Compression / Decompression of data">std.zlib</a></li>
+	<li><a href="std_c_fenv.html" title="Floating point environment">std.c.fenv</a></li>
+	<li><a href="std_c_math.html" title="Math">std.c.math</a></li>
+	<li><a href="std_c_process.html" title="Process">std.c.process</a></li>
+	<li><a href="std_c_stdarg.html" title="Variadic arguments">std.c.stdarg</a></li>
+	<li><a href="std_c_stddef.html" title="Standard definitions">std.c.stddef</a></li>
+	<li><a href="std_c_stdio.html" title="Standard I/O">std.c.stdio</a></li>
+	<li><a href="std_c_stdlib.html" title="Standard library">std.c.stdlib</a></li>
+	<li><a href="std_c_string.html" title="Strings">std.c.string</a></li>
+	<li><a href="std_c_time.html" title="Time">std.c.time</a></li>
+	<li><a href="std_c_wcharh.html" title="Wide characters">std.c.wcharh</a></li>
+	<li><a href="std_windows_charset.html" title="Conversion to/from Windows character sets">std.windows.charset</a></li>
+	<li><a href="phobos.html#std_windows" title="Modules specific to Windows">std.windows</a></li>
+	<li><a href="phobos.html#std_linux" title="Modules specific to Windows">std.linux</a></li>
+	<li><a href="phobos.html#std_c_windows" title="C Windows API">std.c.windows</a></li>
+	<li><a href="phobos.html#std_c_linux" title="C Linux API">std.c.linux</a></li>
+    </ul>
+</div>
+
+</div>
+<div id="content">
+    <h1>std.stream</h1>
+    <!-- Generated by Ddoc from std\stream.d -->
+
+<dl><dt><big>class <u>StreamException</u>: object.Exception;
+</big></dt>
+<dd>A base class for stream exceptions.
+<br><br>
+
+<dl><dt><big>this(char[] <i>msg</i>);
+</big></dt>
+<dd>Construct a StreamException with given error message.
+<br><br>
+
+</dd>
+</dl>
+</dd>
+<dt><big>class <u>ReadException</u>: std.stream.StreamException;
+</big></dt>
+<dd>Thrown when unable to read data from Stream.
+<br><br>
+
+<dl><dt><big>this(char[] <i>msg</i>);
+</big></dt>
+<dd>Construct a ReadException with given error message.
+<br><br>
+
+</dd>
+</dl>
+</dd>
+<dt><big>class <u>WriteException</u>: std.stream.StreamException;
+</big></dt>
+<dd>Thrown when unable to write data to Stream.
+<br><br>
+
+<dl><dt><big>this(char[] <i>msg</i>);
+</big></dt>
+<dd>Construct a WriteException with given error message.
+<br><br>
+
+</dd>
+</dl>
+</dd>
+<dt><big>class <u>SeekException</u>: std.stream.StreamException;
+</big></dt>
+<dd>Thrown when unable to move Stream pointer.
+<br><br>
+
+<dl><dt><big>this(char[] <i>msg</i>);
+</big></dt>
+<dd>Construct a SeekException with given error message.
+<br><br>
+
+</dd>
+</dl>
+</dd>
+<dt><big>interface <u>InputStream</u>;
+</big></dt>
+<dd><u>InputStream</u> is the interface for readable streams.
+<br><br>
+
+<dl><dt><big>abstract void <u>readExact</u>(void* <i>buffer</i>, uint <i>size</i>);
+</big></dt>
+<dd>Read exactly <i>size</i> bytes into the <i>buffer</i>.
+<br><br>
+Throws a ReadException if it is not correct.
+   
+<br><br>
+
+</dd>
+<dt><big>abstract uint <u>read</u>(ubyte[] <i>buffer</i>);
+</big></dt>
+<dd>Read a block of data big enough to fill the given array <i>buffer</i>.
+<br><br>
+<b>Returns:</b><br>
+the actual number of bytes <u>read</u>. Unfilled bytes are not modified.
+   
+<br><br>
+
+</dd>
+<dt><big>abstract void <u>read</u>(out byte <i>x</i>);
+<br>abstract void <u>read</u>(out ubyte <i>x</i>);
+<br>abstract void <u>read</u>(out short <i>x</i>);
+<br>abstract void <u>read</u>(out ushort <i>x</i>);
+<br>abstract void <u>read</u>(out int <i>x</i>);
+<br>abstract void <u>read</u>(out uint <i>x</i>);
+<br>abstract void <u>read</u>(out long <i>x</i>);
+<br>abstract void <u>read</u>(out ulong <i>x</i>);
+<br>abstract void <u>read</u>(out float <i>x</i>);
+<br>abstract void <u>read</u>(out double <i>x</i>);
+<br>abstract void <u>read</u>(out real <i>x</i>);
+<br>abstract void <u>read</u>(out ifloat <i>x</i>);
+<br>abstract void <u>read</u>(out idouble <i>x</i>);
+<br>abstract void <u>read</u>(out ireal <i>x</i>);
+<br>abstract void <u>read</u>(out cfloat <i>x</i>);
+<br>abstract void <u>read</u>(out cdouble <i>x</i>);
+<br>abstract void <u>read</u>(out creal <i>x</i>);
+<br>abstract void <u>read</u>(out char <i>x</i>);
+<br>abstract void <u>read</u>(out wchar <i>x</i>);
+<br>abstract void <u>read</u>(out dchar <i>x</i>);
+<br>abstract void <u>read</u>(out char[] <i>s</i>);
+<br>abstract void <u>read</u>(out wchar[] <i>s</i>);
+</big></dt>
+<dd>Read a basic type or counted string.
+<br><br>
+Throw a ReadException if it could not be <u>read</u>.
+ Outside of byte, ubyte, and char, the format is
+ implementation-specific and should not be used except as opposite actions
+ to write.
+   
+<br><br>
+
+</dd>
+<dt><big>abstract char[] <u>readLine</u>();
+<br>abstract char[] <u>readLine</u>(char[] <i>result</i>);
+<br>abstract wchar[] <u>readLineW</u>();
+<br>abstract wchar[] <u>readLineW</u>(wchar[] <i>result</i>);
+</big></dt>
+<dd>Read a line that is terminated with some combination of carriage return and
+ line feed or end-of-file.
+<br><br>
+The terminators are not included. The wchar version
+ is identical. The optional buffer parameter is filled (reallocating
+ it if necessary) and a slice of the result is returned.
+   
+<br><br>
+
+</dd>
+<dt><big>abstract int <u>opApply</u>(int delegate(inout char[] line) <i>dg</i>);
+<br>abstract int <u>opApply</u>(int delegate(inout ulong n, inout char[] line) <i>dg</i>);
+<br>abstract int <u>opApply</u>(int delegate(inout wchar[] line) <i>dg</i>);
+<br>abstract int <u>opApply</u>(int delegate(inout ulong n, inout wchar[] line) <i>dg</i>);
+</big></dt>
+<dd>Overload foreach statements to read the stream line by line and call the
+ supplied delegate with each line or with each line with line number.
+<br><br>
+The string passed in line may be reused between calls to the delegate.
+ Line numbering starts at 1.
+ Breaking out of the foreach will leave the stream
+ position at the beginning of the next line to be read.
+ For example, to echo a file line-by-line with line numbers run:
+<pre class="d_code"> Stream file = <span class="d_keyword">new</span> BufferedFile(<span class="d_string">"sample.txt"</span>);
+ <span class="d_keyword">foreach</span>(<span class="d_keyword">ulong</span> n, <span class="d_keyword">char</span>[] line; file) {
+   stdout.writefln(<span class="d_string">"line %d: %s"</span>,n,line);
+ }
+ file.close();
+</pre>
+   
+<br><br>
+
+</dd>
+<dt><big>abstract char[] <u>readString</u>(uint <i>length</i>);
+</big></dt>
+<dd>Read a string of the given <i>length</i>,
+<br><br>
+throwing ReadException if there was a problem.
+<br><br>
+
+</dd>
+<dt><big>abstract wchar[] <u>readStringW</u>(uint <i>length</i>);
+</big></dt>
+<dd>Read a string of the given <i>length</i>, throwing ReadException if there was a
+ problem.
+<br><br>
+The file format is implementation-specific and should not be used
+ except as opposite actions to <b>write</b>.
+   
+<br><br>
+
+</dd>
+<dt><big>abstract char <u>getc</u>();
+<br>abstract wchar <u>getcw</u>();
+</big></dt>
+<dd>Read and return the next character in the stream.
+<br><br>
+This is the only method that will handle ungetc properly.
+ getcw's format is implementation-specific.
+ If EOF is reached then <u>getc</u> returns char.init and getcw returns wchar.init.
+   
+<br><br>
+
+</dd>
+<dt><big>abstract char <u>ungetc</u>(char <i>c</i>);
+<br>abstract wchar <u>ungetcw</u>(wchar <i>c</i>);
+</big></dt>
+<dd>Push a character back onto the stream.
+<br><br>
+They will be returned in first-in last-out order from getc/getcw.
+ Only has effect on further calls to getc() and getcw().
+   
+<br><br>
+
+</dd>
+<dt><big>abstract int <u>vreadf</u>(TypeInfo[] <i>arguments</i>, void* <i>args</i>);
+<br>abstract int <u>readf</u>(...);
+</big></dt>
+<dd>Scan a string from the input using a similar form to C's scanf
+ and <a href="std_format.html">std.format</a>.
+<br><br>
+An argument of type char[] is interpreted as a format string.
+ All other <i>arguments</i> must be pointer types.
+ If a format string is not present a default will be supplied computed from
+ the base type of the pointer type. An argument of type char[]* is filled
+ (possibly with appending characters) and a slice of the result is assigned
+ back into the argument. For example the following readf statements
+ are equivalent:
+<pre class="d_code"> <span class="d_keyword">int</span> x;
+ <span class="d_keyword">double</span> y;
+ <span class="d_keyword">char</span>[] s;
+ file.readf(&amp;x, <span class="d_string">" hello "</span>, &amp;y, &amp;s);
+ file.readf(<span class="d_string">"%d hello %f %s"</span>, &amp;x, &amp;y, &amp;s);
+ file.readf(<span class="d_string">"%d hello %f"</span>, &amp;x, &amp;y, <span class="d_string">"%s"</span>, &amp;s);
+</pre>
+   
+<br><br>
+
+</dd>
+<dt><big>abstract uint <u>available</u>();
+</big></dt>
+<dd>Retrieve the number of bytes <u>available</u> for immediate reading.
+<br><br>
+
+</dd>
+<dt><big>abstract bool <u>eof</u>();
+</big></dt>
+<dd>Return whether the current file position is the same as the end of the
+ file.
+<br><br>
+This does not require actually reading past the end, as with stdio. For
+ non-seekable streams this might only return <b>true</b> after attempting to read
+ past the end.
+   
+<br><br>
+
+</dd>
+<dt><big>abstract bool <u>isOpen</u>();
+</big></dt>
+<dd>Return <b>true</b> if the stream is currently open.
+<br><br>
+
+</dd>
+</dl>
+</dd>
+<dt><big>interface <u>OutputStream</u>;
+</big></dt>
+<dd>Interface for writable streams.
+<br><br>
+
+<dl><dt><big>abstract void <u>writeExact</u>(void* <i>buffer</i>, uint <i>size</i>);
+</big></dt>
+<dd>Write exactly <i>size</i> bytes from <i>buffer</i>, or throw a WriteException if that
+ could not be done.
+   
+<br><br>
+
+</dd>
+<dt><big>abstract uint <u>write</u>(ubyte[] <i>buffer</i>);
+</big></dt>
+<dd>Write as much of the <i>buffer</i> as possible,
+ returning the number of bytes written.
+   
+<br><br>
+
+</dd>
+<dt><big>abstract void <u>write</u>(byte <i>x</i>);
+<br>abstract void <u>write</u>(ubyte <i>x</i>);
+<br>abstract void <u>write</u>(short <i>x</i>);
+<br>abstract void <u>write</u>(ushort <i>x</i>);
+<br>abstract void <u>write</u>(int <i>x</i>);
+<br>abstract void <u>write</u>(uint <i>x</i>);
+<br>abstract void <u>write</u>(long <i>x</i>);
+<br>abstract void <u>write</u>(ulong <i>x</i>);
+<br>abstract void <u>write</u>(float <i>x</i>);
+<br>abstract void <u>write</u>(double <i>x</i>);
+<br>abstract void <u>write</u>(real <i>x</i>);
+<br>abstract void <u>write</u>(ifloat <i>x</i>);
+<br>abstract void <u>write</u>(idouble <i>x</i>);
+<br>abstract void <u>write</u>(ireal <i>x</i>);
+<br>abstract void <u>write</u>(cfloat <i>x</i>);
+<br>abstract void <u>write</u>(cdouble <i>x</i>);
+<br>abstract void <u>write</u>(creal <i>x</i>);
+<br>abstract void <u>write</u>(char <i>x</i>);
+<br>abstract void <u>write</u>(wchar <i>x</i>);
+<br>abstract void <u>write</u>(dchar <i>x</i>);
+</big></dt>
+<dd>Write a basic type.
+<br><br>
+Outside of byte, ubyte, and char, the format is implementation-specific
+ and should only be used in conjunction with read.
+ Throw WriteException on error.
+   
+<br><br>
+
+</dd>
+<dt><big>abstract void <u>write</u>(char[] <i>s</i>);
+<br>abstract void <u>write</u>(wchar[] <i>s</i>);
+</big></dt>
+<dd>Writes a string, together with its length.
+<br><br>
+The format is implementation-specific
+ and should only be used in conjunction with read.
+ Throw WriteException on error.
+   
+<br><br>
+
+</dd>
+<dt><big>abstract void <u>writeLine</u>(char[] <i>s</i>);
+</big></dt>
+<dd>Write a line of text,
+ appending the line with an operating-system-specific line ending.
+<br><br>
+Throws WriteException on error.
+   
+<br><br>
+
+</dd>
+<dt><big>abstract void <u>writeLineW</u>(wchar[] <i>s</i>);
+</big></dt>
+<dd>Write a line of text,
+ appending the line with an operating-system-specific line ending.
+<br><br>
+The format is implementation-specific.
+ Throws WriteException on error.
+   
+<br><br>
+
+</dd>
+<dt><big>abstract void <u>writeString</u>(char[] <i>s</i>);
+</big></dt>
+<dd>Write a string of text.
+<br><br>
+Throws WriteException if it could not be fully written.
+   
+<br><br>
+
+</dd>
+<dt><big>abstract void <u>writeStringW</u>(wchar[] <i>s</i>);
+</big></dt>
+<dd>Write a string of text.
+<br><br>
+The format is implementation-specific.
+ Throws WriteException if it could not be fully written.
+   
+<br><br>
+
+</dd>
+<dt><big>abstract uint <u>vprintf</u>(char[] <i>format</i>, void* <i>args</i>);
+<br>abstract uint <u>printf</u>(char[] <i>format</i>,...);
+</big></dt>
+<dd>Print a formatted string into the stream using printf-style syntax,
+ returning the number of bytes written.
+   
+<br><br>
+
+</dd>
+<dt><big>abstract OutputStream <u>writef</u>(...);
+<br>abstract OutputStream <u>writefln</u>(...);
+<br>abstract OutputStream <u>writefx</u>(TypeInfo[] <i>arguments</i>, void* <i>argptr</i>, int <i>newline</i> = cast(int)false);
+</big></dt>
+<dd>Print a formatted string into the stream using <u>writef</u>-style syntax.
+<br><br>
+<b>References:</b><br>
+<a href="std_format.html">std.format</a>.
+<br><br>
+<b>Returns:</b><br>
+self to chain with other stream commands like flush.
+   
+<br><br>
+
+</dd>
+<dt><big>abstract void <u>flush</u>();
+</big></dt>
+<dd>Flush pending output if appropriate.
+<br><br>
+
+</dd>
+<dt><big>abstract void <u>close</u>();
+</big></dt>
+<dd>Close the stream, flushing output if appropriate.
+<br><br>
+
+</dd>
+<dt><big>abstract bool <u>isOpen</u>();
+</big></dt>
+<dd>Return <b>true</b> if the stream is currently open.
+<br><br>
+
+</dd>
+</dl>
+</dd>
+<dt><big>class <u>Stream</u>: std.stream.InputStream, std.stream.OutputStream;
+</big></dt>
+<dd><u>Stream</u> is the base abstract class from which the other stream classes derive.
+<br><br>
+<u>Stream</u>'s byte order is the format native to the computer.
+
+<br><br>
+<b>Reading:</b><br>
+These methods require that the readable flag be set.
+ Problems with reading result in a ReadException being thrown.
+ <u>Stream</u> implements the InputStream interface in addition to the
+ readBlock method.
+
+<br><br>
+<b>Writing:</b><br>
+These methods require that the writeable flag be set. Problems with writing
+ result in a WriteException being thrown. <u>Stream</u> implements the OutputStream
+ interface in addition to the following methods:
+ writeBlock
+ copyFrom
+ copyFrom
+
+<br><br>
+<b>Seeking:</b><br>
+These methods require that the seekable flag be set.
+ Problems with seeking result in a SeekException being thrown.
+ seek, seekSet, seekCur, seekEnd, position, size, toString, toHash
+ 
+<br><br>
+
+<dl><dt><big>bool <u>readable</u>;
+</big></dt>
+<dd>Indicates whether this stream can be read from.
+<br><br>
+
+</dd>
+<dt><big>bool <u>writeable</u>;
+</big></dt>
+<dd>Indicates whether this stream can be written to.
+<br><br>
+
+</dd>
+<dt><big>bool <u>seekable</u>;
+</big></dt>
+<dd>Indicates whether this stream can be seeked within.
+<br><br>
+
+</dd>
+<dt><big>protected bool <u>isopen</u>;
+</big></dt>
+<dd>Indicates whether this stream is open.
+<br><br>
+
+</dd>
+<dt><big>protected bool <u>readEOF</u>;
+</big></dt>
+<dd>Indicates whether this stream is at eof
+<br><br>
+
+</dd>
+<dt><big>protected bool <u>prevCr</u>;
+</big></dt>
+<dd>For a non-seekable stream indicates that
+<br><br>
+after the last read attempt.
+<br><br>
+
+ For a non-seekable stream indicates that
+<br><br>
+
+</dd>
+<dt><big>this();
+</big></dt>
+<dd>the last readLine or readLineW ended on a
+<br><br>
+'\r' character. 
+<br><br>
+
+</dd>
+<dt><big>abstract uint <u>readBlock</u>(void* <i>buffer</i>, uint <i>size</i>);
+</big></dt>
+<dd>Read up to <i>size</i> bytes into the <i>buffer</i> and return the number of bytes
+ actually read. A return value of 0 indicates end-of-file.
+   
+<br><br>
+
+</dd>
+<dt><big>abstract uint <u>writeBlock</u>(void* <i>buffer</i>, uint <i>size</i>);
+</big></dt>
+<dd>Write up to <i>size</i> bytes from <i>buffer</i> in the stream, returning the actual
+ number of bytes that were written.
+   
+<br><br>
+
+</dd>
+<dt><big>void <u>copyFrom</u>(Stream <i>s</i>);
+</big></dt>
+<dd>Copies all data from <i>s</i> into this stream.
+ This may throw ReadException or WriteException on failure.
+ This restores the file position of <i>s</i> so that it is unchanged.
+   
+<br><br>
+
+</dd>
+<dt><big>void <u>copyFrom</u>(Stream <i>s</i>, ulong <i>count</i>);
+</big></dt>
+<dd>Copy a specified number of bytes from the given stream into this one.
+ This may throw ReadException or WriteException on failure.
+ Unlike the previous form, this doesn't restore the file position of <i>s</i>.
+   
+<br><br>
+
+</dd>
+<dt><big>abstract ulong <u>seek</u>(long <i>offset</i>, SeekPos <i>whence</i>);
+</big></dt>
+<dd>Change the current position of the stream. <i>whence</i> is either SeekPos.Set, in
+   which case the <i>offset</i> is an absolute index from the beginning of the stream,
+   SeekPos.Current, in which case the <i>offset</i> is a delta from the current
+   position, or SeekPos.End, in which case the <i>offset</i> is a delta from the end of
+   the stream (negative or zero offsets only make sense in that case). This
+   returns the new file position.
+   
+<br><br>
+
+</dd>
+<dt><big>ulong <u>seekSet</u>(long <i>offset</i>);
+<br>ulong <u>seekCur</u>(long <i>offset</i>);
+<br>ulong <u>seekEnd</u>(long <i>offset</i>);
+</big></dt>
+<dd>Aliases for their normal seek counterparts.
+   
+<br><br>
+
+</dd>
+<dt><big>void <u>position</u>(ulong <i>pos</i>);
+</big></dt>
+<dd>Sets file <u>position</u>. Equivalent to calling seek(<i>pos</i>, SeekPos.Set).
+   
+<br><br>
+
+</dd>
+<dt><big>ulong <u>position</u>();
+</big></dt>
+<dd>Returns current file <u>position</u>. Equivalent to seek(0, SeekPos.Current).
+   
+<br><br>
+
+</dd>
+<dt><big>ulong <u>size</u>();
+</big></dt>
+<dd>Retrieve the <u>size</u> of the stream in bytes.
+ The stream must be seekable or a SeekException is thrown.
+   
+<br><br>
+
+</dd>
+<dt><big>char[] <u>toString</u>();
+</big></dt>
+<dd>Read the entire stream and return it as a string.
+ If the stream is not seekable the contents from the current position to eof
+ is read and returned.
+   
+<br><br>
+
+</dd>
+<dt><big>uint <u>toHash</u>();
+</big></dt>
+<dd>Get a hash of the stream by reading each byte and using it in a CRC-32
+ checksum.
+   
+<br><br>
+
+</dd>
+</dl>
+</dd>
+<dt><big>class <u>FilterStream</u>: std.stream.Stream;
+</big></dt>
+<dd>A base class for streams that wrap a source stream with additional
+ functionality.
+<br><br>
+The method implementations forward read/write/seek calls to the
+ source stream. A <u>FilterStream</u> can change the position of the source stream
+ arbitrarily and may not keep the source stream state in sync with the
+ <u>FilterStream</u>, even upon flushing and closing the <u>FilterStream</u>. It is
+ recommended to not make any assumptions about the state of the source position
+ and read/write state after a <u>FilterStream</u> has acted upon it. Specifc subclasses
+ of <u>FilterStream</u> should document how they modify the source stream and if any
+ invariants hold <b>true</b> between the source and filter.
+ 
+<br><br>
+
+<dl><dt><big>bool <u>nestClose</u>;
+</big></dt>
+<dd>Property indicating when this stream closes to close the source stream as
+<br><br>
+well.
+<br><br>
+
+ Defaults to <b>true</b>.
+<br><br>
+
+</dd>
+<dt><big>this(Stream <i>source</i>);
+</big></dt>
+<dd>Construct a FilterStream for the given <i>source</i>.
+<br><br>
+
+</dd>
+<dt><big>final Stream <u>source</u>();
+</big></dt>
+<dd>Get the current <u>source</u> stream.
+   
+<br><br>
+
+</dd>
+<dt><big>void <u>source</u>(Stream <i>s</i>);
+</big></dt>
+<dd>Set the current <u>source</u> stream.
+<br><br>
+Setting the <u>source</u> stream closes this stream before attaching the new
+ <u>source</u>. Attaching an open stream reopens this stream and resets the stream
+ state.
+   
+<br><br>
+
+</dd>
+<dt><big>void <u>resetSource</u>();
+</big></dt>
+<dd>Indicates the source stream changed state and that this stream should reset
+ any readable, writeable, seekable, isopen and buffering flags.
+   
+<br><br>
+
+</dd>
+</dl>
+</dd>
+<dt><big>class <u>BufferedStream</u>: std.stream.FilterStream;
+</big></dt>
+<dd>This subclass is for buffering a source stream.
+<br><br>
+A buffered stream must be
+ closed explicitly to ensure the final buffer content is written to the source
+ stream. The source stream position is changed according to the block size so
+ reading or writing to the <u>BufferedStream</u> may not change the source stream
+ position by the same amount.
+ 
+<br><br>
+
+<dl><dt><big>this(Stream <i>source</i>, uint <i>bufferSize</i> = 8192u);
+</big></dt>
+<dd>Create a buffered stream for the stream <i>source</i> with the buffer size
+ <i>bufferSize</i>.
+   
+<br><br>
+
+</dd>
+</dl>
+</dd>
+<dt><big>class <u>StreamFileException</u>: std.stream.StreamException;
+</big></dt>
+<dd>An exception for File errors.
+<br><br>
+
+<dl><dt><big>this(char[] <i>msg</i>);
+</big></dt>
+<dd>Construct a StreamFileException with given error message.
+<br><br>
+
+</dd>
+</dl>
+</dd>
+<dt><big>class <u>OpenException</u>: std.stream.StreamFileException;
+</big></dt>
+<dd>An exception for errors during File.open.
+<br><br>
+
+<dl><dt><big>this(char[] <i>msg</i>);
+</big></dt>
+<dd>Construct an OpenFileException with given error message.
+<br><br>
+
+</dd>
+</dl>
+</dd>
+<dt><big>class <u>File</u>: std.stream.Stream;
+</big></dt>
+<dd>This subclass is for unbuffered file system streams.
+<br><br>
+
+<dl><dt><big>this(char[] <i>filename</i>, FileMode <i>mode</i> = cast(FileMode)1);
+</big></dt>
+<dd>Create the stream with no open file, an open file in read <i>mode</i>, or an open
+ file with explicit file <i>mode</i>.
+ <i>mode</i>, if given, is a combination of FileMode.In
+ (indicating a file that can be read) and FileMode.Out (indicating a file
+ that can be written).
+ Opening a file for reading that doesn't exist will error.
+ Opening a file for writing that doesn't exist will create the file.
+ The FileMode.OutNew <i>mode</i> will open the file for writing and reset the
+ length to zero.
+ The FileMode.Append <i>mode</i> will open the file for writing and move the
+ file position to the end of the file.
+   
+<br><br>
+
+</dd>
+<dt><big>void <u>open</u>(char[] <i>filename</i>, FileMode <i>mode</i> = cast(FileMode)1);
+</big></dt>
+<dd>Open a file for the stream, in an identical manner to the constructors.
+ If an error occurs an OpenException is thrown.
+   
+<br><br>
+
+</dd>
+<dt><big>void <u>create</u>(char[] <i>filename</i>);
+<br>void <u>create</u>(char[] <i>filename</i>, FileMode <i>mode</i>);
+</big></dt>
+<dd>Create a file for writing.
+<br><br>
+
+</dd>
+<dt><big>void <u>close</u>();
+</big></dt>
+<dd>Close the current file if it is open; otherwise it does nothing.
+<br><br>
+
+</dd>
+<dt><big>uint <u>available</u>();
+</big></dt>
+<dd>For a seekable file returns the difference of the size and position and
+ otherwise returns 0.
+   
+<br><br>
+
+</dd>
+</dl>
+</dd>
+<dt><big>class <u>BufferedFile</u>: std.stream.BufferedStream;
+</big></dt>
+<dd>This subclass is for buffered file system streams.
+<br><br>
+It is a convenience class for wrapping a File in a BufferedStream.
+ A buffered stream must be closed explicitly to ensure the final buffer
+ content is written to the file.
+ 
+<br><br>
+
+<dl><dt><big>this();
+</big></dt>
+<dd>opens file for reading
+<br><br>
+
+</dd>
+<dt><big>this(char[] <i>filename</i>, FileMode <i>mode</i> = cast(FileMode)1, uint <i>bufferSize</i> = 8192u);
+</big></dt>
+<dd>opens file in requested <i>mode</i> and buffer size
+<br><br>
+
+</dd>
+<dt><big>this(File <i>file</i>, uint <i>bufferSize</i> = 8192u);
+</big></dt>
+<dd>opens <i>file</i> for reading with requested buffer size
+<br><br>
+
+</dd>
+<dt><big>this(HANDLE <i>hFile</i>, FileMode <i>mode</i>, uint <i>buffersize</i>);
+</big></dt>
+<dd>opens existing handle; use with care!
+<br><br>
+
+</dd>
+<dt><big>void <u>open</u>(char[] <i>filename</i>, FileMode <i>mode</i> = cast(FileMode)1);
+</big></dt>
+<dd>opens file in requested <i>mode</i>
+<br><br>
+
+</dd>
+<dt><big>void <u>create</u>(char[] <i>filename</i>, FileMode <i>mode</i> = cast(FileMode)2);
+</big></dt>
+<dd>creates file in requested <i>mode</i>
+<br><br>
+
+</dd>
+</dl>
+</dd>
+<dt><big>enum <u>BOM</u>;
+</big></dt>
+<dd>UTF byte-order-mark signatures 
+<br><br>
+
+<dl><dt><big><u>UTF8</u></big></dt>
+<dd>UTF-8
+<br><br>
+
+</dd>
+<dt><big><u>UTF16LE</u></big></dt>
+<dd>UTF-16 Little Endian
+<br><br>
+
+</dd>
+<dt><big><u>UTF16BE</u></big></dt>
+<dd>UTF-16 Big Endian
+<br><br>
+
+</dd>
+<dt><big><u>UTF32LE</u></big></dt>
+<dd>UTF-32 Little Endian
+<br><br>
+
+</dd>
+<dt><big><u>UTF32BE</u></big></dt>
+<dd>UTF-32 Big Endian
+<br><br>
+
+</dd>
+</dl>
+</dd>
+<dt><big>class <u>EndianStream</u>: std.stream.FilterStream;
+</big></dt>
+<dd>This subclass wraps a stream with big-endian or little-endian byte order
+ swapping.
+<br><br>
+UTF Byte-Order-Mark (BOM) signatures can be read and deduced or
+ written.
+ Note that an <u>EndianStream</u> should not be used as the source of another
+ FilterStream since a FilterStream call the source with byte-oriented
+ read/write requests and the <u>EndianStream</u> will not perform any byte swapping.
+ The <u>EndianStream</u> reads and writes binary data (non-getc functions) in a
+ one-to-one
+ manner with the source stream so the source stream's position and state will be
+ kept in sync with the <u>EndianStream</u> if only non-getc functions are called.
+ 
+<br><br>
+
+<dl><dt><big>Endian <u>endian</u>;
+</big></dt>
+<dd>Endianness property of the source stream.
+<br><br>
+
+</dd>
+<dt><big>this(Stream <i>source</i>, Endian <i>end</i> = cast(Endian)1);
+</big></dt>
+<dd>Create the endian stream for the <i>source</i> stream <i>source</i> with endianness <i>end</i>.
+ The default endianness is the native byte order.
+ The Endian type is defined
+ in the std.system module.
+   
+<br><br>
+
+</dd>
+<dt><big>int <u>readBOM</u>(int <i>ungetCharSize</i> = 1);
+</big></dt>
+<dd>Return -1 if no BOM and otherwise read the BOM and return it.
+<br><br>
+If there is no BOM or if bytes beyond the BOM are read then the bytes read
+ are pushed back onto the ungetc buffer or ungetcw buffer.
+ Pass <i>ungetCharSize</i> == 2 to use
+ ungetcw instead of ungetc when no BOM is present.
+   
+<br><br>
+
+</dd>
+<dt><big>final void <u>fixBO</u>(void* <i>buffer</i>, uint <i>size</i>);
+</big></dt>
+<dd>Correct the byte order of <i>buffer</i> to match native endianness.
+ <i>size</i> must be even.
+   
+<br><br>
+
+</dd>
+<dt><big>final void <u>fixBlockBO</u>(void* <i>buffer</i>, uint <i>size</i>, uint <i>repeat</i>);
+</big></dt>
+<dd>Correct the byte order of the given <i>buffer</i> in blocks of the given <i>size</i> and
+ repeated the given number of times.
+ <i>size</i> must be even.
+   
+<br><br>
+
+</dd>
+<dt><big>void <u>writeBOM</u>(BOM <i>b</i>);
+</big></dt>
+<dd>Write the specified BOM <i>b</i> to the source stream.
+<br><br>
+
+</dd>
+</dl>
+</dd>
+<dt><big>class <u>TArrayStream</u>(Buffer): Stream;
+</big></dt>
+<dd>Parameterized subclass that wraps an array-like buffer with a stream
+ interface.
+<br><br>
+The type Buffer must support the length property, opIndex and opSlice.
+ Compile in release mode when directly instantiating a <u>TArrayStream</u> to avoid
+ link errors.
+ 
+<br><br>
+
+<dl><dt><big>this(Buffer buf);
+</big></dt>
+<dd>Create the stream for the the buffer buf. Non-copying.
+<br><br>
+
+</dd>
+<dt><big>ubyte[] <u>data</u>();
+</big></dt>
+<dd>Get the current memory <u>data</u> in total.
+<br><br>
+
+</dd>
+</dl>
+</dd>
+<dt><big>class <u>MemoryStream</u>: std.stream.TArrayStream!(ubyte[]).TArrayStream;
+</big></dt>
+<dd>This subclass reads and constructs an array of bytes in memory.
+<br><br>
+
+<dl><dt><big>this();
+</big></dt>
+<dd>Create the output buffer and setup for reading, writing, and seeking.
+<br><br>
+
+</dd>
+<dt><big>this(ubyte[] <i>buf</i>);
+<br>this(byte[] <i>buf</i>);
+<br>this(char[] <i>buf</i>);
+</big></dt>
+<dd>Create the output buffer and setup for reading, writing, and seeking.
+ Load it with specific input data.
+   
+<br><br>
+
+</dd>
+<dt><big>void <u>reserve</u>(uint <i>count</i>);
+</big></dt>
+<dd>Ensure the stream can hold <i>count</i> bytes.
+<br><br>
+
+</dd>
+</dl>
+</dd>
+<dt><big>class <u>MmFileStream</u>: std.stream.TArrayStream!(MmFile).TArrayStream;
+</big></dt>
+<dd>This subclass wraps a memory-mapped file with the stream API.
+ See std.mmfile module.
+ 
+<br><br>
+
+<dl><dt><big>this(MmFile <i>file</i>);
+</big></dt>
+<dd>Create stream wrapper for <i>file</i>.
+<br><br>
+
+</dd>
+</dl>
+</dd>
+<dt><big>class <u>SliceStream</u>: std.stream.FilterStream;
+</big></dt>
+<dd>This subclass slices off a portion of another stream, making seeking relative
+ to the boundaries of the slice.
+<br><br>
+It could be used to section a large file into a
+ set of smaller files, such as with tar archives. Reading and writing a
+ <u>SliceStream</u> does not modify the position of the source stream if it is
+ seekable.
+ 
+<br><br>
+
+<dl><dt><big>this(Stream <i>s</i>, ulong <i>low</i>);
+</big></dt>
+<dd>Indicate both the source stream to use for reading from and the <i>low</i> part of
+ the slice.
+<br><br>
+The high part of the slice is dependent upon the end of the source
+ stream, so that if you write beyond the end it resizes the stream normally.
+   
+<br><br>
+
+</dd>
+<dt><big>this(Stream <i>s</i>, ulong <i>low</i>, ulong <i>high</i>);
+</big></dt>
+<dd>Indicate the <i>high</i> index as well.
+<br><br>
+Attempting to read or write past the <i>high</i>
+ index results in the end being clipped off.
+   
+<br><br>
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+    
+<br><br>
+<br><br>
+<!-- Google ad -->
+<script type="text/javascript"><!--
+/**/google_ad_client = "pub-5628673096434613";
+/**/google_ad_width = 728;
+/**/google_ad_height = 90;
+/**/google_ad_format = "728x90_as";
+/**/google_ad_channel ="6203743411";
+/**/google_page_url = document.location;
+//--></script>
+<script type="text/javascript" src="../../../../../../../../../pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+ 
+</div>
+
+
+<div id="copyright">
+Copyright &copy; 1999-2006 by Digital Mars, All Rights Reserved |
+Page generated by <a href="http://www.digitalmars.com/d/ddoc.html">Ddoc</a>.
+</div>
+
+</body>
+
+<!-- Mirrored from www.shorthike.com/trac/browser/trunk/tools_win32/dmd/html/d/phobos/std_stream.html?format=raw by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 01 May 2010 04:40:13 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>
+

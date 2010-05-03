@@ -1,0 +1,6 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP sources simulation ;
+
+AddLocalCppSources ShortHike ;
+AddLocalCppSources SelfTest ;

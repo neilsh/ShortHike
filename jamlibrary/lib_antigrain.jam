@@ -1,0 +1,15 @@
+# --------------------------------------------------------------------------------
+# AntiGrain
+
+ANTIGRAIN_DIR = [ FDirName $(LIBRARIES_DIR) agg23 ] ;
+
+rule LibAntiGrain
+{
+  PROGRAM_NAME = $(1) ;
+  
+  ProgramLibraryFlags $(PROGRAM_NAME) : [ FLibPath $(ANTIGRAIN_DIR) lib ] ;
+  ProgramLibraryFlags $(PROGRAM_NAME) : antigrain_d.lib : antigrain.lib ;
+
+  CPPFLAGS on $(PROGRAM_NAME) += [ FIncPath $(ANTIGRAIN_DIR) include ] 
+  [ FIncPath $(ANTIGRAIN_DIR) font_freetype ] [ FDefines ENABLE_ANTIGRAIN ] ;
+}

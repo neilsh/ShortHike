@@ -1,0 +1,227 @@
+# --------------------------------------------------------------------------------
+# Adds a synchronized directory
+
+rule GetTargetDirectory
+{
+  local DIRECTORY_NAME = $(1) ;
+  return "target" ;
+}
+
+rule TargetDirectory
+{
+  local TARGET_NAME = $(1) ;
+  local DIRECTORY_TARGET = target-$(1) ;
+  local SUBDIRECTORY = $(2) ;
+  
+  local TARGET_DIRECTORY = [ GetTargetDirectory $(TARGET_NAME) ] ;
+  local FILELIST_DIRECTORY = [ FDirName $(TARGET_DIRECTORY) $(SUBDIRECTORY) ] ;
+  local FILELIST_NAME = [ FDirName $(FILELIST_DIRECTORY) filelist.txt ] ;
+  
+  CreateFileList $(FILELIST_NAME) : : $(FILELIST_DIRECTORY) ;
+  Depends $(DIRECTORY_TARGET) : $(FILELIST_NAME) ;
+  Depends target : $(DIRECTORY_TARGET) ;
+  
+  # Copy files that are placed in target subdirectory directly
+  on $(DIRECTORY_TARGET) {
+    for FILENAME in $(DIRECT_FILES) {
+      local TARGET_FILE = [ FDirName $(TARGET_DIRECTORY) $(SUBDIRECTORY) $(FILENAME:D="") ] ;
+      Depends $(FILELIST_NAME) : $(TARGET_FILE) ;
+      DistFile $(TARGET_FILE) : $(FILENAME) ;
+    }
+  }
+
+  # Copy files that are relative to root
+  on $(DIRECTORY_TARGET) {
+    for FILENAME in $(FILES) {
+      on $(FILENAME) {
+	local TARGET_FILE ;
+	if $(TARGET_RENAME) != "" {
+	  TARGET_FILE = [ FDirName $(TARGET_DIRECTORY) $(FILENAME:D) $(TARGET_RENAME) ] ;
+	}
+	else {
+	  TARGET_FILE = [ FDirName $(TARGET_DIRECTORY) $(FILENAME) ] ;
+	}
+	Depends $(FILELIST_NAME) : $(TARGET_FILE) ;
+	DistFile $(TARGET_FILE) : $(FILENAME) ;
+      }
+    }
+  }
+}
+
+# --------------------------------------------------------------------------------
+# Rules for adding asset files
+
+# AddTargetPattern target [target ..] : pattern [pattern ..] ;
+rule AddTargetFiles
+{
+  local TARGETS = $(1) ;
+  local PATTERNS = $(2) ;
+
+  for TARGET_NAME in $(TARGETS) {
+    local DIRECTORY_TARGET = target-$(TARGET_NAME) ;
+    for PATTERN_MATCH in $(PATTERNS) {
+      NEW_FILES = [ Glob [ FDirName $(SEARCH_SOURCE) ] : $(PATTERN_MATCH) ] ;
+      if $(NEW_FILES) = "" {
+	NEW_FILES = [ FDirName $(SEARCH_SOURCE) $(PATTERN_MATCH) ] ;
+      }
+      FILES on $(DIRECTORY_TARGET) += $(NEW_FILES) ;
+    }
+  }
+}
+
+
+
+# AddTargetFiles target [target ..] : file : new_name ;
+rule AddTargetFileRename
+{
+  local TARGETS = $(1) ;
+  local TARGET_FILE = [ FDirName $(SEARCH_SOURCE) $(2) ] ;
+  TARGET_RENAME on $(TARGET_FILE) = $(3) ;
+  
+  for TARGET_NAME in $(TARGETS) {
+    local DIRECTORY_TARGET = target-$(TARGET_NAME) ;
+    FILES on $(DIRECTORY_TARGET) +=  $(TARGET_FILE) ;
+  }
+}
+
+rule AddTargetFilesDirect
+{
+  local DIRECTORY_TARGET = target-$(1) ;
+  local TARGETS = $(2) ;
+  
+  for TARGET_FILE in $(TARGETS) {
+    DIRECT_FILES on $(DIRECTORY_TARGET) += [ FDirName $(SEARCH_SOURCE) $(TARGET_FILE) ] ;
+  }
+}
+
+
+
+# --------------------------------------------------------------------------------
+
+rule ServerDistribute
+{
+  local TARGET_DIRECTORY = $(1) ;
+  local RSYNC_TARGET = rsync-$(3) ;
+  local RSYNC_URL = $(4) ;
+
+  local TARGET_FILELIST = [ FDirName $(TARGET_DIRECTORY) filelist.txt ] ;
+
+  TARGET_DIRECTORY on $(RSYNC_TARGET) = $(TARGET_DIRECTORY) ;
+  RSYNC_URL on $(RSYNC_TARGET) = $(RSYNC_URL) ;
+  RSync $(RSYNC_TARGET) : $(TARGET_FILELIST) ;
+}
+
+
+# new Patcher("testdata/TestFilePatcherUpdate/binary_win32", targetName + "/binary_win32");
+#else
+# Command set for rsyncing with the server. This seems to work but we still need to patch up ssh-agent and other stuff for this to work ..
+# C:\work\ShortHike>rsync -at --progress --delete -e ssh target_assets-standard/assets/* kai@www.shorthike.com:/home/www/test_update/assets_standard
+#
+# For activating the directory:
+# plink kai@www.shorthike.com cd /home/www;make publish-update
+
+rule RSync
+{
+  NOTFILE $(1) ;
+  ALWAYS $(1) ;
+  Depends dist : $(1) ;
+  Depends $(1) : $(2) ;
+}
+
+#  echo rsync -r --delete . $(RSYNC_URL)  
+
+actions RSync
+{
+  cd $(TARGET_DIRECTORY)
+  rsync -r --delete . $(RSYNC_URL)
+}
+
+#rule SVNLoadDirs
+#{
+#  local SVN_FILELIST = $(1) ;
+#  local TARGET_FILELIST = $(2) ;
+#  Depends $(SVN_FILELIST) : $(TARGET_FILELIST) ;
+#  Depends dist : $(SVN_FILELIST) ;
+#}
+
+#  svn_load_dirs.pl -wc $(SVN_DIRECTORY) -v -no_user_input $(SVN_URL) . $(TARGET_DIRECTORY)
+
+#actions SVNLoadDirs
+#{
+#}
+
+# --------------------------------------------------------------------------------
+
+rule InstallerWin32
+{
+  local TARGET_FILELISTS = $(1) ;
+  local OUTPUT_DIR = $(2) ;
+
+  INSTALLER_EXE = [ FDirName $(OUTPUT_DIR) $(OUTPUT_FILENAME) ] ;
+
+  Depends $(INSTALLER_EXE) : $(TARGET_FILELISTS) ;
+  Depends $(INSTALLER_EXE) : $(INSTALLER_SCRIPT) ;
+  Depends installer : $(INSTALLER_EXE) ;
+  
+  OUTPUT_DIR on $(INSTALLER_EXE) = $(OUTPUT_DIR) ;
+
+  BuildInstallerWin32 $(INSTALLER_EXE) : $(TARGET_FILELISTS) ;
+}
+
+rule  BuildInstallerWin32
+{
+}
+
+# Lost password to private key ..
+#  SignCode -spc authenticode\mistaril_credentials.spc -v authenticode\mistaril_authenticode.pvk -n "ShortHike" -i http://www.shorthike.com -$ commercial -t http://timestamp.comodoca.com/authenticode $(OUTPUT_DIR)\$(OUTPUT_FILENAME)
+
+actions BuildInstallerWin32
+{
+  "$(ISCC)" setup\ShortHikeSetup.iss /o$(OUTPUT_DIR)
+}
+
+
+# --------------------------------------------------------------------------------
+# creates filelists in the target directories
+
+rule CreateFileList
+{
+  local FILELIST = $(1) ;
+  DIRECTORY on $(FILELIST) = $(3) ;
+}
+
+actions CreateFileList
+{
+  echo Creating filelist in $(DIRECTORY)
+  cd $(DIRECTORY)
+  bash -e ..\..\create_filelist
+}
+
+
+# --------------------------------------------------------------------------------
+# Adding files to the distribution
+
+rule DistFile
+{
+  local TARGET_FILE = $(1) ;
+  local SOURCE_FILE = $(2) ;
+  local DIRECTORY_PATH = [ FDirName $(1:D) ] ;
+  local TEMP_FILE = [ FDirName $(TARGET_FILE:D) $(SOURCE_FILE:D="") ] ;
+
+  DIRECTORY_PATH on $(TARGET_FILE) = $(DIRECTORY_PATH) ;
+  TEMP_FILE on $(TARGET_FILE) = $(TEMP_FILE) ;
+  Depends $(TARGET_FILE) : $(SOURCE_FILE) ;
+}
+
+# Very Windows specific ..
+# use >NUL to stop output
+#  echo Copying
+#  xcopy /Y /F "$(2)" $(DIRECTORY_PATH)\$(FILENAME) >NUL
+actions DistFile
+{
+  xcopy /Y /F "$(2)" $(DIRECTORY_PATH)\ >NUL
+  move "$(TEMP_FILE)" "$(1)" 
+}
+
+
+

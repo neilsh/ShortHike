@@ -1,0 +1,24 @@
+# --------------------------------------------------------------------------------
+# LuaPlus
+
+LUAPLUS_DIR = [ FDirName $(LIBRARIES_DIR) LuaPlus ] ;
+
+#----------
+# LuaPlus
+
+rule LibLuaPlus
+{
+  PROGRAM_NAME = $(1) ;
+  
+  LibraryExt $(PROGRAM_NAME) :
+  [ FDirName $(LUAPLUS_DIR) Src LuaPlus ] :
+  [ FDirName $(LUAPLUS_DIR) lib win32 ] : [ FDirName $(LUAPLUS_DIR) lib win32 ] :
+  [ FDirName $(LUAPLUS_DIR) bin ] : [ FDirName $(LUAPLUS_DIR) bin ] :
+  LuaPlusD_1081.dll : LuaPlus_1081.dll ;
+  
+  ProgramLibraryFlags $(PROGRAM_NAME) : [ FLibPath $(LUAPLUS_DIR) Lib win32 ] ;
+  
+  ProgramLibraryFlags $(PROGRAM_NAME) : [ FDirName $(LUAPLUS_DIR) Temp LuaPlusModules Glob Debug Glob.lib ] :
+  [ FDirName $(LUAPLUS_DIR) Temp LuaPlusModules Glob Release Glob.lib ] ;
+  CPPFLAGS on $(PROGRAM_NAME) += [ FDefines ENABLE_LUAPLUS ] ;
+}

@@ -1,0 +1,6 @@
+# --------------------------------------------------------------------------------
+
+SubDir TOP sources game ;
+
+AddDImportDirectory ShortHike ;
+AddLocalDSources ShortHike ;

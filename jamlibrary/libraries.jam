@@ -1,0 +1,223 @@
+# --------------------------------------------------------------------------------
+# This jam file defines general rules for how libraries are included into the
+# build process
+
+rule DLLCopy
+{
+	local DLL_DESTINATION = $(1) ;
+	local DLL_SOURCE = $(2) ;
+	local BUILD_NAME = $(3) ;
+	local BUILD_DIRECTORY = $(4) ;
+
+	Depends $(DLL_DESTINATION) : $(DLL_SOURCE) ;
+	Depends $(BUILD_NAME) : $(DLL_DESTINATION) ;
+}
+
+
+actions DLLCopy
+{
+	echo $(2) $(1)
+	$(CP) "$(2)" "$(1)" >NUL
+}
+
+rule SingleDLL
+{
+	local PROGRAM_NAME = $(1) ;
+	local DLL_DIR = $(2) ;
+	local DLL_NAME = $(3) ;
+
+	local DEBUG_BUILD_DIRECTORY = [ GetBuildDirectory debug : $(PROGRAM_NAME) ] ;
+	local RELEASE_BUILD_DIRECTORY = [ GetBuildDirectory release : $(PROGRAM_NAME) ] ;
+
+	DLLCopy [ FDirName $(DEBUG_BUILD_DIRECTORY) $(DLL_NAME) ] :
+		[ FDirName $(DLL_DIR) $(DLL_NAME) ] :
+		debug-$(PROGRAM_NAME) :
+		$(DEBUG_BUILD_DIRECTORY) ;
+
+	DLLCopy [ FDirName $(RELEASE_BUILD_DIRECTORY) $(DLL_NAME) ] :
+		[ FDirName $(DLL_DIR) $(DLL_NAME) ] :
+		release-$(PROGRAM_NAME) :
+		$(RELEASE_BUILD_DIRECTORY) ;
+
+  # Add the DLL file to all distributions
+  on $(PROGRAM_NAME) {
+    if $(DISTRIBUTIONS) != "" {
+      for TARGET_DISTRIBUTION in $(DISTRIBUTIONS) {
+	AddTargetFilesDirect $(TARGET_DISTRIBUTION) : [ FDirName $(RELEASE_BUILD_DIRECTORY) $(DLL_NAME) ] ;
+      }
+    }
+  }
+}
+
+rule MultiDLL
+{
+	local PROGRAM_NAME = $(1) ;
+	local DEBUG_DLL_DIR = $(2) ;
+	local RELEASE_DLL_DIR = $(3) ;
+	local DEBUG_DLL = $(4) ;
+	local RELEASE_DLL = $(5) ;
+
+	local DEBUG_BUILD_DIRECTORY = [ GetBuildDirectory debug : $(PROGRAM_NAME) ] ;
+	local RELEASE_BUILD_DIRECTORY = [ GetBuildDirectory release : $(PROGRAM_NAME) ] ;
+
+	DLLCopy [ FDirName $(DEBUG_BUILD_DIRECTORY) $(DEBUG_DLL) ] :
+		[ FDirName $(DEBUG_DLL_DIR) $(DEBUG_DLL) ] :
+		debug-$(PROGRAM_NAME) :
+		$(DEBUG_BUILD_DIRECTORY) ;
+
+	DLLCopy [ FDirName $(RELEASE_BUILD_DIRECTORY) $(RELEASE_DLL) ] :
+		[ FDirName $(RELEASE_DLL_DIR) $(RELEASE_DLL) ] :
+		release-$(PROGRAM_NAME) :
+		$(RELEASE_BUILD_DIRECTORY) ;
+
+  # Add the DLL file to all distributions
+  on $(PROGRAM_NAME) {
+    if $(DISTRIBUTIONS) != "" {
+      for TARGET_DISTRIBUTION in $(DISTRIBUTIONS) {
+	AddTargetFilesDirect $(TARGET_DISTRIBUTION) : [ FDirName $(RELEASE_BUILD_DIRECTORY) $(RELEASE_DLL) ] ;
+      }
+    }
+  }
+}
+
+
+rule ReleaseDLL
+{
+	local PROGRAM_NAME = $(1) ;
+	local RELEASE_DLL_DIR = $(2) ;
+	local RELEASE_DLL = $(3) ;
+
+	local RELEASE_BUILD_DIRECTORY = [ GetBuildDirectory release : $(PROGRAM_NAME) ] ;	
+
+	DLLCopy [ FDirName $(RELEASE_BUILD_DIRECTORY) $(RELEASE_DLL) ] :
+		[ FDirName $(RELEASE_DLL_DIR) $(RELEASE_DLL) ] :
+		release-$(PROGRAM_NAME) :
+		[ GetBuildDirectory release : $(PROGRAM_NAME) ] ;
+
+  # Add the DLL file to all distributions
+  on $(PROGRAM_NAME) {
+    if $(DISTRIBUTIONS) != "" {
+      for TARGET_DISTRIBUTION in $(DISTRIBUTIONS) {
+	AddTargetFilesDirect $(TARGET_DISTRIBUTION) : [ FDirName $(RELEASE_BUILD_DIRECTORY) $(RELEASE_DLL) ] ;
+      }
+    }
+  }
+}
+
+
+rule Library
+{
+	local PROGRAM_NAME = $(1) ;
+	local INCLUDE_DIR = $(2) ;
+
+	local DEBUG_LIBRARY_DIR = $(3) ;
+	local RELEASE_LIBRARY_DIR = $(4) ;
+
+	local DEBUG_DLL = $(5) ;
+	local RELEASE_DLL = $(6) ;
+	
+	local RENAME_DLL = $(7) ;
+
+	LibraryExt $(PROGRAM_NAME) : $(INCLUDE_DIR) : $(DEBUG_LIBRARY_DIR) : $(RELEASE_LIBRARY_DIR) :
+	$(DEBUG_LIBRARY_DIR) : $(RELEASE_LIBRARY_DIR) :	$(DEBUG_DLL) : $(RELEASE_DLL) : $(RENAME_DLL) ;
+}
+
+
+rule LibraryExt
+{
+	local PROGRAM_NAME = $(1) ;
+	local INCLUDE_DIR = $(2) ;
+
+	local DEBUG_LIBRARY_DIR = $(3) ;	
+	local RELEASE_LIBRARY_DIR = $(4) ;
+	
+	local DEBUG_DLL_DIR = $(5) ;
+	local RELEASE_DLL_DIR = $(6) ;
+
+	local DEBUG_DLL = $(7) ;
+	local RELEASE_DLL = $(8) ;
+	
+	local RENAME_DLL = $(9) ;
+
+	local DEBUG_BUILD_DIRECTORY = [ GetBuildDirectory debug : $(PROGRAM_NAME) ] ;
+	local RELEASE_BUILD_DIRECTORY = [ GetBuildDirectory release : $(PROGRAM_NAME) ] ;	
+
+	local TARGET_DEBUG_DLL = $(DEBUG_DLL) ;
+	local TARGET_RELEASE_DLL = $(RELEASE_DLL) ;
+
+
+	if $(RENAME_DLL) != "" {
+		TARGET_DEBUG_DLL = $(RENAME_DLL) ;
+		TARGET_RELEASE_DLL = $(RENAME_DLL) ;	
+	}	
+
+	DLLCopy [ FDirName $(DEBUG_BUILD_DIRECTORY) $(TARGET_DEBUG_DLL) ] :
+		[ FDirName $(DEBUG_DLL_DIR) $(DEBUG_DLL) ] :
+		debug-$(PROGRAM_NAME) :
+		[ GetBuildDirectory debug : $(PROGRAM_NAME) ] ;
+
+	DLLCopy [ FDirName $(RELEASE_BUILD_DIRECTORY) $(TARGET_RELEASE_DLL) ] :
+		[ FDirName $(RELEASE_DLL_DIR) $(RELEASE_DLL) ] :
+		release-$(PROGRAM_NAME) :
+		[ GetBuildDirectory release : $(PROGRAM_NAME) ] ;
+
+	ProgramLibraryFlags $(PROGRAM_NAME) : [ FLibPath $(DEBUG_LIBRARY_DIR) ] : [ FLibPath $(RELEASE_LIBRARY_DIR) ] ;
+
+	if $(INCLUDE_DIR) != "." {
+		for DIRECTORY in $(INCLUDE_DIR) {
+			CPPFLAGS on $(PROGRAM_NAME) += [ FIncPath $(DIRECTORY) ] ;
+		}
+	}
+
+  # Add the DLL file to all distributions
+  on $(PROGRAM_NAME) {
+    if $(DISTRIBUTIONS) != "" {
+      for TARGET_DISTRIBUTION in $(DISTRIBUTIONS) {
+	AddTargetFilesDirect $(TARGET_DISTRIBUTION) : [ FDirName $(RELEASE_BUILD_DIRECTORY) $(TARGET_RELEASE_DLL) ] ;
+      }
+    }
+  }
+}
+
+
+rule LibraryFlags
+{
+	local DEBUG_FLAGS = $(1) ;
+	local RELEASE_FLAGS = $(2) ;
+	if $(2) = "" {
+		RELEASE_FLAGS = $(DEBUG_FLAGS) ;
+	}
+
+	LDFLAGS on debug += $(DEBUG_FLAGS) ;
+	LDFLAGS on release += $(RELEASE_FLAGS) ;
+}
+
+rule ProgramLibraryFlags
+{
+	local PROGRAM_NAME = $(1) ;
+	local DEBUG_FLAGS = $(2) ;
+	local RELEASE_FLAGS = $(3) ;
+	local TARGET_DEBUG = debug-$(PROGRAM_NAME) ;
+	local TARGET_RELEASE = release-$(PROGRAM_NAME) ;
+
+	if $(3) = "" {
+		RELEASE_FLAGS = $(DEBUG_FLAGS) ;
+	}
+
+	LDFLAGS on $(TARGET_DEBUG) += $(DEBUG_FLAGS) ;
+	LDFLAGS on $(TARGET_RELEASE) += $(RELEASE_FLAGS) ;
+}
+
+rule SingleBuildLibrary
+{
+	local PROGRAM_NAME = $(1) ;
+	local INCLUDE_DIR = $(2) ;
+	local LIBRARY_DIR = $(3) ;
+	local DLL_DIR = $(4) ;
+	local DLL_NAME = $(5) ;
+
+	LibraryExt $(PROGRAM_NAME) : $(INCLUDE_DIR) :
+		$(LIBRARY_DIR) : $(LIBRARY_DIR) :
+		$(DLL_DIR) : $(DLL_DIR) :
+		$(DLL_NAME) : $(DLL_NAME) ;
+}

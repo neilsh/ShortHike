@@ -1,0 +1,238 @@
+module windef;
+/* 
+ * win32 defines ported to 2 from
+ */
+/* start with the D windows I/F hence most of this is commented out */
+import windows;
+
+/*++
+Copyright (c) 1985-1996  Microsoft Corporation
+Module Name:
+    windef.h
+Abstract:
+    Basic Windows Type Definitions.
+Revision History:
+--*/
+extern (Windows)
+{
+	/*
+alias uint     ULONG;
+alias ushort   USHORT;
+alias ubyte    UCHAR;
+alias wchar    WCHAR;
+
+alias void   VOID;
+alias char   CHAR;
+alias short  SHORT;
+alias int    LONG;
+
+alias char *   PSZ;
+alias ubyte *  PUCHAR;
+alias ushort * PUSHORT;
+alias uint *   PULONG;
+
+alias CHAR * LPSTR,PSTR,LPCSTR,PCSTR;
+alias LPSTR  LPTCH, PTCH;
+alias LPSTR  PTSTR, LPTSTR;
+alias LPCSTR LPCTSTR;
+
+alias uint    DWORD;
+alias int     BOOL;
+alias ubyte   BYTE;
+alias ushort  WORD;
+alias float   FLOAT;
+
+alias float * PFLOAT;
+alias BOOL  * PBOOL,LPBOOL;
+alias BYTE  * PBYTE,LPBYTE;
+alias int   * PINT,LPINT;
+alias WORD  * PWORD,LPWORD;
+alias DWORD * PDWORD,LPDWORD;
+alias void * LPVOID;
+// should be const :(
+alias void * LPCVOID;
+
+alias int  INT;
+alias uint UINT;
+alias uint *PUINT;
+
+alias void * PVOID;
+alias LONG HRESULT;
+alias LONG SCODE;
+
+typedef void * HANDLE;
+
+alias HANDLE   HGLOBAL;
+alias HANDLE   GLOBALHANDLE;
+alias HANDLE   LOCALHANDLE;
+
+// should this be a typedef ?
+alias HANDLE    HINSTANCE;
+alias HINSTANCE HMODULE;
+// should this be a typedef
+alias HANDLE HWND;
+alias HANDLE HACCEL;
+*/
+
+alias HANDLE * PHANDLE,LPHANDLE,SPHANDLE;
+alias HANDLE HLOCAL;
+alias HANDLE HHOOK;
+
+alias WCHAR * LPWSTR, PWSTR;
+
+version( STANDALONE ) {
+alias WCHAR * LPCWSTR, PCWSTR;
+alias LONG  * LPLONG;
+} // version( STANDALONE )
+
+alias LONG  * PLONG;
+
+/*
+
+// should this be a typedef
+alias HANDLE HGDIOBJ;
+alias HANDLE HBITMAP;
+alias HANDLE HBRUSH;
+alias HANDLE HCOLORSPACE;
+alias HANDLE HDC;
+alias HANDLE HGLRC;
+alias HANDLE HDESK;
+alias HANDLE HENHMETAFILE;
+alias HANDLE HFONT;
+alias HANDLE HICON;
+alias HANDLE HMENU;
+alias HANDLE HMETAFILE;
+alias HANDLE HPALETTE;
+alias HANDLE HPEN;
+alias HANDLE HRGN;
+alias HANDLE HRSRC;
+alias HANDLE HSTR;
+alias HANDLE HTASK;
+alias HANDLE HWINSTA;
+alias HANDLE HKL;
+alias HICON HCURSOR;
+
+alias HANDLE HKEY;
+alias HKEY *PHKEY;
+alias DWORD ACCESS_MASK;
+alias ACCESS_MASK *PACCESS_MASK;
+alias ACCESS_MASK REGSAM;
+
+alias UINT WPARAM;
+alias LONG LPARAM;
+alias LONG LRESULT;
+
+alias DWORD   COLORREF;
+alias DWORD   *LPCOLORREF;
+alias WORD    ATOM;
+
+enum { MAX_PATH          = 260 }
+
+//alias null NULL;
+//alias false FALSE;
+//alias true TRUE;
+
+WORD LOWORD(int l) { return (WORD)l; }
+WORD HIWORD(int l) { return (WORD)((l >> 16) & 0xFFFF); }
+BYTE LOBYTE(int l) { return (BYTE)l; }
+BYTE HIBYTE(int l) { return (BYTE)((l >> 8) & 0xFF); }
+int FAILED(int status) { return status < 0; }
+int SUCCEEDED(int Status) { return Status >= 0; }
+
+struct RECT {
+    LONG    left;
+    LONG    top;
+    LONG    right;
+    LONG    bottom;
+} 
+alias RECT * PRECT,NPRECT,LPRECT;
+
+alias RECT * LPCRECT;
+//typedef const RECT FAR* LPCRECT;
+*/
+
+version( STANDALONE ) {
+alias int (*FARPROC)();
+} // version( STANDALONE )
+
+alias int (*NEARPROC)();
+alias int (*PROC)();
+
+struct RECTL {
+    LONG    left;
+    LONG    top;
+    LONG    right;
+    LONG    bottom;
+} 
+alias RECTL * PRECTL,LPRECTL;
+//typedef const RECTL FAR* LPCRECTL;
+alias RECTL * LPCRECTL;
+
+/*
+struct POINT {
+    LONG  x;
+    LONG  y;
+} 
+alias POINT * PPOINT,NPPOINT,LPPOINT;
+*/
+
+struct POINTS {
+    SHORT   x;
+    SHORT   y;
+} 
+alias POINTS * PPOINTS,LPPOINTS;
+
+struct POINTL { 
+    LONG  x;
+    LONG  y;
+} 
+alias POINTL * PPOINTL;
+
+struct SIZE {
+    LONG        cx;
+    LONG        cy;
+} 
+alias SIZE * PSIZE,LPSIZE;
+
+alias SIZE SIZEL;
+alias SIZE * PSIZEL,LPSIZEL;
+
+alias int HFILE;      
+const HFILE HFILE_ERROR = ((HFILE)-1);
+
+enum {
+// mode selections for the device mode function 
+DM_UPDATE           =1,
+DM_COPY             =2,
+DM_PROMPT           =4,
+DM_MODIFY           =8,
+
+DM_IN_BUFFER        =DM_MODIFY,
+DM_IN_PROMPT        =DM_PROMPT,
+DM_OUT_BUFFER       =DM_COPY,
+DM_OUT_DEFAULT      =DM_UPDATE
+}
+
+enum {
+// device capabilities indices 
+DC_FIELDS           =1,
+DC_PAPERS           =2,
+DC_PAPERSIZE        =3,
+DC_MINEXTENT        =4,
+DC_MAXEXTENT        =5,
+DC_BINS             =6,
+DC_DUPLEX           =7,
+DC_SIZE             =8,
+DC_EXTRA            =9,
+DC_VERSION          =10,
+DC_DRIVER           =11,
+DC_BINNAMES         =12,
+DC_ENUMRESOLUTIONS  =13,
+DC_FILEDEPENDENCIES =14,
+DC_TRUETYPE         =15,
+DC_PAPERNAMES       =16,
+DC_ORIENTATION      =17,
+DC_COPIES           =18
+}
+
+}
